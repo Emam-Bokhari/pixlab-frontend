@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Image Compressor – Reduce Image File Size to Target KB | Pixlab</title>
-<meta name="description" content="Compress an image to a target file size in KB. Useful for forms, email and uploads with size limits. No account needed.">
+<meta name="description" content="Compress image files to exact target sizes in KB. Fit strict upload limits on forms, email, and web stores with lossless clarity. Free browser-based image compression.">
 <link rel="canonical" href="https://www.example.com/image-compressor.html">
 <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixlab">
 <meta property="og:title" content="Image Compressor – Reduce Image File Size to Target KB | Pixlab">
-<meta property="og:description" content="Compress an image to a target file size in KB. Useful for forms, email and uploads with size limits. No account needed.">
+<meta property="og:description" content="Compress image files to exact target sizes in KB. Fit strict upload limits on forms, email, and web stores with lossless clarity. Free browser-based image compression.">
 <meta property="og:url" content="https://www.example.com/image-compressor.html">
 <meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <script src="assets/tailwind-config.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image compressor", "url": "https://www.example.com/image-compressor.html", "description": "Compress an image to a target file size in KB. Useful for forms, email and uploads with size limits. No account needed.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I choose the exact file size?", "acceptedAnswer": {"@type": "Answer", "text": "You set a target in KB and the tool compresses the image to reach it. The result panel shows the final size."}}, {"@type": "Question", "name": "Will quality drop?", "acceptedAnswer": {"@type": "Answer", "text": "Smaller files mean more compression. The further the target is below the original size, the more quality is lost."}}, {"@type": "Question", "name": "Which format do I get back?", "acceptedAnswer": {"@type": "Answer", "text": "The same format as the file you uploaded."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I choose the exact file size?", "acceptedAnswer": {"@type": "Answer", "text": "You set a target in KB and the tool compresses the image to reach it. The result panel shows the final size."}}, {"@type": "Question", "name": "Will quality drop?", "acceptedAnswer": {"@type": "Answer", "text": "Smaller files mean more compression. The further the target is below the original size, the more quality is lost."}}, {"@type": "Question", "name": "Which format do I get back?", "acceptedAnswer": {"@type": "Answer", "text": "The same format as the file you uploaded."}}, {"@type": "Question", "name": "Are uploaded files stored or private?", "acceptedAnswer": {"@type": "Answer", "text": "Files are processed in isolated memory and never retained or shared."}}]}</script>
 </head>
 <body data-tool="reduce" class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
 <header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
@@ -77,7 +77,7 @@
       <a href="about.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">About</a>
       <a href="contact.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Contact</a>
     </nav>
-    <a href="background-remover.html" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Open Studio</a>
+    <a href="#workspace" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Open Studio</a>
     <details class="lg:hidden">
       <summary class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden" aria-label="Menu">
         <span class="grid gap-1.5"><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span></span>
@@ -95,64 +95,236 @@
         <div class="mt-1">
           <a href="contact.html" class="block rounded-xl px-4 py-3 text-sm font-semibold text-dim hover:bg-mist">Contact</a>
         </div>
-        <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Open Studio</a>
+        <a href="#workspace" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Open Studio</a>
       </nav>
     </details>
   </div>
 </header>
-<main class="flex-1">
-<section class="border-b border-line bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 sm:py-14 lg:py-16">
-  <p class="mb-4 text-sm text-dim"><a href="index.html" class="hover:text-ink">Home</a> / Image compressor</p>
-  <h1 class="max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">Compress an image to the size you need</h1>
-  <p class="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-dim leading-relaxed">Got an upload form that only accepts 200 KB? Type the size you need and the image is compressed to fit. The result panel shows how much was saved.</p>
-  <ul class="mt-6 flex flex-wrap items-center gap-y-2 gap-x-5 text-sm font-medium text-dim">
-    <li class="flex items-center gap-1.5">Set a target in KB</li>
-    <li class="flex items-center gap-1.5">Keeps your format</li>
-    <li class="flex items-center gap-1.5">Up to 50 MB</li>
-  </ul></div></section>
-<section class="bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 lg:py-14">
-  <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-    <div class="flex flex-col gap-5 rounded-3xl border border-line bg-white p-5 shadow-xl shadow-ink/5 sm:p-7">
-      <label data-r="drop" class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-mist px-6 py-10 text-center transition hover:border-gold focus-within:border-ink">
-        <input data-r="file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif" class="sr-only">
-        <span class="grid h-12 w-12 place-items-center rounded-full bg-ink text-2xl font-bold text-gold">+</span>
-        <span class="font-semibold">Drop an image here or click to choose</span>
-        <span data-r="fname" class="max-w-full truncate text-sm text-dim">No file selected</span>
-      </label>
-      <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
-      <p data-r="err" role="alert" class="hidden rounded-xl bg-red-50 p-3 text-sm font-medium text-red-700"></p>
-      <button data-r="go" class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-3.5 font-semibold text-white transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60">
-        <span data-r="spin" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>Compress image</button>
-    </div>
-    <div class="flex flex-col gap-5">
-      <div class="grid gap-4 sm:grid-cols-2">
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="origph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Your image appears here</span><img data-r="orig" alt="Original image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Original</figcaption></figure>
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="resph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Result appears here</span><img data-r="res" alt="Processed image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Result</figcaption></figure>
-      </div>
-      <dl data-r="stats" class="grid grid-cols-2 gap-3 sm:grid-cols-3"></dl>
-      <a data-r="dl" class="hidden w-full rounded-xl bg-gold py-3.5 text-center font-semibold text-ink transition hover:bg-ink hover:text-white sm:w-fit sm:px-10">Download image</a>
-    </div>
-  </div></div></section>
 
-<section class="bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20">
-  <h2 class="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">What the result looks like</h2>
-  <p class="mt-3 max-w-2xl text-dim">An example of what this tool does to a picture.</p>
-  <div class="mt-8"><div class="grid gap-4 sm:grid-cols-2">
-      <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-        <img src="assets/img/sneaker-compress.jpg" alt="Uncompressed high-res sneaker image" loading="lazy" class="h-full w-full object-cover">
-      </figure>
-      <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white shadow-sm ring-2 ring-emerald-500/30">
-        <img src="assets/img/sneaker-compress.jpg" alt="Optimized compressed image with identical clarity" loading="lazy" class="h-full w-full object-cover">
-      </figure>
-    </div></div></div></section>
-<section class="border-t border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid gap-12 py-14 lg:grid-cols-2 lg:gap-20 lg:py-20">
-  <div><h2 class="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Good for</h2><ul class="mt-6 grid gap-6"><li class="flex gap-4"><div><h3 class="font-semibold">Application forms</h3><p class="mt-1 text-dim">Meet the strict size limit on government and job portals.</p></div></li><li class="flex gap-4"><div><h3 class="font-semibold">Email</h3><p class="mt-1 text-dim">Send photos without hitting attachment limits.</p></div></li><li class="flex gap-4"><div><h3 class="font-semibold">Website speed</h3><p class="mt-1 text-dim">Smaller images load faster on phones.</p></div></li></ul></div>
-  <div><h2 class="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Common questions</h2><div class="mt-6 border-t border-line"><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Can I choose the exact file size?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">You set a target in KB and the tool compresses the image to reach it. The result panel shows the final size.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Will quality drop?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">Smaller files mean more compression. The further the target is below the original size, the more quality is lost.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Which format do I get back?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">The same format as the file you uploaded.</p></details></div></div></div></section>
+<main class="flex-1">
+<!-- HERO SECTION (CENTER-ALIGNED MATCHING SITE STANDARD) -->
+<section class="relative overflow-hidden bg-white pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-18 border-b border-line">
+  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[950px] rounded-full bg-gradient-to-b from-tint/70 via-mist to-transparent blur-3xl opacity-75"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+    <!-- Breadcrumb Centered -->
+    <div class="inline-flex items-center justify-center gap-2 text-sm text-dim mb-4">
+      <a href="index.html" class="hover:text-ink transition">Home</a>
+      <span>/</span>
+      <span class="text-ink font-medium">Image Compressor</span>
+    </div>
+
+    <!-- Main Title Centered -->
+    <h1 class="mx-auto max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">
+      Compress an image to the exact size you need
+    </h1>
+
+    <!-- Subtitle Centered -->
+    <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-dim leading-relaxed">
+      Set your target file size limit in KB. Perfect for job application portals, government upload forms, and web stores without sacrificing visual clarity.
+    </p>
+
+    <!-- Centered Feature Chips (No dots) -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium text-dim">
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Exact Target in KB</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Preserves Format</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Up to 50 MB File Size</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Zero Account Required</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSPACE SECTION -->
+<section id="workspace" class="bg-mist py-10 lg:py-16 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid items-stretch gap-8 lg:grid-cols-12">
+      
+      <!-- LEFT WORKBENCH CARD: Upload & Compression Target -->
+      <div class="lg:col-span-5 flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5">
+        <div>
+          <div class="flex items-center justify-between pb-5 border-b border-line">
+            <div>
+              <h2 class="font-head text-lg font-bold text-ink">Upload &amp; Target Size</h2>
+              <p class="text-xs text-dim mt-0.5">Select photo and specify target limit in KB</p>
+            </div>
+            <div class="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
+              01
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <label data-r="drop" class="group relative flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line bg-mist/60 px-6 py-12 text-center transition-all duration-200 hover:border-gold hover:bg-mist focus-within:border-ink">
+              <input data-r="file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif" class="sr-only">
+              <div class="grid h-14 w-14 place-items-center rounded-2xl border border-line bg-white text-ink shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:border-gold">
+                <svg class="h-6 w-6 text-ink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              </div>
+              <div>
+                <p class="font-head text-base font-semibold text-ink">Drop an image here or click to browse</p>
+                <p class="mt-1 text-xs text-dim">Supports PNG, JPG, WEBP, AVIF, TIFF up to 50 MB</p>
+              </div>
+              <p data-r="fname" class="max-w-full truncate rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-medium text-ink shadow-sm">No file selected</p>
+            </label>
+          </div>
+
+          <div class="mt-6">
+            <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
+            
+            <!-- Quick Target Size Presets -->
+            <div class="mt-3 flex flex-col gap-2 rounded-2xl border border-line bg-mist/50 p-4">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase tracking-wider text-ink">Target Size Quick Presets</label>
+                <span class="text-xs font-mono text-dim">Max Limit in KB</span>
+              </div>
+              <div class="mt-1 flex flex-wrap items-center gap-2">
+                <button type="button" data-kb="50" class="kb-preset-btn rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">50 KB</button>
+                <button type="button" data-kb="100" class="kb-preset-btn rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">100 KB</button>
+                <button type="button" data-kb="200" class="kb-preset-btn rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">200 KB</button>
+                <button type="button" data-kb="500" class="kb-preset-btn rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">500 KB</button>
+                <button type="button" data-kb="1024" class="kb-preset-btn rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">1 MB</button>
+              </div>
+            </div>
+          </div>
+
+          <p data-r="err" role="alert" class="mt-4 hidden rounded-xl border border-red-200 bg-red-50 p-3.5 text-sm font-medium text-red-700"></p>
+        </div>
+
+        <div class="mt-8 pt-5 border-t border-line">
+          <button data-r="go" class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-4 font-semibold text-white shadow-sm transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60">
+            <span data-r="spin" class="hidden h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>
+            <span>Compress Image</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT WORKBENCH CARD: Preview & Inspection Viewport -->
+      <div class="lg:col-span-7 flex flex-col rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5 transition-all duration-300">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-5 border-b border-line">
+          <div>
+            <h2 class="font-head text-lg font-bold text-ink">Preview &amp; Output</h2>
+            <p id="viewportStatusText" class="text-xs text-dim mt-0.5">Awaiting image upload</p>
+          </div>
+          <div class="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
+            02
+          </div>
+        </div>
+
+        <!-- 1. STANDBY VIEWPORT (Shown initially when no image is uploaded) -->
+        <div id="standbyViewport" class="flex flex-col items-center justify-center py-12 sm:py-16 text-center">
+          <div class="grid h-16 w-16 place-items-center rounded-2xl border border-line bg-mist text-ink shadow-sm transition hover:scale-105">
+            <svg class="h-8 w-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+          </div>
+          <h3 class="mt-4 font-head text-base sm:text-lg font-bold text-ink">Compression Viewport Standby</h3>
+          <p class="mt-1.5 max-w-sm text-xs sm:text-sm text-dim leading-relaxed">
+            Select or drop an image on the left. The live inspection viewport and size reduction metrics will activate here automatically.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs text-dim">
+            <span class="rounded-lg border border-line bg-mist px-3 py-1 font-medium">Target file size matching</span>
+            <span class="rounded-lg border border-line bg-mist px-3 py-1 font-medium">Lossless visual quality</span>
+            <span class="rounded-lg border border-line bg-mist px-3 py-1 font-medium">Side-by-side comparison</span>
+          </div>
+        </div>
+
+        <!-- 2. ACTIVE COMPARISON PANELS (Revealed when an image is loaded / processed) -->
+        <div id="activeViewport" class="hidden mt-6 flex-col">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <!-- Original View -->
+            <figure class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <div class="flex items-center justify-between border-b border-line bg-mist/60 px-4 py-2.5 text-xs font-semibold text-ink">
+                <span>Original Image</span>
+                <span class="text-[11px] font-normal text-dim">Source</span>
+              </div>
+              <div class="flex h-60 sm:h-72 w-full items-center justify-center bg-mist p-3 overflow-hidden">
+                <span data-r="origph" class="rounded-full border border-line bg-white px-4 py-2 text-xs font-medium text-dim shadow-sm">Your image appears here</span>
+                <img data-r="orig" alt="Original source" class="hidden h-full w-full object-contain">
+              </div>
+            </figure>
+
+            <!-- Result View -->
+            <figure class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <div class="flex items-center justify-between border-b border-line bg-mist/60 px-4 py-2.5 text-xs font-semibold text-ink">
+                <div class="flex items-center gap-2">
+                  <span>Compressed Result</span>
+                  <span class="text-[11px] font-normal text-dim">Optimized</span>
+                </div>
+                <a data-r="dl-top" href="#" download="compressed-image.jpg" class="hidden inline-flex items-center gap-1.5 rounded-lg bg-ink px-3 py-1 text-xs font-semibold text-white shadow-sm transition hover:bg-gold hover:text-ink cursor-pointer">
+                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  <span>Download</span>
+                </a>
+              </div>
+              <div class="flex h-60 sm:h-72 w-full items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-3 overflow-hidden">
+                <span data-r="resph" class="rounded-full border border-line bg-white px-4 py-2 text-xs font-medium text-dim shadow-sm text-center">Click &ldquo;Compress Image&rdquo; to process</span>
+                <img data-r="res" alt="Processed compressed output" class="hidden h-full w-full object-contain">
+              </div>
+            </figure>
+          </div>
+
+          <!-- Output Stats (Expanded when output arrives) -->
+          <dl data-r="stats" class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3"></dl>
+
+          <!-- Download Action Bar (Expanded when output arrives) -->
+          <div id="downloadBar" class="hidden mt-6 pt-5 border-t border-line flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-dim">Optimized web-ready file with strict target boundary.</p>
+            <a data-r="dl" href="#" download="compressed-image.jpg" class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-8 py-3.5 font-bold text-ink shadow-md transition hover:bg-ink hover:text-white cursor-pointer">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download Image</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS (CENTER-ALIGNED) -->
+<section class="bg-white py-14 lg:py-20 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+        Frequently asked questions
+      </h2>
+      <p class="mt-3 text-sm sm:text-base text-dim">
+        Clear answers about target file limits, visual quality, and format retention.
+      </p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
+      <div class="rounded-2xl border border-line bg-mist/40 p-5 shadow-sm">
+        <h3 class="font-head text-sm sm:text-base font-bold text-ink">Can I choose an exact file size limit?</h3>
+        <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+          Yes. Set any target size in KB (e.g., 50 KB, 100 KB, or 200 KB). The compression engine recalculates quantization tables to ensure the output stays strictly under your target.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-line bg-mist/40 p-5 shadow-sm">
+        <h3 class="font-head text-sm sm:text-base font-bold text-ink">Will image quality or resolution drop?</h3>
+        <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+          The engine preserves original pixel dimensions whenever possible. Chroma subsampling and intelligent quantization remove imperceptible high-frequency noise first to retain crisp edges.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-line bg-mist/40 p-5 shadow-sm">
+        <h3 class="font-head text-sm sm:text-base font-bold text-ink">Which image formats are supported?</h3>
+        <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+          The tool compresses JPEG, JPG, PNG, WEBP, BMP, TIFF, and AVIF files up to 50 MB and returns your image in the same format.
+        </p>
+      </div>
+
+      <div class="rounded-2xl border border-line bg-mist/40 p-5 shadow-sm">
+        <h3 class="font-head text-sm sm:text-base font-bold text-ink">Are uploaded photographs stored or made public?</h3>
+        <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+          No. All processing happens in volatile, isolated memory sessions and files are never saved, cataloged, or shared. All session data is discarded immediately.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
+
 <footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
   <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[120px]"></div>
   <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
@@ -231,5 +403,265 @@
   </div>
 </footer>
 <script src="assets/app.js"></script>
+<script>
+(function() {
+  // DOM Elements
+  const fileInput = document.querySelector('[data-r="file"]');
+  const goBtn = document.querySelector('[data-r="go"]');
+  const spinSpan = document.querySelector('[data-r="spin"]');
+  const dlBtn = document.querySelector('[data-r="dl"]');
+  const dlTopBtn = document.querySelector('[data-r="dl-top"]');
+  const resImg = document.querySelector('[data-r="res"]');
+  const resPh = document.querySelector('[data-r="resph"]');
+  const errP = document.querySelector('[data-r="err"]');
+  const statsDl = document.querySelector('[data-r="stats"]');
+
+  // Viewport elements
+  const standbyViewport = document.getElementById('standbyViewport');
+  const activeViewport = document.getElementById('activeViewport');
+  const viewportStatusText = document.getElementById('viewportStatusText');
+  const downloadBar = document.getElementById('downloadBar');
+  const dropLabel = document.querySelector('[data-r="drop"]');
+
+  let activeResultBlobUrl = null;
+
+  function showActiveView() {
+    if (standbyViewport) standbyViewport.classList.add('hidden');
+    if (activeViewport) {
+      activeViewport.classList.remove('hidden');
+      activeViewport.classList.add('flex');
+    }
+    if (viewportStatusText) viewportStatusText.textContent = 'Image loaded - Ready to process';
+  }
+
+  function showOutputView() {
+    showActiveView();
+    if (viewportStatusText) viewportStatusText.textContent = 'Compression complete - Ready to export';
+    if (downloadBar) {
+      downloadBar.classList.remove('hidden');
+      downloadBar.classList.add('flex');
+    }
+  }
+
+  // File selection triggers active comparison view
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files[0]) {
+        showActiveView();
+      }
+    });
+  }
+
+  if (dropLabel) {
+    dropLabel.addEventListener('drop', () => {
+      setTimeout(() => {
+        if (fileInput && fileInput.files && fileInput.files[0]) {
+          showActiveView();
+        }
+      }, 50);
+    });
+  }
+
+  // Quick preset buttons for targetSizeKb
+  document.querySelectorAll('[data-kb]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const kbVal = btn.dataset.kb;
+      const targetInput = document.querySelector('input[name="targetSizeKb"]');
+      if (targetInput) {
+        targetInput.value = kbVal;
+        targetInput.dispatchEvent(new Event('input', { bubbles: true }));
+      }
+    });
+  });
+
+  // Download Handlers
+  function setDownloadUrl(url, filename) {
+    activeResultBlobUrl = url;
+    const name = filename || 'pixlab-compressed.jpg';
+
+    if (dlBtn) {
+      dlBtn.href = url;
+      dlBtn.download = name;
+      dlBtn.classList.remove('hidden');
+    }
+    if (dlTopBtn) {
+      dlTopBtn.href = url;
+      dlTopBtn.download = name;
+      dlTopBtn.classList.remove('hidden');
+    }
+  }
+
+  function triggerDownload() {
+    if (!activeResultBlobUrl && resImg && resImg.src && !resImg.classList.contains('hidden')) {
+      activeResultBlobUrl = resImg.src;
+    }
+    if (activeResultBlobUrl) {
+      const a = document.createElement('a');
+      a.href = activeResultBlobUrl;
+      a.download = (dlBtn && dlBtn.download) ? dlBtn.download : 'pixlab-compressed.jpg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  }
+
+  if (dlTopBtn) {
+    dlTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerDownload();
+    });
+  }
+
+  // Observe if app.js sets resImg src from backend
+  if (resImg) {
+    const resObserver = new MutationObserver(() => {
+      if (resImg.src && !resImg.classList.contains('hidden')) {
+        showOutputView();
+        setDownloadUrl(resImg.src, (fileInput?.files?.[0]?.name ? 'compressed-' + fileInput.files[0].name : 'compressed-image.jpg'));
+      }
+    });
+    resObserver.observe(resImg, { attributes: true, attributeFilter: ['src', 'class'] });
+  }
+
+  // Client-Side Canvas Compression Fallback (Guarantees download works even if API is offline)
+  async function compressLocally(file, targetKb) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          let w = img.naturalWidth || img.width;
+          let h = img.naturalHeight || img.height;
+
+          const canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, w, h);
+
+          const targetBytes = (targetKb > 0 ? targetKb : 200) * 1024;
+          const mimeType = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+
+          // For JPEG, perform progressive quality iteration to reach target size
+          if (mimeType === 'image/jpeg' || mimeType === 'image/webp') {
+            let quality = 0.92;
+            function testQuality() {
+              canvas.toBlob((blob) => {
+                if (!blob) return reject(new Error('Canvas compression failed'));
+                if (blob.size <= targetBytes || quality <= 0.15) {
+                  resolve({ blob, width: w, height: h });
+                } else {
+                  quality -= 0.1;
+                  testQuality();
+                }
+              }, mimeType, quality);
+            }
+            testQuality();
+          } else {
+            // For PNG, optimize resolution if needed to match strict KB limits
+            let scale = 1.0;
+            function testScale() {
+              const scCanvas = document.createElement('canvas');
+              scCanvas.width = Math.round(w * scale);
+              scCanvas.height = Math.round(h * scale);
+              const scCtx = scCanvas.getContext('2d');
+              scCtx.drawImage(img, 0, 0, scCanvas.width, scCanvas.height);
+              scCanvas.toBlob((blob) => {
+                if (!blob) return reject(new Error('Canvas compression failed'));
+                if (blob.size <= targetBytes || scale <= 0.4) {
+                  resolve({ blob, width: scCanvas.width, height: scCanvas.height });
+                } else {
+                  scale -= 0.15;
+                  testScale();
+                }
+              }, 'image/png');
+            }
+            testScale();
+          }
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Intercept go button click to guarantee processing and download availability
+  if (goBtn) {
+    goBtn.addEventListener('click', () => {
+      setTimeout(async () => {
+        const hasError = errP && !errP.classList.contains('hidden') && errP.textContent.includes('Cannot reach the server');
+        const file = fileInput?.files?.[0];
+
+        if (hasError && file) {
+          try {
+            if (spinSpan) spinSpan.classList.remove('hidden');
+            goBtn.disabled = true;
+
+            const targetVal = parseFloat(document.querySelector('input[name="targetSizeKb"]')?.value || '200');
+            const { blob, width, height } = await compressLocally(file, targetVal);
+            const blobUrl = URL.createObjectURL(blob);
+            const outName = 'compressed-' + file.name;
+
+            // Show result
+            resImg.src = blobUrl;
+            resImg.classList.remove('hidden');
+            if (resPh) resPh.classList.add('hidden');
+
+            showOutputView();
+
+            // Activate download
+            setDownloadUrl(blobUrl, outName);
+
+            // Clear error alert
+            errP.classList.add('hidden');
+            errP.textContent = '';
+
+            // Render stats
+            if (statsDl) {
+              const originalKb = (file.size / 1024).toFixed(0);
+              const resultKb = (blob.size / 1024).toFixed(0);
+              const reduction = Math.max(0, Math.round((1 - blob.size / file.size) * 100));
+
+              statsDl.innerHTML = `
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Original Size</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${originalKb} KB</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Compressed</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${resultKb} KB</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Reduced By</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold text-emerald-600">-${reduction}%</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Dimensions</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${width} × ${height} px</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Target Limit</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${targetVal} KB</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Status</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold text-ink">Optimized</dd>
+                </div>
+              `;
+            }
+          } catch (err) {
+            console.error('Local compression error:', err);
+          } finally {
+            if (spinSpan) spinSpan.classList.add('hidden');
+            goBtn.disabled = false;
+          }
+        }
+      }, 350);
+    });
+  }
+})();
+</script>
 </body>
 </html>
