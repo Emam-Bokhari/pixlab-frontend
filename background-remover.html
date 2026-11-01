@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Background Remover – Remove Image Background Online | Pixlab</title>
-<meta name="description" content="Remove the background from any photo online. Download a transparent PNG or fill the space with a colour you choose. No account needed.">
+<title>Background Remover – Precision Image Cutout Studio | Pixlab</title>
+<meta name="description" content="Remove image backgrounds with studio precision. Export transparent PNGs or apply uniform solid backdrops. Free browser-based image isolation.">
 <link rel="canonical" href="https://www.example.com/background-remover.html">
 <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -12,8 +12,8 @@
 <meta name="theme-color" content="#0B1B3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixlab">
-<meta property="og:title" content="Background Remover – Remove Image Background Online | Pixlab">
-<meta property="og:description" content="Remove the background from any photo online. Download a transparent PNG or fill the space with a colour you choose. No account needed.">
+<meta property="og:title" content="Background Remover – Precision Image Cutout Studio | Pixlab">
+<meta property="og:description" content="Remove image backgrounds with studio precision. Export transparent PNGs or apply uniform solid backdrops. Free browser-based image isolation.">
 <meta property="og:url" content="https://www.example.com/background-remover.html">
 <meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <script src="assets/tailwind-config.js"></script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Background remover", "url": "https://www.example.com/background-remover.html", "description": "Remove the background from any photo online. Download a transparent PNG or fill the space with a colour you choose. No account needed.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What file do I get back?", "acceptedAnswer": {"@type": "Answer", "text": "A PNG. The background is transparent unless you enter a fill colour."}}, {"@type": "Question", "name": "How do I fill the background with a colour?", "acceptedAnswer": {"@type": "Answer", "text": "Type a hex code such as #FFFFFF or FF0000 in the fill colour box. Leave it empty to keep the background transparent."}}, {"@type": "Question", "name": "Which images can I upload?", "acceptedAnswer": {"@type": "Answer", "text": "PNG, JPEG, JPG, WEBP, BMP, TIFF, GIF and AVIF files up to 50 MB."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What file do I get back?", "acceptedAnswer": {"@type": "Answer", "text": "A 32-bit PNG. The background is transparent unless you enter an optional fill colour."}}, {"@type": "Question", "name": "How do I fill the background with a colour?", "acceptedAnswer": {"@type": "Answer", "text": "Type a hex code such as #FFFFFF or #000000 in the fill colour box. Leave it empty to keep the background transparent."}}, {"@type": "Question", "name": "Which images can I upload?", "acceptedAnswer": {"@type": "Answer", "text": "PNG, JPEG, JPG, WEBP, BMP, TIFF, GIF and AVIF files up to 50 MB."}}]}</script>
 </head>
 <body data-tool="bg" class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
 <header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
@@ -77,7 +77,7 @@
       <a href="about.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">About</a>
       <a href="contact.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Contact</a>
     </nav>
-    <a href="background-remover.html" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Open Studio</a>
+    <a href="#workspace" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Open Studio</a>
     <details class="lg:hidden">
       <summary class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden" aria-label="Menu">
         <span class="grid gap-1.5"><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span></span>
@@ -95,67 +95,563 @@
         <div class="mt-1">
           <a href="contact.html" class="block rounded-xl px-4 py-3 text-sm font-semibold text-dim hover:bg-mist">Contact</a>
         </div>
-        <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Open Studio</a>
+        <a href="#workspace" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Open Studio</a>
       </nav>
     </details>
   </div>
 </header>
-<main class="flex-1">
-<section class="border-b border-line bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 sm:py-14 lg:py-16">
-  <p class="mb-4 text-sm text-dim"><a href="index.html" class="hover:text-ink">Home</a> / Background remover</p>
-  <h1 class="max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">Remove the background from any image</h1>
-  <p class="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-dim leading-relaxed">Upload a photo and get the subject back on a transparent background. Prefer a solid backdrop? Type a colour code and the empty space is filled for you.</p>
-  <ul class="mt-6 flex flex-wrap items-center gap-y-2 gap-x-5 text-sm font-medium text-dim">
-    <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Returns a PNG</li>
-    <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Transparent or coloured</li>
-    <li class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-gold"></span>Up to 50 MB</li>
-  </ul></div></section>
-<section class="bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 lg:py-14">
-  <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-    <div class="flex flex-col gap-5 rounded-3xl border border-line bg-white p-5 shadow-xl shadow-ink/5 sm:p-7">
-      <label data-r="drop" class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-mist px-6 py-10 text-center transition hover:border-gold focus-within:border-ink">
-        <input data-r="file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif" class="sr-only">
-        <span class="grid h-12 w-12 place-items-center rounded-full bg-ink text-2xl font-bold text-gold">+</span>
-        <span class="font-semibold">Drop an image here or click to choose</span>
-        <span data-r="fname" class="max-w-full truncate text-sm text-dim">No file selected</span>
-      </label>
-      <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
-      <p data-r="err" role="alert" class="hidden rounded-xl bg-red-50 p-3 text-sm font-medium text-red-700"></p>
-      <button data-r="go" class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-3.5 font-semibold text-white transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60">
-        <span data-r="spin" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>Remove background</button>
-    </div>
-    <div class="flex flex-col gap-5">
-      <div class="grid gap-4 sm:grid-cols-2">
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="origph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Your image appears here</span><img data-r="orig" alt="Original image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Original</figcaption></figure>
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="resph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Result appears here</span><img data-r="res" alt="Processed image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Result</figcaption></figure>
-      </div>
-      <dl data-r="stats" class="grid grid-cols-2 gap-3 sm:grid-cols-3"></dl>
-      <a data-r="dl" class="hidden w-full rounded-xl bg-gold py-3.5 text-center font-semibold text-ink transition hover:bg-ink hover:text-white sm:w-fit sm:px-10">Download image</a>
-    </div>
-  </div></div></section>
 
-<section class="bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20">
-  <h2 class="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">What the result looks like</h2>
-  <p class="mt-3 max-w-2xl text-dim">An example of what this tool does to a picture.</p>
-  <div class="mt-8"><div class="grid gap-4 sm:grid-cols-3">
-      <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-        <img src="assets/img/tool-sneaker-original.jpg" alt="Designer sneaker original photo" loading="lazy" class="h-full w-full object-cover">
-      </figure>
-      <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] shadow-sm">
-        <img src="assets/img/tool-sneaker-transparent.png" alt="Designer sneaker transparent PNG" loading="lazy" class="h-full w-full object-cover">
-      </figure>
-      <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-mist shadow-sm flex items-center justify-center p-4">
-        <img src="assets/img/hero-watch-transparent.png" alt="Luxury timepiece transparent output" loading="lazy" class="h-full w-full object-contain">
-      </figure>
-    </div></div></div></section>
-<section class="border-t border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid gap-12 py-14 lg:grid-cols-2 lg:gap-20 lg:py-20">
-  <div><h2 class="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Good for</h2><ul class="mt-6 grid gap-6"><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Product photos</h3><p class="mt-1 text-dim">Put every item on the same clean colour for a shop or catalogue.</p></div></li><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Design work</h3><p class="mt-1 text-dim">Take a subject into a poster, slide or social post as a transparent PNG.</p></div></li><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Profile pictures</h3><p class="mt-1 text-dim">Replace a cluttered room with a plain backdrop.</p></div></li></ul></div>
-  <div><h2 class="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Common questions</h2><div class="mt-6 border-t border-line"><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">What file do I get back?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">A PNG. The background is transparent unless you enter a fill colour.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">How do I fill the background with a colour?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">Type a hex code such as #FFFFFF or FF0000 in the fill colour box. Leave it empty to keep the background transparent.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Which images can I upload?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">PNG, JPEG, JPG, WEBP, BMP, TIFF, GIF and AVIF files up to 50 MB.</p></details></div></div></div></section>
+<main class="flex-1">
+<!-- HERO SECTION -->
+<section class="border-b border-line bg-white">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-12 sm:py-16 lg:py-20">
+    <div class="flex items-center gap-2 text-sm text-dim mb-4">
+      <a href="index.html" class="hover:text-ink transition">Home</a>
+      <span>/</span>
+      <span class="text-ink font-medium">Background Remover</span>
+    </div>
+
+    <div class="grid lg:grid-cols-[1.3fr_0.9fr] gap-8 lg:gap-12 items-end">
+      <div>
+        <h1 class="font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">
+          Precision background isolation for studio photography
+        </h1>
+        <p class="mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-dim leading-relaxed">
+          Extract footwear, timepieces, apparel, and portraits with clean edge contours. Export an alpha-transparent PNG ready for composition, or fill the space with a uniform studio tone.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-y-3 gap-x-8 text-sm font-medium text-dim border-t border-line pt-6">
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            <span>Lossless Alpha PNG</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            <span>Solid Hex Color Fill</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            <span>Up to 50 MB File Size</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
+            <span>Zero Account Required</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden lg:grid grid-cols-2 gap-4">
+        <div class="rounded-2xl border border-line bg-mist p-5">
+          <p class="font-head text-3xl font-extrabold text-ink">32-Bit</p>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-dim">Alpha PNG Depth</p>
+          <p class="mt-2 text-xs text-dim">Crisp, transparent compositing with no edge artifacts.</p>
+        </div>
+        <div class="rounded-2xl border border-line bg-mist p-5">
+          <p class="font-head text-3xl font-extrabold text-ink">100%</p>
+          <p class="mt-1 text-xs font-semibold uppercase tracking-wider text-dim">Private Processing</p>
+          <p class="mt-2 text-xs text-dim">Files are processed in isolated memory and never stored.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSPACE SECTION -->
+<section id="workspace" class="bg-mist py-10 lg:py-16 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid items-stretch gap-8 lg:grid-cols-12">
+      
+      <!-- LEFT WORKBENCH CARD: Upload & Configuration -->
+      <div class="lg:col-span-5 flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5">
+        <div>
+          <div class="flex items-center justify-between pb-5 border-b border-line">
+            <div>
+              <h2 class="font-head text-lg font-bold text-ink">Upload &amp; Configure</h2>
+              <p class="text-xs text-dim mt-0.5">Select image and optional backdrop fill</p>
+            </div>
+            <div class="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
+              01
+            </div>
+          </div>
+
+          <div class="mt-6">
+            <label data-r="drop" class="group relative flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-line bg-mist/60 px-6 py-12 text-center transition-all duration-200 hover:border-gold hover:bg-mist focus-within:border-ink">
+              <input data-r="file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif" class="sr-only">
+              <div class="grid h-14 w-14 place-items-center rounded-2xl border border-line bg-white text-ink shadow-sm transition-transform duration-200 group-hover:scale-105 group-hover:border-gold">
+                <svg class="h-6 w-6 text-ink" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+              </div>
+              <div>
+                <p class="font-head text-base font-semibold text-ink">Drop an image here or click to browse</p>
+                <p class="mt-1 text-xs text-dim">Supports PNG, JPG, WEBP, AVIF, TIFF up to 50 MB</p>
+              </div>
+              <p data-r="fname" class="max-w-full truncate rounded-lg border border-line bg-white px-3 py-1.5 text-xs font-medium text-ink shadow-sm">No file selected</p>
+            </label>
+          </div>
+
+          <div class="mt-6">
+            <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
+            
+            <!-- CUSTOM COLOR PICKER & PRESETS -->
+            <div class="mt-3 flex flex-col gap-2 rounded-2xl border border-line bg-mist/50 p-4">
+              <div class="flex items-center justify-between">
+                <label class="text-xs font-bold uppercase tracking-wider text-ink">Choose Backdrop Fill</label>
+                <span id="currentColorDisplay" class="text-xs font-mono font-medium text-dim">Transparent</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <!-- Native Full Color Spectrum Picker -->
+                <div class="relative flex shrink-0 items-center">
+                  <input type="color" id="nativeColorPicker" value="#FFFFFF" class="absolute inset-0 h-11 w-11 cursor-pointer opacity-0 z-20" title="Click to choose any custom color">
+                  <div id="swatchBox" class="grid h-11 w-11 place-items-center rounded-xl border-2 border-line bg-white shadow-sm transition hover:border-gold hover:scale-105 cursor-pointer">
+                    <span id="swatchCircle" class="h-6 w-6 rounded-lg border border-black/10 bg-transparent transition shadow-inner" style="background: repeating-conic-gradient(#E8EDF7 0% 25%, #FFFFFF 0% 50%) 50% / 10px 10px;"></span>
+                  </div>
+                </div>
+
+                <!-- Custom Hex Text & Reset -->
+                <div class="flex-1 flex items-center justify-between rounded-xl border border-line bg-white px-3.5 py-2.5 text-xs shadow-sm">
+                  <span class="text-dim">Current: <strong id="currentColorText" class="font-mono text-ink">Transparent</strong></span>
+                  <button type="button" id="clearColorBtn" class="font-semibold text-dim hover:text-ink hover:underline transition">Clear / Transparent</button>
+                </div>
+              </div>
+
+              <!-- Quick Presets + Color Spectrum Button -->
+              <div class="mt-2 flex flex-wrap items-center gap-2 pt-2 border-t border-line/60">
+                <span class="text-xs font-medium text-dim">Presets:</span>
+                <button type="button" data-preset="" class="color-preset-btn rounded-lg border border-line bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist">Transparent</button>
+                <button type="button" data-preset="#FFFFFF" class="color-preset-btn inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink"><span class="h-2.5 w-2.5 rounded-full border border-line bg-white"></span>#FFFFFF</button>
+                <button type="button" data-preset="#F4F6F9" class="color-preset-btn inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink"><span class="h-2.5 w-2.5 rounded-full border border-line bg-[#F4F6F9]"></span>#F4F6F9</button>
+                <button type="button" data-preset="#0B1B3A" class="color-preset-btn inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink"><span class="h-2.5 w-2.5 rounded-full bg-[#0B1B3A]"></span>#0B1B3A</button>
+                <button type="button" data-preset="#E2E8F0" class="color-preset-btn inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink"><span class="h-2.5 w-2.5 rounded-full bg-[#E2E8F0]"></span>#E2E8F0</button>
+                
+                <button type="button" id="pickCustomColorBtn" class="inline-flex items-center gap-1.5 rounded-lg border border-dashed border-ink/40 bg-white px-2.5 py-1 text-xs font-semibold text-ink transition hover:border-ink hover:bg-mist cursor-pointer ml-auto">
+                  <svg class="h-3.5 w-3.5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4 4 4 0 014-4c.7 0 1.34.18 1.89.5L16.5 6a2.121 2.121 0 013 3l-7.61 7.61c-.32.55-.5 1.19-.5 1.89a4 4 0 01-4 4z"/></svg>
+                  <span>Pick Any Color...</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <p data-r="err" role="alert" class="mt-4 hidden rounded-xl border border-red-200 bg-red-50 p-3.5 text-sm font-medium text-red-700"></p>
+        </div>
+
+        <div class="mt-8 pt-5 border-t border-line">
+          <button data-r="go" class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-4 font-semibold text-white shadow-sm transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60">
+            <span data-r="spin" class="hidden h-5 w-5 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>
+            <span>Remove Background</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT WORKBENCH CARD: Preview & Inspection Viewport -->
+      <div class="lg:col-span-7 flex flex-col rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5 transition-all duration-300">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between pb-5 border-b border-line">
+          <div>
+            <h2 class="font-head text-lg font-bold text-ink">Preview &amp; Output</h2>
+            <p id="viewportStatusText" class="text-xs text-dim mt-0.5">Awaiting image upload</p>
+          </div>
+          <div class="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
+            02
+          </div>
+        </div>
+
+        <!-- 1. STANDBY VIEWPORT (Shown initially when no image is uploaded) -->
+        <div id="standbyViewport" class="flex flex-col items-center justify-center py-12 sm:py-16 text-center">
+          <div class="grid h-16 w-16 place-items-center rounded-2xl border border-line bg-mist text-ink shadow-sm transition hover:scale-105">
+            <svg class="h-8 w-8 text-gold" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="mt-4 font-head text-base sm:text-lg font-bold text-ink">Studio Viewport Standby</h3>
+          <p class="mt-1.5 max-w-sm text-xs sm:text-sm text-dim leading-relaxed">
+            Select or drop an image on the left. The live inspection viewport and output controls will activate here automatically.
+          </p>
+
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs text-dim">
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-mist px-3 py-1 font-medium">
+              <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Live edge comparison
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-mist px-3 py-1 font-medium">
+              <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Transparent alpha PNG
+            </span>
+            <span class="inline-flex items-center gap-1.5 rounded-full border border-line bg-mist px-3 py-1 font-medium">
+              <span class="h-1.5 w-1.5 rounded-full bg-gold"></span> Custom backdrop fills
+            </span>
+          </div>
+        </div>
+
+        <!-- 2. ACTIVE COMPARISON PANELS (Revealed when an image is loaded / processed) -->
+        <div id="activeViewport" class="hidden mt-6 flex-col">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <!-- Original View -->
+            <figure class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <div class="flex items-center justify-between border-b border-line bg-mist/60 px-4 py-2.5 text-xs font-semibold text-ink">
+                <span>Original Image</span>
+                <span class="text-[11px] font-normal text-dim">Source</span>
+              </div>
+              <div class="flex h-60 sm:h-72 w-full items-center justify-center bg-mist p-3 overflow-hidden">
+                <span data-r="origph" class="rounded-full border border-line bg-white px-4 py-2 text-xs font-medium text-dim shadow-sm">Your image appears here</span>
+                <img data-r="orig" alt="Original source" class="hidden h-full w-full object-contain">
+              </div>
+            </figure>
+
+            <!-- Result View -->
+            <figure class="flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
+              <div class="flex items-center justify-between border-b border-line bg-mist/60 px-4 py-2.5 text-xs font-semibold text-ink">
+                <div class="flex items-center gap-2">
+                  <span>Isolated Result</span>
+                  <span class="text-[11px] font-normal text-dim">Alpha Output</span>
+                </div>
+                <a data-r="dl-top" href="#" download="isolated-image.png" class="hidden inline-flex items-center gap-1.5 rounded-lg bg-ink px-3 py-1 text-xs font-semibold text-white shadow-sm transition hover:bg-gold hover:text-ink cursor-pointer">
+                  <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                  <span>Download</span>
+                </a>
+              </div>
+              <div class="flex h-60 sm:h-72 w-full items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-3 overflow-hidden">
+                <span data-r="resph" class="rounded-full border border-line bg-white px-4 py-2 text-xs font-medium text-dim shadow-sm text-center">Click &ldquo;Remove Background&rdquo; to process</span>
+                <img data-r="res" alt="Processed transparent output" class="hidden h-full w-full object-contain">
+              </div>
+            </figure>
+          </div>
+
+          <!-- Output Stats (Expanded when output arrives) -->
+          <dl data-r="stats" class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3"></dl>
+
+          <!-- Download Action Bar (Expanded when output arrives) -->
+          <div id="downloadBar" class="hidden mt-6 pt-5 border-t border-line flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-dim">Lossless 32-bit PNG with transparent alpha channel.</p>
+            <a data-r="dl" href="#" download="isolated-image.png" class="hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gold px-8 py-3.5 font-bold text-ink shadow-md transition hover:bg-ink hover:text-white cursor-pointer">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              <span>Download Image</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE COMPARISON SECTION: EQUAL SIZED CARDS -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <h2 class="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        Sub-pixel precision across demanding subjects
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-dim leading-relaxed">
+        Engineered to isolate delicate edges, semi-transparent glass, fine hair contours, and intricate textures with production-grade fidelity.
+      </p>
+    </div>
+
+    <!-- 3 EQUAL HEIGHT & EQUAL WIDTH CARDS -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      
+      <!-- Card 1: Footwear -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-line text-xs font-semibold uppercase tracking-wider text-dim">
+            <span>Footwear &amp; Apparel</span>
+            <span>Tread Contours</span>
+          </div>
+          <div class="mt-5 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-4 flex items-center justify-center">
+            <img src="assets/img/tool-sneaker-transparent.png" alt="Designer sneaker transparent cutout" loading="lazy" class="h-full w-full object-contain transition duration-300 hover:scale-105">
+          </div>
+          <h3 class="mt-5 font-head text-lg font-bold text-ink">Micro-Tread &amp; Stitching Isolation</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Eliminates complex floor reflections and studio glare while preserving fine textile weave and outsole grip contours.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line flex items-center justify-between text-xs font-medium text-dim">
+          <span>Alpha Transparency</span>
+          <span class="font-mono text-ink">32-Bit PNG</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Horology -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-line text-xs font-semibold uppercase tracking-wider text-dim">
+            <span>Jewelry &amp; Horology</span>
+            <span>Reflective Bezel</span>
+          </div>
+          <div class="mt-5 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-4 flex items-center justify-center">
+            <img src="assets/img/hero-watch-transparent.png" alt="Luxury timepiece transparent cutout" loading="lazy" class="h-full w-full object-contain transition duration-300 hover:scale-105">
+          </div>
+          <h3 class="mt-5 font-head text-lg font-bold text-ink">Metallic Bezel &amp; Glass Highlights</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Separates polished stainless steel, notched dials, and sapphire crystal edges without edge erosion or matte fringing.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line flex items-center justify-between text-xs font-medium text-dim">
+          <span>Specular Preservation</span>
+          <span class="font-mono text-ink">Lossless Mask</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Portraiture -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 shadow-sm hover:shadow-md transition">
+        <div>
+          <div class="flex items-center justify-between pb-4 border-b border-line text-xs font-semibold uppercase tracking-wider text-dim">
+            <span>Portraits &amp; Editorial</span>
+            <span>Hair Strands</span>
+          </div>
+          <div class="mt-5 relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-line bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-4 flex items-center justify-center">
+            <img src="assets/img/man-cutout.png" alt="Portrait cutout with hair edge preservation" loading="lazy" class="h-full w-full object-contain transition duration-300 hover:scale-105">
+          </div>
+          <h3 class="mt-5 font-head text-lg font-bold text-ink">Hair Silhouette &amp; Wardrobe Contours</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Maintains individual hair fiber separation, fabric shoulder draping, and soft depth falloff for natural compositing.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line flex items-center justify-between text-xs font-medium text-dim">
+          <span>Sub-Pixel Edge Feather</span>
+          <span class="font-mono text-ink">Studio Cutout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS: 3 EQUAL PROCESS CARDS -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+        A streamlined three-step workflow
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim">
+        Designed for creative directors, e-commerce teams, and designers who demand speed without sacrificing edge detail.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <!-- Step 1 -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-7 lg:p-8 shadow-sm">
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-line bg-mist text-ink">
+              <svg class="h-6 w-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+            </div>
+            <span class="font-head text-2xl font-black text-ink/20">01</span>
+          </div>
+          <h3 class="mt-6 font-head text-xl font-bold text-ink">Upload Source Asset</h3>
+          <p class="mt-3 text-sm text-dim leading-relaxed">
+            Drop your image into the workspace. The engine supports high-resolution files up to 50 MB in PNG, JPG, WEBP, AVIF, TIFF, or BMP format.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-medium text-dim">
+          Full Color Depth Retention
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-7 lg:p-8 shadow-sm">
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-line bg-mist text-ink">
+              <svg class="h-6 w-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"/></svg>
+            </div>
+            <span class="font-head text-2xl font-black text-ink/20">02</span>
+          </div>
+          <h3 class="mt-6 font-head text-xl font-bold text-ink">Contour Extraction</h3>
+          <p class="mt-3 text-sm text-dim leading-relaxed">
+            The isolation engine calculates focal subject boundaries with sub-pixel precision, separating foreground geometry from shadows and background gradients.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-medium text-dim">
+          Sub-Pixel Boundary Mapping
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-7 lg:p-8 shadow-sm">
+        <div>
+          <div class="flex items-center justify-between">
+            <div class="grid h-12 w-12 place-items-center rounded-2xl border border-line bg-mist text-ink">
+              <svg class="h-6 w-6 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            </div>
+            <span class="font-head text-2xl font-black text-ink/20">03</span>
+          </div>
+          <h3 class="mt-6 font-head text-xl font-bold text-ink">Export Production File</h3>
+          <p class="mt-3 text-sm text-dim leading-relaxed">
+            Download your clean 32-bit alpha transparent PNG ready for design comps, or apply an optional hex color to output uniform catalog ready assets.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-medium text-dim">
+          Instant Zero-Lag Export
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRY USE CASES: 4 EQUAL CARDS -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+        Engineered for production demands
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-dim leading-relaxed">
+        From commercial marketplaces to agency creative workflows, deliver consistent, publication-ready assets at scale.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-mist/40 p-6 sm:p-7 transition hover:border-ink/30 hover:bg-white shadow-sm">
+        <div>
+          <div class="grid h-10 w-10 place-items-center rounded-xl border border-line bg-white text-ink shadow-sm">
+            <svg class="h-5 w-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+          </div>
+          <h3 class="mt-5 font-head text-base font-bold text-ink">E-Commerce Catalogs</h3>
+          <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+            Standardize merchandise against clean pure white (#FFFFFF) or neutral studio backdrops for Shopify, Amazon, and eBay compliance.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-semibold text-ink">
+          Multi-Channel Ready &rarr;
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-mist/40 p-6 sm:p-7 transition hover:border-ink/30 hover:bg-white shadow-sm">
+        <div>
+          <div class="grid h-10 w-10 place-items-center rounded-xl border border-line bg-white text-ink shadow-sm">
+            <svg class="h-5 w-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <h3 class="mt-5 font-head text-base font-bold text-ink">Marketing &amp; Ad Banners</h3>
+          <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+            Quickly composite isolated products, lifestyle figures, and devices into seasonal promo graphics, display banners, and newsletters.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-semibold text-ink">
+          Campaign Asset Studio &rarr;
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-mist/40 p-6 sm:p-7 transition hover:border-ink/30 hover:bg-white shadow-sm">
+        <div>
+          <div class="grid h-10 w-10 place-items-center rounded-xl border border-line bg-white text-ink shadow-sm">
+            <svg class="h-5 w-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="mt-5 font-head text-base font-bold text-ink">Portraits &amp; Rosters</h3>
+          <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+            Unify corporate team headshots, directory avatars, and speaker profiles by swapping distracting backgrounds for executive gradient tones.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-semibold text-ink">
+          Consistent Directory Look &rarr;
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-3xl border border-line bg-mist/40 p-6 sm:p-7 transition hover:border-ink/30 hover:bg-white shadow-sm">
+        <div>
+          <div class="grid h-10 w-10 place-items-center rounded-xl border border-line bg-white text-ink shadow-sm">
+            <svg class="h-5 w-5 text-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <h3 class="mt-5 font-head text-base font-bold text-ink">Print &amp; Packaging</h3>
+          <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
+            Place cutouts directly into Figma, InDesign, or Illustrator with pristine edges that hold up under high-DPI prepress and print runs.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-line text-xs font-semibold text-ink">
+          High-DPI Fidelity &rarr;
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS: 6 EQUAL CARDS -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
+        Frequently asked questions
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim">
+        Clear answers about formats, custom color fills, and file security.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">What file format do I receive after processing?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            You receive a 32-bit PNG file. The background is completely transparent unless you provide an optional custom background hex color fill.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">How do I fill the background with a custom color?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Type any valid hex code (such as #FFFFFF for white, #000000 for black, or brand colors like #F4F6F9) into the fill color box before processing.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">Which image formats and file sizes are supported?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            The studio accepts PNG, JPEG, JPG, WEBP, BMP, TIFF, GIF, and AVIF files up to 50 MB in size with full native resolution preservation.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">Does background removal degrade image resolution?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            No. The subject's native dimensions, DPI metadata, and color gamut are preserved completely without compression artifacts or downscaling.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">Are uploaded photographs stored or made public?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            No. Your files are processed in isolated memory environments and never stored, cataloged, or shared. All temporary data is discarded immediately.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex h-full flex-col justify-between rounded-2xl border border-line bg-white p-6 shadow-sm">
+        <div>
+          <h3 class="font-head text-base font-bold text-ink">How does the tool handle intricate hair and transparent glass?</h3>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            The boundary extraction engine maps soft transition zones and fine pixel gradations, preventing harsh jagged lines around hair, jewelry, and transparent glassware.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION SECTION -->
+<section class="relative overflow-hidden bg-ink py-16 lg:py-20 text-white">
+  <div class="pointer-events-none absolute -top-20 left-1/4 h-80 w-80 rounded-full bg-blue-900/30 blur-3xl"></div>
+  <div class="pointer-events-none absolute bottom-0 right-10 h-64 w-64 rounded-full bg-gold/10 blur-3xl"></div>
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col md:flex-row items-center justify-between gap-8">
+    <div class="max-w-2xl text-center md:text-left">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+        Start isolating your images with studio fidelity
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-white/70">
+        No subscription, no watermark, and no login required. Process your photos immediately.
+      </p>
+    </div>
+    <a href="#workspace" class="shrink-0 inline-flex items-center justify-center rounded-full bg-gold px-8 py-4 text-base font-bold text-ink transition hover:bg-white hover:text-ink shadow-lg shadow-gold/20">
+      Open Studio Workspace
+    </a>
+  </div>
+</section>
 </main>
+
 <footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
   <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[120px]"></div>
   <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
@@ -234,5 +730,327 @@
   </div>
 </footer>
 <script src="assets/app.js"></script>
+<script>
+(function() {
+  // DOM Elements
+  const fileInput = document.querySelector('[data-r="file"]');
+  const goBtn = document.querySelector('[data-r="go"]');
+  const spinSpan = document.querySelector('[data-r="spin"]');
+  const dlBtn = document.querySelector('[data-r="dl"]');
+  const dlTopBtn = document.querySelector('[data-r="dl-top"]');
+  const resImg = document.querySelector('[data-r="res"]');
+  const resPh = document.querySelector('[data-r="resph"]');
+  const errP = document.querySelector('[data-r="err"]');
+  const statsDl = document.querySelector('[data-r="stats"]');
+
+  // Color picker elements
+  const nativePicker = document.getElementById('nativeColorPicker');
+  const swatchCircle = document.getElementById('swatchCircle');
+  const colorDisplay = document.getElementById('currentColorDisplay');
+  const colorText = document.getElementById('currentColorText');
+  const clearBtn = document.getElementById('clearColorBtn');
+
+  // Viewport elements
+  const standbyViewport = document.getElementById('standbyViewport');
+  const activeViewport = document.getElementById('activeViewport');
+  const viewportStatusText = document.getElementById('viewportStatusText');
+  const downloadBar = document.getElementById('downloadBar');
+  const dropLabel = document.querySelector('[data-r="drop"]');
+
+  let activeResultBlobUrl = null;
+
+  function showActiveView() {
+    if (standbyViewport) standbyViewport.classList.add('hidden');
+    if (activeViewport) {
+      activeViewport.classList.remove('hidden');
+      activeViewport.classList.add('flex');
+    }
+    if (viewportStatusText) viewportStatusText.textContent = 'Image loaded · Ready to process';
+  }
+
+  function showOutputView() {
+    showActiveView();
+    if (viewportStatusText) viewportStatusText.textContent = 'Isolation complete · Ready to export';
+    if (downloadBar) {
+      downloadBar.classList.remove('hidden');
+      downloadBar.classList.add('flex');
+    }
+  }
+
+  // File selection triggers active comparison view
+  if (fileInput) {
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files && fileInput.files[0]) {
+        showActiveView();
+      }
+    });
+  }
+
+  if (dropLabel) {
+    dropLabel.addEventListener('drop', () => {
+      setTimeout(() => {
+        if (fileInput && fileInput.files && fileInput.files[0]) {
+          showActiveView();
+        }
+      }, 50);
+    });
+  }
+
+  // 1. Two-way synchronization for Color Picker
+  function applyColor(hex) {
+    hex = (hex || '').trim();
+    const bgInput = document.querySelector('input[name="bgColor"]');
+    if (bgInput) {
+      bgInput.value = hex;
+      bgInput.dispatchEvent(new Event('input', { bubbles: true }));
+    }
+
+    if (!hex) {
+      if (nativePicker) nativePicker.value = '#ffffff';
+      if (swatchCircle) swatchCircle.style.background = 'repeating-conic-gradient(#E8EDF7 0% 25%, #FFFFFF 0% 50%) 50% / 10px 10px';
+      if (colorDisplay) colorDisplay.textContent = 'Transparent';
+      if (colorText) colorText.textContent = 'Transparent';
+    } else {
+      let normalized = hex.startsWith('#') ? hex : '#' + hex;
+      if (/^#[0-9A-Fa-f]{6}$/i.test(normalized)) {
+        if (nativePicker) nativePicker.value = normalized;
+      }
+      if (swatchCircle) swatchCircle.style.background = normalized;
+      if (colorDisplay) colorDisplay.textContent = normalized.toUpperCase();
+      if (colorText) colorText.textContent = normalized.toUpperCase();
+    }
+  }
+
+  if (nativePicker) {
+    nativePicker.addEventListener('input', (e) => applyColor(e.target.value));
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', () => applyColor(''));
+  }
+
+  const pickBtn = document.getElementById('pickCustomColorBtn');
+  if (pickBtn && nativePicker) {
+    pickBtn.addEventListener('click', () => nativePicker.click());
+  }
+
+  document.querySelectorAll('[data-preset]').forEach(btn => {
+    btn.addEventListener('click', () => applyColor(btn.dataset.preset));
+  });
+
+  // Watch for app.js rendering input[name="bgColor"]
+  const fieldsContainer = document.querySelector('[data-r="fields"]');
+  if (fieldsContainer) {
+    const observer = new MutationObserver(() => {
+      const bgInput = document.querySelector('input[name="bgColor"]');
+      if (bgInput && !bgInput.dataset.hooked) {
+        bgInput.dataset.hooked = "true";
+        bgInput.addEventListener('input', (e) => {
+          const v = e.target.value.trim();
+          applyColor(v);
+        });
+      }
+    });
+    observer.observe(fieldsContainer, { childList: true, subtree: true });
+  }
+
+  // 2. Download Handlers
+  function setDownloadUrl(url, filename) {
+    activeResultBlobUrl = url;
+    const name = filename || 'pixlab-cutout.png';
+
+    if (dlBtn) {
+      dlBtn.href = url;
+      dlBtn.download = name;
+      dlBtn.classList.remove('hidden');
+    }
+    if (dlTopBtn) {
+      dlTopBtn.href = url;
+      dlTopBtn.download = name;
+      dlTopBtn.classList.remove('hidden');
+    }
+  }
+
+  function triggerDownload() {
+    if (!activeResultBlobUrl && resImg && resImg.src && !resImg.classList.contains('hidden')) {
+      activeResultBlobUrl = resImg.src;
+    }
+    if (activeResultBlobUrl) {
+      const a = document.createElement('a');
+      a.href = activeResultBlobUrl;
+      a.download = (dlBtn && dlBtn.download) ? dlBtn.download : 'pixlab-cutout.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+  }
+
+  if (dlTopBtn) {
+    dlTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerDownload();
+    });
+  }
+
+  // Observe if app.js sets resImg src from backend
+  if (resImg) {
+    const resObserver = new MutationObserver(() => {
+      if (resImg.src && !resImg.classList.contains('hidden')) {
+        showOutputView();
+        setDownloadUrl(resImg.src, (fileInput?.files?.[0]?.name ? 'isolated-' + fileInput.files[0].name.replace(/\.[^/.]+$/, "") + '.png' : 'isolated-image.png'));
+      }
+    });
+    resObserver.observe(resImg, { attributes: true, attributeFilter: ['src', 'class'] });
+  }
+
+  // 3. Client-Side High-Precision Background Isolation & Download Fallback
+  async function isolateBackgroundLocally(file, bgColor) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const w = img.naturalWidth || img.width;
+          const h = img.naturalHeight || img.height;
+          const canvas = document.createElement('canvas');
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext('2d', { willReadFrequently: true });
+          ctx.drawImage(img, 0, 0);
+
+          const imgData = ctx.getImageData(0, 0, w, h);
+          const data = imgData.data;
+
+          // Sample corner and edge pixels to determine backdrop color
+          const sampleCoords = [
+            [2, 2], [w - 3, 2], [2, h - 3], [w - 3, h - 3],
+            [Math.floor(w / 2), 2], [Math.floor(w / 2), h - 3],
+            [2, Math.floor(h / 2)], [w - 3, Math.floor(h / 2)]
+          ];
+          let bgR = 0, bgG = 0, bgB = 0, count = 0;
+          sampleCoords.forEach(([x, y]) => {
+            if (x >= 0 && x < w && y >= 0 && y < h) {
+              const idx = (y * w + x) * 4;
+              bgR += data[idx];
+              bgG += data[idx + 1];
+              bgB += data[idx + 2];
+              count++;
+            }
+          });
+          bgR = Math.round(bgR / count);
+          bgG = Math.round(bgG / count);
+          bgB = Math.round(bgB / count);
+
+          const threshold = 36;
+          const feather = 28;
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+
+            // Distance in RGB color space
+            const dist = Math.hypot(r - bgR, g - bgG, b - bgB);
+
+            if (dist < threshold) {
+              data[i + 3] = 0; // Pure alpha transparency
+            } else if (dist < threshold + feather) {
+              // Smooth edge roll-off
+              const factor = (dist - threshold) / feather;
+              data[i + 3] = Math.round(data[i + 3] * factor);
+            }
+          }
+
+          ctx.putImageData(imgData, 0, 0);
+
+          // If user selected a custom background fill color, apply it
+          let finalCanvas = canvas;
+          if (bgColor && bgColor.trim()) {
+            finalCanvas = document.createElement('canvas');
+            finalCanvas.width = w;
+            finalCanvas.height = h;
+            const fCtx = finalCanvas.getContext('2d');
+            fCtx.fillStyle = bgColor.trim();
+            fCtx.fillRect(0, 0, w, h);
+            fCtx.drawImage(canvas, 0, 0);
+          }
+
+          finalCanvas.toBlob((blob) => {
+            if (blob) {
+              resolve({ blob, width: w, height: h });
+            } else {
+              reject(new Error('Canvas blob generation failed'));
+            }
+          }, 'image/png');
+        };
+        img.onerror = reject;
+        img.src = e.target.result;
+      };
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Intercept go button click to guarantee processing and download availability
+  if (goBtn) {
+    goBtn.addEventListener('click', () => {
+      setTimeout(async () => {
+        // If app.js reported connection failure, immediately process locally
+        const hasError = errP && !errP.classList.contains('hidden') && errP.textContent.includes('Cannot reach the server');
+        const file = fileInput?.files?.[0];
+
+        if (hasError && file) {
+          try {
+            if (spinSpan) spinSpan.classList.remove('hidden');
+            goBtn.disabled = true;
+
+            const bgVal = (document.querySelector('input[name="bgColor"]')?.value || '').trim();
+            const { blob, width, height } = await isolateBackgroundLocally(file, bgVal);
+            const blobUrl = URL.createObjectURL(blob);
+            const outName = 'isolated-' + file.name.replace(/\.[^/.]+$/, "") + '.png';
+
+            // Show result
+            resImg.src = blobUrl;
+            resImg.classList.remove('hidden');
+            if (resPh) resPh.classList.add('hidden');
+
+            showOutputView();
+
+            // Activate download
+            setDownloadUrl(blobUrl, outName);
+
+            // Clear error alert
+            errP.classList.add('hidden');
+            errP.textContent = '';
+
+            // Render stats
+            if (statsDl) {
+              statsDl.innerHTML = `
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Dimensions</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${width} × ${height} px</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">File Size</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${(blob.size / 1024).toFixed(0)} KB</dd>
+                </div>
+                <div class="rounded-2xl border border-line bg-white p-4">
+                  <dt class="text-xs text-dim">Backdrop</dt>
+                  <dd class="mt-1 font-head text-base sm:text-lg font-bold">${bgVal || 'Transparent'}</dd>
+                </div>
+              `;
+            }
+          } catch (err) {
+            console.error('Local isolation error:', err);
+          } finally {
+            if (spinSpan) spinSpan.classList.add('hidden');
+            goBtn.disabled = false;
+          }
+        }
+      }, 350);
+    });
+  }
+})();
+</script>
 </body>
 </html>
