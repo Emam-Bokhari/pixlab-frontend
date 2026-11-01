@@ -1,955 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>
-      Pixlab – Remove Background, Upscale, Compress and Resize Images Online
-    </title>
-    <meta
-      name="description"
-      content="Four image tools in one place: remove backgrounds, upscale, compress to a target size and resize to exact pixels. No account needed."
-    />
-    <link rel="canonical" href="https://www.example.com/" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <meta name="theme-color" content="#0B1B3A" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Pixlab" />
-    <meta
-      property="og:title"
-      content="Pixlab – Remove Background, Upscale, Compress and Resize Images Online"
-    />
-    <meta
-      property="og:description"
-      content="Four image tools in one place: remove backgrounds, upscale, compress to a target size and resize to exact pixels. No account needed."
-    />
-    <meta property="og:url" content="https://www.example.com/" />
-    <meta
-      property="og:image"
-      content="https://www.example.com/assets/img/crop-wide.jpg"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script src="assets/tailwind-config.js"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Pixlab",
-        "url": "https://www.example.com/"
-      }
-    </script>
-  </head>
-  <body
-    class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg"
-  >
-    <header
-      class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur"
-    >
-      <div
-        class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex h-16 items-center justify-between gap-6 lg:h-20"
-      >
-        <a
-          href="index.html"
-          class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"
-          ><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"
-            ><span class="h-4 w-4 rounded-full bg-ink"></span></span
-          >Pixlab</a
-        >
-        <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
-          <a
-            href="index.html"
-            class="rounded-full px-4 py-2 text-sm font-semibold transition bg-tint text-ink"
-            >Home</a
-          >
-          <div class="group relative">
-            <button
-              type="button"
-              class="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
-            >
-              Tools
-              <svg
-                viewBox="0 0 20 20"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                class="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180"
-              >
-                <path d="m5 8 5 5 5-5" />
-              </svg>
-            </button>
-            <div
-              class="invisible absolute left-1/2 top-full w-[36rem] -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
-            >
-              <div
-                class="grid grid-cols-2 gap-1 rounded-3xl border border-line bg-white p-3 shadow-2xl"
-              >
-                <a
-                  href="background-remover.html"
-                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
-                  ><img
-                    src="assets/img/filled.jpg"
-                    alt=""
-                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
-                  /><span
-                    ><span class="block font-semibold">Background remover</span
-                    ><span class="block text-sm text-dim"
-                      >Transparent or solid colour</span
-                    ></span
-                  ></a
-                ><a
-                  href="image-upscaler.html"
-                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
-                  ><img
-                    src="assets/img/scene.jpg"
-                    alt=""
-                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
-                  /><span
-                    ><span class="block font-semibold">Image upscaler</span
-                    ><span class="block text-sm text-dim"
-                      >2x, 3x or 4x larger</span
-                    ></span
-                  ></a
-                ><a
-                  href="image-compressor.html"
-                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
-                  ><img
-                    src="assets/img/light.jpg"
-                    alt=""
-                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
-                  /><span
-                    ><span class="block font-semibold">Image compressor</span
-                    ><span class="block text-sm text-dim"
-                      >Fit a size limit in KB</span
-                    ></span
-                  ></a
-                ><a
-                  href="image-resizer.html"
-                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
-                  ><img
-                    src="assets/img/crop-square.jpg"
-                    alt=""
-                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
-                  /><span
-                    ><span class="block font-semibold">Image resizer</span
-                    ><span class="block text-sm text-dim"
-                      >Exact width and height</span
-                    ></span
-                  ></a
-                >
-              </div>
-            </div>
-          </div>
-          <a
-            href="about.html"
-            class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
-            >About</a
-          >
-          <a
-            href="contact.html"
-            class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
-            >Contact</a
-          >
-        </nav>
-        <a
-          href="background-remover.html"
-          class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex"
-          >Try it now</a
-        >
-        <details class="lg:hidden">
-          <summary
-            class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden"
-            aria-label="Menu"
-          >
-            <span class="grid gap-1.5"
-              ><span class="h-0.5 w-5 bg-ink"></span
-              ><span class="h-0.5 w-5 bg-ink"></span
-              ><span class="h-0.5 w-5 bg-ink"></span
-            ></span>
-          </summary>
-          <nav
-            aria-label="Mobile"
-            class="absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-white p-3 shadow-xl"
-          >
-            <a
-              href="index.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold bg-tint"
-              >Home</a
-            >
-            <p class="px-4 pb-1 pt-3 text-xs font-semibold text-dim">Tools</p>
-            <a
-              href="background-remover.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
-              >Background remover</a
-            ><a
-              href="image-upscaler.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
-              >Image upscaler</a
-            ><a
-              href="image-compressor.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
-              >Image compressor</a
-            ><a
-              href="image-resizer.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
-              >Image resizer</a
-            >
-            <a
-              href="about.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist"
-              >About</a
-            ><a
-              href="contact.html"
-              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist"
-              >Contact</a
-            >
-            <a
-              href="background-remover.html"
-              class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full"
-              >Try it now</a
-            >
-          </nav>
-        </details>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pixlab – Remove Background, Upscale, Compress and Resize Images Online</title>
+<meta name="description" content="Four image tools in one place: remove backgrounds, upscale, compress to a target size and resize to exact pixels. No account needed.">
+<link rel="canonical" href="https://www.example.com/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0B1B3A">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pixlab">
+<meta property="og:title" content="Pixlab – Remove Background, Upscale, Compress and Resize Images Online">
+<meta property="og:description" content="Four image tools in one place: remove backgrounds, upscale, compress to a target size and resize to exact pixels. No account needed.">
+<meta property="og:url" content="https://www.example.com/">
+<meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script src="assets/tailwind-config.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Pixlab", "url": "https://www.example.com/"}</script>
+</head>
+<body class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
+<header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex h-16 items-center justify-between gap-6 lg:h-20">
+    <a href="index.html" class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"><span class="h-4 w-4 rounded-full bg-ink"></span></span>Pixlab</a>
+    <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
+      <a href="index.html" class="rounded-full px-4 py-2 text-sm font-semibold transition bg-tint text-ink">Home</a>
+      <div class="group relative">
+        <button type="button" class="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Tools <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180"><path d="m5 8 5 5 5-5"/></svg></button>
+        <div class="invisible absolute left-1/2 top-full w-[36rem] -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1 rounded-3xl border border-line bg-white p-3 shadow-2xl"><a href="background-remover.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/filled.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Background remover</span><span class="block text-sm text-dim">Transparent or solid colour</span></span></a><a href="image-upscaler.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/scene.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image upscaler</span><span class="block text-sm text-dim">2x, 3x or 4x larger</span></span></a><a href="image-compressor.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/light.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image compressor</span><span class="block text-sm text-dim">Fit a size limit in KB</span></span></a><a href="image-resizer.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/crop-square.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image resizer</span><span class="block text-sm text-dim">Exact width and height</span></span></a></div></div>
       </div>
-    </header>
-    <main class="flex-1">
-      <section class="bg-white">
-        <div
-          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-12 py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20"
-        >
-          <div>
-            <h1
-              class="font-head text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl 2xl:text-7xl"
-            >
-              Remove backgrounds, enlarge, compress and resize images.
-            </h1>
-            <p class="mt-6 max-w-xl text-base text-dim sm:text-lg 2xl:text-xl">
-              Drop in a picture, choose what to change and download the result.
-              No account, nothing to install.
-            </p>
-            <div class="mt-9 flex flex-wrap gap-3">
-              <a
-                href="background-remover.html"
-                class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white"
-                >Remove a background</a
-              >
-              <a
-                href="image-compressor.html"
-                class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition border border-line hover:border-ink"
-                >Compress an image</a
-              >
-            </div>
-            <p class="mt-8 text-sm text-dim">
-              Drag the handle on the picture to see a background disappear.
-            </p>
-          </div>
-          <div
-            class="relative aspect-[4/3] select-none overflow-hidden rounded-3xl border border-line shadow-2xl shadow-ink/10"
-          >
-            <div
-              class="absolute inset-0 bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px]"
-            >
-              <img
-                src="assets/img/cutout.png"
-                alt="Camera with the background removed"
-                class="h-full w-full object-cover"
-              />
-            </div>
-            <img
-              data-r="top"
-              src="assets/img/scene.jpg"
-              alt="Camera in front of a busy background"
-              class="absolute inset-0 h-full w-full object-cover"
-            />
-            <span
-              class="absolute left-4 top-4 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold shadow"
-              >Before</span
-            >
-            <span
-              class="absolute right-4 top-4 rounded-full bg-ink px-3.5 py-1.5 text-xs font-semibold text-white shadow"
-              >After</span
-            >
-            <div
-              data-r="knob"
-              class="absolute inset-y-0 w-1 -translate-x-1/2 bg-white shadow-lg"
-            >
-              <span
-                class="absolute top-1/2 grid h-11 w-11 -translate-x-[45%] -translate-y-1/2 place-items-center rounded-full bg-gold font-bold shadow-xl"
-                >||</span
-              >
-            </div>
-            <input
-              data-r="range"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              aria-label="Compare before and after"
-              class="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="border-y border-line bg-mist">
-        <div
-          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20"
-        >
-          <h2
-            class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl"
-          >
-            Four tools, each built for one job
-          </h2>
-          <p class="mt-3 max-w-2xl text-dim sm:text-lg">
-            Every example below shows a real before and after.
-          </p>
-          <div class="mt-6 divide-y divide-line">
-            <div
-              class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16"
-            >
-              <div class="lg:order-last">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/scene.jpg"
-                      alt="Camera on a table in front of a busy background"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      Original
-                    </figcaption>
-                  </figure>
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px]"
-                  >
-                    <img
-                      src="assets/img/cutout.png"
-                      alt="Camera with the background removed"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      Transparent PNG
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-dim">Background remover</p>
-                <h3
-                  class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl"
-                >
-                  Cut the subject out in one step
-                </h3>
-                <p class="mt-4 max-w-lg text-dim sm:text-lg">
-                  Product shots, portraits, logos. Get a transparent PNG, or
-                  fill the space with any colour so every picture shares the
-                  same backdrop.
-                </p>
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Returns a PNG
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Transparent or coloured
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Up to 50 MB
-                  </li>
-                </ul>
-                <a
-                  href="background-remover.html"
-                  class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink"
-                  >Open the background remover</a
-                >
-              </div>
-            </div>
-            <div
-              class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16"
-            >
-              <div class="">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/low.jpg"
-                      alt="Small low resolution image"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      Before: 250 × 188 px
-                    </figcaption>
-                  </figure>
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/scene.jpg"
-                      alt="Enlarged sharp image"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      After: 4x, 1000 × 750 px
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-dim">Image upscaler</p>
-                <h3
-                  class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl"
-                >
-                  Enlarge small pictures
-                </h3>
-                <p class="mt-4 max-w-lg text-dim sm:text-lg">
-                  Turn a small file into a bigger one for print, banners or a
-                  sharper preview. Pick 2x, 3x or 4x and compare the sizes
-                  before you save.
-                </p>
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    2x, 3x or 4x
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Keeps your format
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Up to 50 MB
-                  </li>
-                </ul>
-                <a
-                  href="image-upscaler.html"
-                  class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink"
-                  >Open the image upscaler</a
-                >
-              </div>
-            </div>
-            <div
-              class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16"
-            >
-              <div class="lg:order-last">
-                <div class="grid gap-3 sm:grid-cols-2">
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/heavy.png"
-                      alt="Large image file"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      Before: 1.7 MB
-                    </figcaption>
-                  </figure>
-                  <figure
-                    class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/light.jpg"
-                      alt="Compressed image that looks the same"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      After: 76 KB
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-dim">Image compressor</p>
-                <h3
-                  class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl"
-                >
-                  Shrink a file to your limit
-                </h3>
-                <p class="mt-4 max-w-lg text-dim sm:text-lg">
-                  Tell the compressor the size you need, in KB, and it reduces
-                  the file to fit. Ideal for application forms, email
-                  attachments and website uploads.
-                </p>
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Set a target in KB
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Keeps your format
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Up to 50 MB
-                  </li>
-                </ul>
-                <a
-                  href="image-compressor.html"
-                  class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink"
-                  >Open the image compressor</a
-                >
-              </div>
-            </div>
-            <div
-              class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16"
-            >
-              <div class="">
-                <div class="grid grid-cols-[1fr_1.6fr_0.7fr] items-end gap-3">
-                  <figure
-                    class="relative aspect-square overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/crop-square.jpg"
-                      alt="Square crop"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      1:1
-                    </figcaption>
-                  </figure>
-                  <figure
-                    class="relative aspect-video overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/crop-wide.jpg"
-                      alt="Wide crop"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      16:9
-                    </figcaption>
-                  </figure>
-                  <figure
-                    class="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-white"
-                  >
-                    <img
-                      src="assets/img/crop-tall.jpg"
-                      alt="Tall crop"
-                      loading="lazy"
-                      class="h-full w-full object-cover"
-                    />
-                    <figcaption
-                      class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
-                    >
-                      9:16
-                    </figcaption>
-                  </figure>
-                </div>
-              </div>
-              <div>
-                <p class="text-sm font-semibold text-dim">Image resizer</p>
-                <h3
-                  class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl"
-                >
-                  Get the exact size every time
-                </h3>
-                <p class="mt-4 max-w-lg text-dim sm:text-lg">
-                  Square for a profile, wide for a cover, tall for a story.
-                  Enter the pixels you need and the crop follows the main
-                  subject so it stays in frame.
-                </p>
-                <ul class="mt-6 flex flex-wrap gap-2">
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    8 to 8000 px
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Subject-aware crop
-                  </li>
-                  <li
-                    class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium"
-                  >
-                    Up to 50 MB
-                  </li>
-                </ul>
-                <a
-                  href="image-resizer.html"
-                  class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink"
-                  >Open the image resizer</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="bg-ink text-white">
-        <div
-          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20"
-        >
-          <h2
-            class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl"
-          >
-            How it works
-          </h2>
-          <ol class="mt-10 grid gap-10 md:grid-cols-3">
-            <li class="border-t border-white/20 pt-6">
-              <span class="font-head text-5xl font-extrabold text-gold">1</span>
-              <h3 class="mt-4 font-head text-xl font-bold">Choose a tool</h3>
-              <p class="mt-2 text-white/70">
-                Open the page for the job: background, size up, size down or
-                exact dimensions.
-              </p>
-            </li>
-            <li class="border-t border-white/20 pt-6">
-              <span class="font-head text-5xl font-extrabold text-gold">2</span>
-              <h3 class="mt-4 font-head text-xl font-bold">
-                Upload your image
-              </h3>
-              <p class="mt-2 text-white/70">
-                Drop a file in and set the one or two options the tool asks for.
-              </p>
-            </li>
-            <li class="border-t border-white/20 pt-6">
-              <span class="font-head text-5xl font-extrabold text-gold">3</span>
-              <h3 class="mt-4 font-head text-xl font-bold">
-                Download the result
-              </h3>
-              <p class="mt-2 text-white/70">
-                Compare before and after, with dimensions and file sizes, then
-                save the new file.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-      <section
-        class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:py-20"
-      >
+      <a href="about.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">About</a>
+      <a href="contact.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Contact</a>
+    </nav>
+    <a href="background-remover.html" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Try it now</a>
+    <details class="lg:hidden">
+      <summary class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden" aria-label="Menu">
+        <span class="grid gap-1.5"><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span></span></summary>
+      <nav aria-label="Mobile" class="absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-white p-3 shadow-xl">
+        <a href="index.html" class="block rounded-xl px-4 py-3 text-sm font-semibold bg-tint ">Home</a><p class="px-4 pb-1 pt-3 text-xs font-semibold text-dim">Tools</p>
+        <a href="background-remover.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Background remover</a><a href="image-upscaler.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Image upscaler</a><a href="image-compressor.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Image compressor</a><a href="image-resizer.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Image resizer</a>
+        <a href="about.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ">About</a><a href="contact.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ">Contact</a>
+        <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Try it now</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main class="flex-1">
+<section class="bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-12 py-12 lg:grid-cols-[1fr_1.05fr] lg:gap-16 lg:py-20">
+  <div>
+    <h1 class="font-head text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl 2xl:text-7xl">Remove backgrounds, enlarge, compress and resize images.</h1>
+    <p class="mt-6 max-w-xl text-base text-dim sm:text-lg 2xl:text-xl">Drop in a picture, choose what to change and download the result. No account, nothing to install.</p>
+    <div class="mt-9 flex flex-wrap gap-3">
+      <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white">Remove a background</a>
+      <a href="image-compressor.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition border border-line hover:border-ink">Compress an image</a>
+    </div>
+    <p class="mt-8 text-sm text-dim">Drag the handle on the picture to see a background disappear.</p>
+  </div>
+  <div class="relative aspect-[4/3] select-none overflow-hidden rounded-3xl border border-line shadow-2xl shadow-ink/10">
+    <div class="absolute inset-0 bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px]"><img src="assets/img/cutout.png" alt="Camera with the background removed" class="h-full w-full object-cover"></div>
+    <img data-r="top" src="assets/img/scene.jpg" alt="Camera in front of a busy background" class="absolute inset-0 h-full w-full object-cover">
+    <span class="absolute left-4 top-4 rounded-full bg-white px-3.5 py-1.5 text-xs font-semibold shadow">Before</span>
+    <span class="absolute right-4 top-4 rounded-full bg-ink px-3.5 py-1.5 text-xs font-semibold text-white shadow">After</span>
+    <div data-r="knob" class="absolute inset-y-0 w-1 -translate-x-1/2 bg-white shadow-lg"><span class="absolute top-1/2 grid h-11 w-11 -translate-x-[45%] -translate-y-1/2 place-items-center rounded-full bg-gold font-bold shadow-xl">||</span></div>
+    <input data-r="range" type="range" min="0" max="100" value="50" aria-label="Compare before and after" class="absolute inset-0 h-full w-full cursor-ew-resize opacity-0">
+  </div></div></section>
+<section class="border-y border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20">
+  <h2 class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl">Four tools, each built for one job</h2>
+  <p class="mt-3 max-w-2xl text-dim sm:text-lg">Every example below shows a real before and after.</p>
+  <div class="mt-6 divide-y divide-line"><div class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
+  <div class="lg:order-last"><div class="grid gap-3 sm:grid-cols-2"><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/scene.jpg" alt="Camera on a table in front of a busy background" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">Original</figcaption></figure><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px]"><img src="assets/img/cutout.png" alt="Camera with the background removed" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">Transparent PNG</figcaption></figure></div></div>
+  <div><p class="text-sm font-semibold text-dim">Background remover</p>
+    <h3 class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl">Cut the subject out in one step</h3>
+    <p class="mt-4 max-w-lg text-dim sm:text-lg">Product shots, portraits, logos. Get a transparent PNG, or fill the space with any colour so every picture shares the same backdrop.</p>
+    <ul class="mt-6 flex flex-wrap gap-2"><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Returns a PNG</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Transparent or coloured</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Up to 50 MB</li></ul>
+    <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink">Open the background remover</a></div></div>
+<div class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
+  <div class=""><div class="grid gap-3 sm:grid-cols-2"><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/low.jpg" alt="Small low resolution image" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">Before: 250 × 188 px</figcaption></figure><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/scene.jpg" alt="Enlarged sharp image" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">After: 4x, 1000 × 750 px</figcaption></figure></div></div>
+  <div><p class="text-sm font-semibold text-dim">Image upscaler</p>
+    <h3 class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl">Enlarge small pictures</h3>
+    <p class="mt-4 max-w-lg text-dim sm:text-lg">Turn a small file into a bigger one for print, banners or a sharper preview. Pick 2x, 3x or 4x and compare the sizes before you save.</p>
+    <ul class="mt-6 flex flex-wrap gap-2"><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">2x, 3x or 4x</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Keeps your format</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Up to 50 MB</li></ul>
+    <a href="image-upscaler.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink">Open the image upscaler</a></div></div>
+<div class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
+  <div class="lg:order-last"><div class="grid gap-3 sm:grid-cols-2"><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/heavy.png" alt="Large image file" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">Before: 1.7 MB</figcaption></figure><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/light.jpg" alt="Compressed image that looks the same" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">After: 76 KB</figcaption></figure></div></div>
+  <div><p class="text-sm font-semibold text-dim">Image compressor</p>
+    <h3 class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl">Shrink a file to your limit</h3>
+    <p class="mt-4 max-w-lg text-dim sm:text-lg">Tell the compressor the size you need, in KB, and it reduces the file to fit. Ideal for application forms, email attachments and website uploads.</p>
+    <ul class="mt-6 flex flex-wrap gap-2"><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Set a target in KB</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Keeps your format</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Up to 50 MB</li></ul>
+    <a href="image-compressor.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink">Open the image compressor</a></div></div>
+<div class="grid items-center gap-8 py-12 lg:grid-cols-2 lg:gap-16 lg:py-16">
+  <div class=""><div class="grid grid-cols-[1fr_1.6fr_0.7fr] items-end gap-3"><figure class="relative aspect-square overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/crop-square.jpg" alt="Square crop" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">1:1</figcaption></figure><figure class="relative aspect-video overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/crop-wide.jpg" alt="Wide crop" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">16:9</figcaption></figure><figure class="relative aspect-[9/16] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/crop-tall.jpg" alt="Tall crop" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">9:16</figcaption></figure></div></div>
+  <div><p class="text-sm font-semibold text-dim">Image resizer</p>
+    <h3 class="mt-2 font-head text-2xl font-bold tracking-tight sm:text-4xl">Get the exact size every time</h3>
+    <p class="mt-4 max-w-lg text-dim sm:text-lg">Square for a profile, wide for a cover, tall for a story. Enter the pixels you need and the crop follows the main subject so it stays in frame.</p>
+    <ul class="mt-6 flex flex-wrap gap-2"><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">8 to 8000 px</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Subject-aware crop</li><li class="rounded-full border border-line bg-white px-3.5 py-1.5 text-sm font-medium">Up to 50 MB</li></ul>
+    <a href="image-resizer.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition mt-8 bg-ink text-white hover:bg-gold hover:text-ink">Open the image resizer</a></div></div>
+</div></div></section>
+<section class="bg-ink text-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20">
+  <h2 class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl">How it works</h2>
+  <ol class="mt-10 grid gap-10 md:grid-cols-3"><li class="border-t border-white/20 pt-6"><span class="font-head text-5xl font-extrabold text-gold">1</span><h3 class="mt-4 font-head text-xl font-bold">Choose a tool</h3><p class="mt-2 text-white/70">Open the page for the job: background, size up, size down or exact dimensions.</p></li><li class="border-t border-white/20 pt-6"><span class="font-head text-5xl font-extrabold text-gold">2</span><h3 class="mt-4 font-head text-xl font-bold">Upload your image</h3><p class="mt-2 text-white/70">Drop a file in and set the one or two options the tool asks for.</p></li><li class="border-t border-white/20 pt-6"><span class="font-head text-5xl font-extrabold text-gold">3</span><h3 class="mt-4 font-head text-xl font-bold">Download the result</h3><p class="mt-2 text-white/70">Compare before and after, with dimensions and file sizes, then save the new file.</p></li></ol></div></section>
+<section class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-10 py-14 lg:grid-cols-[1fr_1.1fr] lg:gap-16 lg:py-20">
+  <div><h2 class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl">Works with the files you already have</h2>
+    <p class="mt-4 max-w-lg text-dim sm:text-lg">Upload up to 50 MB per image. The resizer accepts any width or height from 8 to 8000 pixels. Background removal always returns a PNG; the other tools give you back the format you sent.</p></div>
+  <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4"><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">PNG</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">JPEG</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">JPG</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">WEBP</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">BMP</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">TIFF</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">GIF</li><li class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold">AVIF</li></ul></section>
+<section class="bg-gold"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-8 py-14 lg:flex-row lg:items-center lg:py-20"><div><h2 class="max-w-2xl font-head text-3xl font-extrabold tracking-tight sm:text-4xl 2xl:text-5xl">Start with your own image</h2><p class="mt-3 max-w-xl text-ink/75">Pick a tool and see the result in a few seconds.</p></div><a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition shrink-0 bg-ink text-white hover:bg-white hover:text-ink">Open the background remover</a></div></section>
+</main>
+<footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
+  <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-600/15 blur-[120px]"></div>
+  <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
+  
+  <div class="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-[#132A5E]/40 blur-sm"></div>
+  <div class="pointer-events-none absolute right-16 top-12 h-80 w-80 rounded-full bg-[#1A3B80]/30 blur-[2px]"></div>
+  <div class="pointer-events-none absolute right-52 top-1/3 h-64 w-64 rounded-full bg-[#0E2045]/60 blur-md"></div>
+  <div class="pointer-events-none absolute -right-10 bottom-4 h-96 w-96 rounded-full bg-blue-500/10 blur-[90px]"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10">
+      <div class="flex flex-col justify-between">
         <div>
-          <h2
-            class="font-head text-3xl font-bold tracking-tight sm:text-4xl 2xl:text-5xl"
-          >
-            Works with the files you already have
-          </h2>
-          <p class="mt-4 max-w-lg text-dim sm:text-lg">
-            Upload up to 50 MB per image. The resizer accepts any width or
-            height from 8 to 8000 pixels. Background removal always returns a
-            PNG; the other tools give you back the format you sent.
-          </p>
-        </div>
-        <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            PNG
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            JPEG
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            JPG
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            WEBP
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            BMP
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            TIFF
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            GIF
-          </li>
-          <li
-            class="grid place-items-center rounded-2xl border border-line bg-mist py-6 font-head text-lg font-bold"
-          >
-            AVIF
-          </li>
-        </ul>
-      </section>
-      <section class="bg-gold">
-        <div
-          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-8 py-14 lg:flex-row lg:items-center lg:py-20"
-        >
-          <div>
-            <h2
-              class="max-w-2xl font-head text-3xl font-extrabold tracking-tight sm:text-4xl 2xl:text-5xl"
-            >
-              Start with your own image
-            </h2>
-            <p class="mt-3 max-w-xl text-ink/75">
-              Pick a tool and see the result in a few seconds.
-            </p>
-          </div>
-          <a
-            href="background-remover.html"
-            class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition shrink-0 bg-ink text-white hover:bg-white hover:text-ink"
-            >Open the background remover</a
-          >
-        </div>
-      </section>
-    </main>
-    <footer
-      class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10"
-    >
-      <div
-        class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-600/15 blur-[120px]"
-      ></div>
-      <div
-        class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"
-      ></div>
-
-      <div
-        class="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-[#132A5E]/40 blur-sm"
-      ></div>
-      <div
-        class="pointer-events-none absolute right-16 top-12 h-80 w-80 rounded-full bg-[#1A3B80]/30 blur-[2px]"
-      ></div>
-      <div
-        class="pointer-events-none absolute right-52 top-1/3 h-64 w-64 rounded-full bg-[#0E2045]/60 blur-md"
-      ></div>
-      <div
-        class="pointer-events-none absolute -right-10 bottom-4 h-96 w-96 rounded-full bg-blue-500/10 blur-[90px]"
-      ></div>
-
-      <div
-        class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14"
-      >
-        <div
-          class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10"
-        >
-          <div class="flex flex-col justify-between">
-            <div>
-              <a
-                href="index.html"
-                class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group"
-              >
-                <span
-                  class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105"
-                >
-                  <span class="h-4 w-4 rounded-full bg-ink"></span>
-                </span>
-                <span class="tracking-tight text-2xl"
-                  >Pix<span class="text-gold">lab</span></span
-                >
-              </a>
-              <p
-                class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60"
-              >
-                Next-generation online image laboratory. Fast, browser-based
-                tools to remove backgrounds, enlarge, compress, and resize with
-                zero friction.
-              </p>
-            </div>
-
-            <div class="mt-8 flex flex-wrap items-center gap-3">
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
-              >
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="X (Twitter)"
-                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
-              >
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                aria-label="GitHub"
-                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
-              >
-                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h2
-              class="font-head text-sm font-bold uppercase tracking-wider text-white"
-            >
-              Tools
-            </h2>
-            <ul class="mt-5 grid gap-3 text-sm">
-              <li>
-                <a
-                  href="background-remover.html"
-                  class="transition-colors hover:text-white"
-                  >Background remover</a
-                >
-              </li>
-              <li>
-                <a
-                  href="image-upscaler.html"
-                  class="transition-colors hover:text-white"
-                  >Image upscaler</a
-                >
-              </li>
-              <li>
-                <a
-                  href="image-compressor.html"
-                  class="transition-colors hover:text-white"
-                  >Image compressor</a
-                >
-              </li>
-              <li>
-                <a
-                  href="image-resizer.html"
-                  class="transition-colors hover:text-white"
-                  >Image resizer</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2
-              class="font-head text-sm font-bold uppercase tracking-wider text-white"
-            >
-              Company
-            </h2>
-            <ul class="mt-5 grid gap-3 text-sm">
-              <li>
-                <a href="index.html" class="transition-colors hover:text-white"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a href="about.html" class="transition-colors hover:text-white"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="transition-colors hover:text-white"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h2
-              class="font-head text-sm font-bold uppercase tracking-wider text-white"
-            >
-              Legal
-            </h2>
-            <ul class="mt-5 grid gap-3 text-sm">
-              <li>
-                <a href="terms.html" class="transition-colors hover:text-white"
-                  >Terms of Service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="privacy.html"
-                  class="transition-colors hover:text-white"
-                  >Privacy Policy</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div
-          class="relative w-full overflow-hidden select-none pointer-events-none pt-12 sm:pt-16 pb-2 sm:pb-4 flex justify-center items-center"
-        >
-          <div
-            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-36 w-3/4 max-w-4xl rounded-full bg-gradient-to-r from-blue-600/15 via-gold/15 to-indigo-600/15 blur-3xl"
-          ></div>
-          <p
-            class="font-head font-black tracking-[-0.04em] text-[18vw] sm:text-[17vw] lg:text-[16vw] xl:text-[210px] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]"
-          >
-            PIXLAB
+          <a href="index.html" class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group">
+            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
+              <span class="h-4 w-4 rounded-full bg-ink"></span>
+            </span>
+            <span class="tracking-tight text-2xl">Pix<span class="text-gold">lab</span></span>
+          </a>
+          <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60">
+            Next-generation online image laboratory. Fast, browser-based tools to remove backgrounds, enlarge, compress, and resize with zero friction.
           </p>
         </div>
 
-        <div
-          class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs sm:text-sm text-white/50"
-        >
-          <p>© 2026 Pixlab. All rights reserved.</p>
-          <div class="flex items-center gap-6">
-            <a href="privacy.html" class="transition hover:text-white"
-              >Privacy Policy</a
-            >
-            <a href="terms.html" class="transition hover:text-white"
-              >Terms of Service</a
-            >
-          </div>
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="#" aria-label="X (Twitter)" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="#" aria-label="GitHub" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          </a>
         </div>
       </div>
-    </footer>
-    <script src="assets/app.js"></script>
-  </body>
+
+      <div>
+        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Tools</h2>
+        <ul class="mt-5 grid gap-3 text-sm">
+          <li><a href="background-remover.html" class="transition-colors hover:text-white">Background remover</a></li>
+          <li><a href="image-upscaler.html" class="transition-colors hover:text-white">Image upscaler</a></li>
+          <li><a href="image-compressor.html" class="transition-colors hover:text-white">Image compressor</a></li>
+          <li><a href="image-resizer.html" class="transition-colors hover:text-white">Image resizer</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Company</h2>
+        <ul class="mt-5 grid gap-3 text-sm">
+          <li><a href="index.html" class="transition-colors hover:text-white">Home</a></li>
+          <li><a href="about.html" class="transition-colors hover:text-white">About Us</a></li>
+          <li><a href="contact.html" class="transition-colors hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Legal</h2>
+        <ul class="mt-5 grid gap-3 text-sm">
+          <li><a href="terms.html" class="transition-colors hover:text-white">Terms of Service</a></li>
+          <li><a href="privacy.html" class="transition-colors hover:text-white">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="relative w-full overflow-hidden select-none pointer-events-none pt-12 sm:pt-16 pb-2 sm:pb-4 flex justify-center items-center">
+      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-36 w-3/4 max-w-4xl rounded-full bg-gradient-to-r from-blue-600/15 via-gold/15 to-indigo-600/15 blur-3xl"></div>
+      <p class="font-head font-black tracking-[-0.04em] text-[18vw] sm:text-[17vw] lg:text-[16vw] xl:text-[210px] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]">
+        PIXLAB
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs sm:text-sm text-white/50">
+      <p>© 2026 Pixlab. All rights reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="privacy.html" class="transition hover:text-white">Privacy Policy</a>
+        <a href="terms.html" class="transition hover:text-white">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
 </html>

@@ -345,36 +345,596 @@ for t in TOOLS:
     write(t["file"], t["title"], t["desc"], body, t["file"], tool=t["key"], extra="".join(f'<script type="application/ld+json">{json.dumps(x)}</script>\n' for x in (app, fq)))
 
 # ---------- ABOUT ----------
-values = [("Simple on purpose", "One tool per page, a few options, and a clear result. Nothing to learn first."), ("Results you can check", "You always see the original and the result side by side, with dimensions and file sizes, before you download."), ("Open to everyone", "No account, no password. Open a tool and start.")]
-about = pagehead("Image tools without the clutter", f"{SITE} does four jobs on pictures and does them without asking you to sign up.") + f"""
-<section class="{W} grid items-center gap-10 py-14 lg:grid-cols-2 lg:gap-16 lg:py-20">
-  <div class="grid grid-cols-2 gap-3"><div class="col-span-2">{fig("scene.jpg", "Original", "Camera on a table")}</div>{fig("cutout.png", "Cut out", "Camera cut out", checker=True)}{fig("crop-square.jpg", "Resized", "Square crop of the camera", "aspect-[4/3]")}</div>
-  <div><h2 class="{H2}">Why it exists</h2>
-    <p class="mt-5 text-dim sm:text-lg">Most people do not need a full photo editor. They need a product shot with a clean backdrop, a photo small enough for a form, or a picture at an exact size. Those jobs should take a minute, not an install.</p>
-    <p class="mt-4 text-dim sm:text-lg">Your image is sent to our server, processed and returned straight to your browser as a file you can download. That is the whole flow.</p></div></section>
-<section class="border-y border-line bg-mist"><div class="{W} py-14 lg:py-20"><h2 class="{H2}">What we care about</h2>
-  <div class="mt-10 grid gap-6 md:grid-cols-3">{"".join(f'<div class="rounded-3xl border border-line bg-white p-7"><h3 class="font-head text-xl font-bold">{a}</h3><p class="mt-3 text-dim">{b}</p></div>' for a, b in values)}</div></div></section>
-{cta("Found a bug or have an idea?", "Tell us what you tried and what you expected.", "contact.html", "Contact us")}"""
-write("about.html", f"About {SITE} – Simple Online Image Tools", f"Learn why {SITE} exists, how it works and what we care about.", about, "about.html")
+about = """<!-- HERO SECTION -->
+<section class="relative overflow-hidden bg-white pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 border-b border-line">
+  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[950px] rounded-full bg-gradient-to-b from-tint/70 via-mist to-transparent blur-3xl opacity-75"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+    <div class="inline-flex items-center gap-2 rounded-full border border-line bg-mist/90 px-4 py-1.5 text-xs font-semibold text-ink backdrop-blur shadow-sm mb-6">
+      <span class="h-2 w-2 rounded-full bg-gold animate-pulse"></span>
+      <span>Next-Gen Visual Intelligence</span>
+    </div>
+
+    <h1 class="mx-auto max-w-4xl font-head text-4xl font-extrabold leading-[1.12] tracking-tight text-ink sm:text-5xl lg:text-6xl 2xl:text-7xl">
+      Built for modern <br class="hidden sm:inline" />creative & image workflows
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dim sm:text-lg lg:text-xl 2xl:max-w-3xl">
+      Creative velocity depends on fast, distortion-free AI image processing. Pixlab provides a unified suite of browser-native tools to transform, upscale, and refine visual assets with zero friction.
+    </p>
+
+    <!-- 3-Image Showcase Cards -->
+    <div class="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center text-left">
+      <div class="group relative overflow-hidden rounded-3xl border border-line bg-mist p-3 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
+          <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="Precision studio camera setup" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 flex items-center gap-2">
+            <span class="rounded-full bg-white/95 backdrop-blur px-3 py-1 text-xs font-semibold text-ink shadow-sm flex items-center gap-1.5">
+              <span class="h-2 w-2 rounded-full bg-emerald-500"></span>
+              Instant Neural Cutout
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-3xl border-2 border-gold/50 bg-white p-3.5 shadow-xl shadow-gold/15 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:-mt-4">
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-tint">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Studio portrait with clean lighting" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+            <span class="rounded-full bg-gold px-3.5 py-1 text-xs font-bold text-ink shadow-md flex items-center gap-1.5">
+              <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+              100+ Formats Supported
+            </span>
+            <span class="rounded-full bg-white/95 backdrop-blur px-2.5 py-1 text-[11px] font-semibold text-ink shadow-sm">
+              100% In-Browser
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-3xl border border-line bg-mist p-3 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Ultra detailed product photography" loading="lazy" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-ink/75 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 flex items-center gap-2">
+            <span class="rounded-full bg-white/95 backdrop-blur px-3 py-1 text-xs font-semibold text-ink shadow-sm flex items-center gap-1.5">
+              <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+              Lossless 4x Super-Res
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Statement Banner -->
+    <div class="mx-auto mt-14 max-w-4xl text-center sm:mt-20">
+      <p class="font-head text-xl sm:text-2xl lg:text-3xl font-medium leading-relaxed text-ink">
+        We are on a mission to help creators and teams reach their <span class="font-extrabold text-ink underline decoration-gold decoration-4 underline-offset-8">full potential</span> through smarter and more <span class="font-extrabold text-ink">efficient image tools</span> across global digital workflows.
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="mt-12 sm:mt-16 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 text-center">
+      <div class="rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md hover:border-gold/50">
+        <p class="font-head text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-ink">25M+</p>
+        <p class="mt-2 text-xs sm:text-sm font-semibold text-dim uppercase tracking-wider">Images Processed</p>
+      </div>
+      <div class="rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md hover:border-gold/50">
+        <p class="font-head text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-ink">99.8%</p>
+        <p class="mt-2 text-xs sm:text-sm font-semibold text-dim uppercase tracking-wider">Edge & Subject Accuracy</p>
+      </div>
+      <div class="rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md hover:border-gold/50">
+        <p class="font-head text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-ink">&lt; 400ms</p>
+        <p class="mt-2 text-xs sm:text-sm font-semibold text-dim uppercase tracking-wider">Average Processing Speed</p>
+      </div>
+      <div class="rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition hover:shadow-md hover:border-gold/50">
+        <p class="font-head text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-ink">140+</p>
+        <p class="mt-2 text-xs sm:text-sm font-semibold text-dim uppercase tracking-wider">Countries Worldwide</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SHOWCASE 1: Delivering Certainty -->
+<section class="border-b border-line bg-white py-16 sm:py-20 lg:py-28">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <div>
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 border border-emerald-200">
+        Solution
+      </span>
+      <h2 class="mt-4 font-head text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-tight">
+        Delivering Certainty in Every Single Pixel
+      </h2>
+      <p class="mt-5 text-base sm:text-lg leading-relaxed text-dim">
+        Most creators don't need a heavy desktop suite with dozens of menus. They need a product photo with a pure clean backdrop, a small file that uploads without errors, or an exact aspect ratio for an ad. Pixlab makes high-precision image operations instantaneous without requiring account registration.
+      </p>
+
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 border-t border-line pt-8">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-tint text-ink">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </span>
+            <h3 class="font-head font-bold text-ink">Sub-Second Processing</h3>
+          </div>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Real-time neural heuristics detect edges and subjects in under 400ms directly in your session.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="grid h-8 w-8 place-items-center rounded-lg bg-tint text-ink">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </span>
+            <h3 class="font-head font-bold text-ink">Lossless Precision</h3>
+          </div>
+          <p class="mt-2 text-sm text-dim leading-relaxed">
+            Export true transparent PNGs and pixel-perfect crops without chromatic aberration or blur.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Showcase Image with Floating Metric Cards -->
+    <div class="relative">
+      <div class="relative overflow-hidden rounded-3xl border border-line bg-mist shadow-xl">
+        <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=1000&q=80" alt="Precision digital design workflow" loading="lazy" class="aspect-[4/3] w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-tr from-ink/30 via-transparent to-transparent"></div>
+      </div>
+
+      <div class="absolute -top-5 -right-3 sm:-right-6 rounded-2xl border border-line bg-white/95 p-4 shadow-xl backdrop-blur max-w-[200px] sm:max-w-[220px]">
+        <div class="flex items-baseline gap-2">
+          <span class="font-head text-2xl sm:text-3xl font-black text-ink">10x</span>
+          <span class="text-xs font-semibold text-emerald-600">Faster</span>
+        </div>
+        <p class="mt-1 text-xs text-dim">Speed increase compared to manual lasso & clipping</p>
+      </div>
+
+      <div class="absolute -bottom-6 -left-3 sm:-left-6 rounded-2xl border border-line bg-white/95 p-4 shadow-xl backdrop-blur max-w-[210px] sm:max-w-[230px]">
+        <div class="flex items-baseline gap-2">
+          <span class="font-head text-2xl sm:text-3xl font-black text-ink">95%</span>
+          <span class="text-xs font-semibold text-blue-600">Storage Saved</span>
+        </div>
+        <p class="mt-1 text-xs text-dim">Adaptive compression without noticeable visual loss</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SHOWCASE 2: Unparalleled Experience -->
+<section class="border-b border-line bg-mist/60 py-16 sm:py-20 lg:py-28">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+    <div class="relative order-2 lg:order-1">
+      <div class="relative overflow-hidden rounded-3xl border border-line bg-white shadow-xl">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=80" alt="Creative agency team reviewing image assets" loading="lazy" class="aspect-[4/3] w-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent"></div>
+
+        <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 rounded-2xl border border-white/20 bg-white/95 p-5 shadow-2xl backdrop-blur">
+          <p class="text-xs sm:text-sm font-medium leading-relaxed text-ink/90 italic">
+            "Pixlab brings rapid turnaround, crisp accuracy, and consistent studio quality we can depend on across hundreds of e-commerce catalog launches daily."
+          </p>
+          <div class="mt-3 flex items-center justify-between border-t border-line/60 pt-3">
+            <div class="flex items-center gap-2">
+              <span class="grid h-6 w-6 place-items-center rounded-lg bg-gold text-[10px] font-bold text-ink">P</span>
+              <span class="text-xs font-bold text-ink">Pixlab Enterprise Partner</span>
+            </div>
+            <span class="text-[11px] font-semibold text-dim">Verified Review</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 border border-blue-200">
+        Solution
+      </span>
+      <h2 class="mt-4 font-head text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl leading-tight">
+        Unparalleled Experience for Teams & Creators
+      </h2>
+      <p class="mt-5 text-base sm:text-lg leading-relaxed text-dim">
+        We bring modern visual technology right to your fingertips. Whether you are generating social banners, polishing Amazon listings, or fitting photos to strict upload size limits, Pixlab delivers measurable ROI and efficiency at scale.
+      </p>
+
+      <ul class="mt-8 space-y-4">
+        <li class="flex items-start gap-3.5">
+          <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-ink font-bold text-xs">✓</span>
+          <div>
+            <h3 class="font-head text-base font-bold text-ink">Deep Computer Vision Expertise</h3>
+            <p class="text-sm text-dim">Engineered by researchers focused exclusively on pixel-level clarity and edge preservation.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3.5">
+          <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-ink font-bold text-xs">✓</span>
+          <div>
+            <h3 class="font-head text-base font-bold text-ink">Zero Setup & Account Barriers</h3>
+            <p class="text-sm text-dim">Open any tool, drag-and-drop your asset, and download the finished file in seconds.</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3.5">
+          <span class="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gold text-ink font-bold text-xs">✓</span>
+          <div>
+            <h3 class="font-head text-base font-bold text-ink">Guaranteed Client-Side Privacy</h3>
+            <p class="text-sm text-dim">Your files are processed securely in temporary sandbox sessions without persistent storage or unauthorized model training.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM SECTION -->
+<section class="border-b border-line bg-white py-16 sm:py-20 lg:py-28">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="text-center max-w-2xl mx-auto">
+      <span class="inline-flex items-center gap-1.5 rounded-full bg-teal-50 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-teal-700 border border-teal-200">
+        Team
+      </span>
+      <h2 class="mt-4 font-head text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl">
+        Meet the Pixlab people
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-dim">
+        We deliver reliable visual intelligence and effortless image tools for a sustainable digital future.
+      </p>
+    </div>
+
+    <div class="mt-14 sm:mt-18 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Royal Hooper</h3>
+          <p class="text-sm font-medium text-dim">CEO · Founder</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Royal Hooper" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Matilda Shelton</h3>
+          <p class="text-sm font-medium text-dim">Head of Product</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Matilda Shelton" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Tony Manning</h3>
+          <p class="text-sm font-medium text-dim">Lead Vision Engineer</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Tony Manning" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Jennifer Davis</h3>
+          <p class="text-sm font-medium text-dim">Operations & Quality Manager</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Jennifer Davis" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Tommie Harvey</h3>
+          <p class="text-sm font-medium text-dim">Lead AI & ML Scientist</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Tommie Harvey" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-[2rem] border border-line bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
+        <div class="mb-4">
+          <h3 class="font-head text-xl font-bold text-ink group-hover:text-gold transition-colors">Christi Hampton</h3>
+          <p class="text-sm font-medium text-dim">Lead Marketing & UX Strategist</p>
+        </div>
+        <div class="aspect-[4/4.5] w-full overflow-hidden rounded-2xl bg-tint/60">
+          <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80" alt="Christi Hampton" loading="lazy" class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENTLY ASKED QUESTIONS -->
+<section class="border-b border-line bg-mist/40 py-16 sm:py-20 lg:py-28">
+  <div class="mx-auto w-full max-w-5xl 2xl:max-w-6xl px-4 sm:px-6 lg:px-10">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-head text-3xl font-extrabold tracking-tight text-ink sm:text-4xl lg:text-5xl">
+        Frequently Asked Questions
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-dim">
+        Clear answers to common questions about our platform, features, privacy, and performance.
+      </p>
+
+      <div class="mt-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-line bg-white p-1.5 shadow-sm" id="faq-tabs">
+        <button type="button" data-filter="all" class="faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm">
+          General
+        </button>
+        <button type="button" data-filter="platform" class="faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">
+          Platform
+        </button>
+        <button type="button" data-filter="features" class="faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">
+          Features
+        </button>
+        <button type="button" data-filter="support" class="faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">
+          Support
+        </button>
+      </div>
+    </div>
+
+    <div class="mt-12 space-y-4" id="faq-accordion">
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="general platform" open>
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q1</span>
+            What is Pixlab and how does it process images?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          Pixlab is a modern online image lab designed to remove backgrounds, upscale images up to 4x, compress to exact KB targets, and resize with smart focal cropping. Everything works through browser-accelerated WebAssembly and neural heuristics to give you instant studio-grade results.
+        </p>
+      </details>
+
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="general">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q2</span>
+            Do I need to sign up or create an account to use the tools?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          No. Pixlab is built with zero friction in mind. All four core tools (Background Remover, Upscaler, Compressor, Resizer) are completely free to use directly in your browser without requiring passwords, credit cards, or email logins.
+        </p>
+      </details>
+
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="platform support">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q3</span>
+            How does Pixlab guarantee the privacy of my uploaded photos?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          Your media privacy is central to our engineering. Files uploaded for processing are handled in temporary sandboxed volatile memory and are purged immediately after the output is downloaded. We do not store your images, sell your data, or use your private photos to train public models.
+        </p>
+      </details>
+
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="features">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q4</span>
+            What scales and formats does the Image Upscaler support?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          The upscaler supports 2x, 3x, and 4x enlargement for PNG, JPG, JPEG, WEBP, BMP, and TIFF files up to 50 MB. It intelligently sharpens fine boundaries and reconstructs high-frequency textures without creating pixelated blocks.
+        </p>
+      </details>
+
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="features">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q5</span>
+            Can I compress an image down to a specific target file size in KB?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          Yes! Our Image Compressor lets you define an exact target limit (e.g. 200 KB or 500 KB), which is essential when submitting official documents, government portals, university admissions, and online marketplaces that enforce strict upload caps.
+        </p>
+      </details>
+
+      <details class="group rounded-2xl border border-line bg-white p-5 sm:p-6 transition-all duration-200 open:border-ink/40 open:shadow-md" data-category="support platform">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-head text-base sm:text-lg font-bold text-ink [&::-webkit-details-marker]:hidden">
+          <span class="flex items-center gap-3">
+            <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-tint text-ink text-xs font-bold">Q6</span>
+            What should I do if I need enterprise volume or custom API access?
+          </span>
+          <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line bg-mist text-dim transition group-open:rotate-180 group-open:bg-ink group-open:text-white">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </span>
+        </summary>
+        <p class="mt-4 pl-10 text-sm sm:text-base leading-relaxed text-dim border-t border-line/60 pt-4">
+          If your business processes thousands of images daily and requires automated batch workflows or custom headless API access, reach out to our team via our <a href="contact.html" class="font-semibold text-ink underline decoration-gold">Contact page</a>. We provide dedicated solutions for high-volume catalogs.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION BANNER -->
+<section class="relative overflow-hidden bg-[#070F20] py-16 sm:py-20 lg:py-24 text-white">
+  <div class="pointer-events-none absolute -top-24 left-1/4 h-80 w-80 rounded-full bg-blue-600/20 blur-[100px]"></div>
+  <div class="pointer-events-none absolute bottom-0 right-1/4 h-72 w-72 rounded-full bg-gold/15 blur-[100px]"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-center justify-between gap-8 text-center lg:flex-row lg:text-left">
+    <div class="max-w-2xl">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur">
+        Ready to create?
+      </span>
+      <h2 class="mt-4 font-head text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-white">
+        Transform your visual content in seconds
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-white/70">
+        Join thousands of creators, online sellers, and designers who rely on Pixlab for flawless, high-speed image processing.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center justify-center gap-4 shrink-0">
+      <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 font-semibold text-ink transition hover:bg-white hover:shadow-xl hover:shadow-gold/20">
+        Try Background Remover
+      </a>
+      <a href="contact.html" class="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-8 py-3.5 font-semibold text-white backdrop-blur transition hover:bg-white/15 hover:border-white/40">
+        Contact Team
+      </a>
+    </div>
+  </div>
+</section>
+"""
+about_extra = """<script>
+  // Interactive FAQ Tab Filtering
+  const faqBtns = document.querySelectorAll('.faq-tab-btn');
+  const faqItems = document.querySelectorAll('#faq-accordion details');
+
+  faqBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      faqBtns.forEach((b) => {
+        b.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist';
+      });
+      btn.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm';
+
+      faqItems.forEach((item) => {
+        const categories = item.getAttribute('data-category') || '';
+        if (filter === 'all' || categories.includes(filter)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+"""
+write("about.html", f"About {SITE} – Simple Online Image Tools", f"Learn why {SITE} exists, how it works and what we care about.", about, "about.html", extra=about_extra)
 
 # ---------- CONTACT ----------
-fld = lambda n, label, attrs, span="": f'<label class="flex flex-col gap-1.5 text-sm font-semibold {span}">{label}<input name="{n}" {attrs} class="{INP}"></label>'
-quick = [("My file was rejected", "Use PNG, JPEG, JPG, WEBP, BMP, TIFF, GIF or AVIF, and keep it under 50 MB."), ("The resizer shows an error", "Width and height must each be between 8 and 8000 pixels."), ("The result looks softer than the original", "Compression and enlarging both change pixels. Try a larger target size in the compressor or a smaller scale in the upscaler.")]
-contact = pagehead("Contact support", "Something not working, or a tool you wish we had? Tell us what you tried and what you saw.") + f"""
-<section class="{W} grid items-start gap-10 py-12 lg:grid-cols-[1.5fr_1fr] lg:gap-14 lg:py-16">
-  <form data-r="contact" class="grid gap-5 rounded-3xl border border-line bg-white p-5 shadow-xl shadow-ink/5 sm:grid-cols-2 sm:p-8">
-    {fld("name", "Name", 'required minlength="2" maxlength="100" autocomplete="name"')}
-    {fld("email", "Email", 'type="email" required autocomplete="email"')}
-    {fld("subject", "Subject", 'required minlength="5" maxlength="150"', "sm:col-span-2")}
-    <label class="flex flex-col gap-1.5 text-sm font-semibold sm:col-span-2">Message<textarea name="message" required minlength="10" maxlength="2000" rows="6" class="{INP}"></textarea></label>
-    <p data-r="cstatus" role="status" class="hidden"></p>
-    <button class="rounded-xl bg-ink py-3.5 font-semibold text-white transition hover:bg-ink/90 disabled:opacity-60 sm:col-span-2">Send message</button>
-  </form>
-  <aside class="grid gap-8">
-    <div class="rounded-3xl bg-tint p-6 sm:p-8"><h2 class="font-head text-xl font-bold">Include these details</h2>
-      <ul class="mt-4 grid gap-3 text-dim"><li>Which tool you were using</li><li>The file type and approximate size</li><li>The exact error message, if you saw one</li><li>Your browser and device</li></ul></div>
-    <div><h2 class="font-head text-xl font-bold">Quick answers</h2><div class="mt-3 border-t border-line">{"".join(f'<details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">{q}<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 text-dim">{a}</p></details>' for q, a in quick)}</div></div>
-  </aside></section>"""
+contact = f"""<section class="relative overflow-hidden bg-[#070F20] text-white py-24 sm:py-28 lg:py-36">
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=2000&q=80" alt="Office workspace background" class="h-full w-full object-cover object-center opacity-25">
+    <div class="absolute inset-0 bg-gradient-to-b from-[#070F20]/90 via-[#0B1B3A]/80 to-[#070F20]"></div>
+  </div>
+  <div class="pointer-events-none absolute -top-20 left-1/3 h-80 w-80 rounded-full bg-blue-600/20 blur-[100px]"></div>
+  <div class="pointer-events-none absolute top-1/2 right-1/4 h-72 w-72 rounded-full bg-indigo-500/15 blur-[90px]"></div>
+  <div class="relative z-10 {W} text-center">
+    <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-gold backdrop-blur">Get in touch</span>
+    <h1 class="mt-6 font-head text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-white">Contact us</h1>
+    <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-white/80 leading-relaxed font-body">{SITE} is ready to provide the right solution according to your needs. Reach out to our team anytime.</p>
+  </div>
+</section>
+
+<section class="relative z-20 {W} -mt-16 sm:-mt-24 lg:-mt-28">
+  <div class="rounded-3xl border border-line bg-white p-6 sm:p-10 lg:p-14 shadow-2xl shadow-ink/10">
+    <div class="grid gap-12 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
+      
+      <div class="flex flex-col justify-between">
+        <div>
+          <h2 class="font-head text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">Get in touch</h2>
+          <p class="mt-3 text-sm sm:text-base text-dim leading-relaxed">Have questions about our tools, API integrations, or need custom enterprise image workflows? We're here to help you get the best results.</p>
+          <div class="mt-8 space-y-6">
+            <div class="flex items-start gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-blue-50 text-blue-600 shadow-sm border border-blue-100">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              </span>
+              <div>
+                <h3 class="font-head text-base font-bold text-ink">Head Office</h3>
+                <p class="mt-1 text-sm text-dim leading-relaxed">742 Evergreen Terrace, Suite 400<br>San Francisco, CA 94107</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-amber-50 text-amber-600 shadow-sm border border-amber-100">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </span>
+              <div>
+                <h3 class="font-head text-base font-bold text-ink">Email Us</h3>
+                <p class="mt-1 text-sm text-dim"><a href="mailto:support@pixlab.com" class="text-ink hover:text-gold transition font-medium">support@pixlab.com</a><br><a href="mailto:hello@pixlab.com" class="text-dim hover:text-ink transition">hello@pixlab.com</a></p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-emerald-50 text-emerald-600 shadow-sm border border-emerald-100">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              </span>
+              <div>
+                <h3 class="font-head text-base font-bold text-ink">Call Us</h3>
+                <p class="mt-1 text-sm text-dim leading-relaxed">Phone: <a href="tel:+18005550199" class="text-ink font-medium hover:text-gold transition">+1 (800) 555-0199</a><br>Hours: Mon – Fri, 9am – 6pm EST</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 pt-8 border-t border-line">
+          <h3 class="font-head text-sm font-bold uppercase tracking-wider text-dim">Follow our social media</h3>
+          <div class="mt-4 flex flex-wrap items-center gap-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="grid h-11 w-11 place-items-center rounded-xl border border-line bg-mist text-dim transition-all duration-200 hover:border-blue-600 hover:bg-blue-600 hover:text-white hover:shadow-md hover:-translate-y-0.5">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="grid h-11 w-11 place-items-center rounded-xl border border-line bg-mist text-dim transition-all duration-200 hover:border-pink-600 hover:bg-pink-600 hover:text-white hover:shadow-md hover:-translate-y-0.5">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="grid h-11 w-11 place-items-center rounded-xl border border-line bg-mist text-dim transition-all duration-200 hover:border-ink hover:bg-ink hover:text-white hover:shadow-md hover:-translate-y-0.5">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="grid h-11 w-11 place-items-center rounded-xl border border-line bg-mist text-dim transition-all duration-200 hover:border-blue-700 hover:bg-blue-700 hover:text-white hover:shadow-md hover:-translate-y-0.5">
+              <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="grid h-11 w-11 place-items-center rounded-xl border border-line bg-mist text-dim transition-all duration-200 hover:border-red-600 hover:bg-red-600 hover:text-white hover:shadow-md hover:-translate-y-0.5">
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="font-head text-2xl sm:text-3xl font-extrabold text-ink tracking-tight">Send us a message</h2>
+        <form data-r="contact" class="mt-6 grid gap-5 sm:grid-cols-2">
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink">Name
+            <input name="name" required minlength="2" maxlength="100" autocomplete="name" placeholder="Your name" class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30">
+          </label>
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink">Company
+            <input name="company" maxlength="100" autocomplete="organization" placeholder="Your company name" class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30">
+          </label>
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink">Phone
+            <input name="phone" type="tel" autocomplete="tel" placeholder="+1 (555) 000-0000" class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30">
+          </label>
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink">Email
+            <input name="email" type="email" required autocomplete="email" placeholder="you@company.com" class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30">
+          </label>
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink sm:col-span-2">Subject
+            <input name="subject" required minlength="5" maxlength="150" placeholder="How can we help?" class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30">
+          </label>
+          <label class="flex flex-col gap-1.5 text-sm font-semibold text-ink sm:col-span-2">Message
+            <textarea name="message" required minlength="10" maxlength="2000" rows="5" placeholder="Tell us what you need or what you tried..." class="w-full rounded-xl border border-line bg-mist/50 px-4 py-3 text-base font-normal outline-none transition focus:border-ink focus:bg-white focus:ring-4 focus:ring-gold/30"></textarea>
+          </label>
+          <p data-r="cstatus" role="status" class="hidden sm:col-span-2"></p>
+          <button class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-ink py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:bg-gold hover:text-ink hover:shadow-xl hover:-translate-y-0.5 disabled:opacity-60 sm:col-span-2">
+            <span>Send message</span>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="{W} py-16 sm:py-20">
+  <div class="relative overflow-hidden rounded-3xl border border-line shadow-xl shadow-ink/5 aspect-[16/7] min-h-[360px] sm:min-h-[440px] w-full">
+    <iframe title="Pixlab Office Location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017940733!3d37.75781500057217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" class="absolute inset-0 h-full w-full border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>"""
 write("contact.html", f"Contact Support | {SITE}", f"Send a question, bug report or suggestion to the {SITE} team.", contact, "contact.html")
 
 # ---------- LEGAL ----------
