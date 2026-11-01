@@ -1,0 +1,29 @@
+{
+  "name": "Pixlab - AI Image Studio",
+  "short_name": "Pixlab",
+  "description": "Next-generation online image laboratory. Fast, browser-based tools to remove backgrounds, enlarge, compress, and resize with zero friction.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0B1B3A",
+  "icons": [
+    {
+      "src": "assets/logo/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logo/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/logo/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

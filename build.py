@@ -92,7 +92,9 @@ def head(title, desc, file, extra=""):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0B1B3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{SITE}">
@@ -109,7 +111,7 @@ def head(title, desc, file, extra=""):
 {extra}</head>
 """
 
-LOGO = f'<a href="index.html" class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"><span class="h-4 w-4 rounded-full bg-ink"></span></span>{SITE}</a>'
+LOGO = f'<a href="index.html" class="flex shrink-0 items-center transition hover:opacity-90" aria-label="{SITE}"><img src="assets/logo/logo.svg" alt="{SITE}" class="h-8 sm:h-9 w-auto"></a>'
 
 def header(active):
     tool_on = any(t["file"] == active for t in TOOLS)
@@ -161,11 +163,8 @@ def footer():
     <div class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10">
       <div class="flex flex-col justify-between">
         <div>
-          <a href="index.html" class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group">
-            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
-              <span class="h-4 w-4 rounded-full bg-ink"></span>
-            </span>
-            <span class="tracking-tight text-2xl">Pix<span class="text-gold">lab</span></span>
+          <a href="index.html" class="inline-flex items-center transition hover:opacity-90" aria-label="{SITE}">
+            <img src="assets/logo/logo-light.svg" alt="{SITE}" class="h-9 sm:h-10 w-auto">
           </a>
           <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60">
             Next-generation online image laboratory. Fast, browser-based tools to remove backgrounds, enlarge, compress, and resize with zero friction.
@@ -287,7 +286,7 @@ home = f"""<section class="bg-white"><div class="{W} grid items-center gap-12 py
     <p class="mt-4 max-w-lg text-dim sm:text-lg">Upload up to 50 MB per image. The resizer accepts any width or height from 8 to 8000 pixels. Background removal always returns a PNG; the other tools give you back the format you sent.</p></div>
   <ul class="grid grid-cols-2 gap-3 sm:grid-cols-4">{fmts}</ul></section>
 {cta("Start with your own image", "Pick a tool and see the result in a few seconds.", "background-remover.html", "Open the background remover")}"""
-ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": DOMAIN + "/"})
+ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "name": SITE, "url": DOMAIN + "/", "image": f"{DOMAIN}/assets/logo/logo.png"})
 write("index.html", f"{SITE} – Remove Background, Upscale, Compress and Resize Images Online",
       "Four image tools in one place: remove backgrounds, upscale, compress to a target size and resize to exact pixels. No account needed.",
       home, "index.html", extra=f'<script type="application/ld+json">{ld}</script>\n')
@@ -518,7 +517,7 @@ about = """<!-- HERO SECTION -->
           </p>
           <div class="mt-3 flex items-center justify-between border-t border-line/60 pt-3">
             <div class="flex items-center gap-2">
-              <span class="grid h-6 w-6 place-items-center rounded-lg bg-gold text-[10px] font-bold text-ink">P</span>
+              <img src="assets/logo/icon.svg" alt="Pixlab" class="h-6 w-6 rounded-lg object-contain">
               <span class="text-xs font-bold text-ink">Pixlab Enterprise Partner</span>
             </div>
             <span class="text-[11px] font-semibold text-dim">Verified Review</span>
@@ -795,25 +794,27 @@ about = """<!-- HERO SECTION -->
 """
 about_extra = """<script>
   // Interactive FAQ Tab Filtering
-  const faqBtns = document.querySelectorAll('.faq-tab-btn');
-  const faqItems = document.querySelectorAll('#faq-accordion details');
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqBtns = document.querySelectorAll('.faq-tab-btn');
+    const faqItems = document.querySelectorAll('#faq-accordion details');
 
-  faqBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+    faqBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
 
-      faqBtns.forEach((b) => {
-        b.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist';
-      });
-      btn.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm';
+        faqBtns.forEach((b) => {
+          b.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist';
+        });
+        btn.className = 'faq-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm';
 
-      faqItems.forEach((item) => {
-        const categories = item.getAttribute('data-category') || '';
-        if (filter === 'all' || categories.includes(filter)) {
-          item.style.display = 'block';
-        } else {
-          item.style.display = 'none';
-        }
+        faqItems.forEach((item) => {
+          const categories = item.getAttribute('data-category') || '';
+          if (filter === 'all' || categories.includes(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
       });
     });
   });
@@ -973,7 +974,7 @@ legal("privacy.html", f"Privacy Policy | {SITE}", f"What {SITE} collects, why, w
 <h2>Changes</h2><p>If we change this policy we will update the date at the top of the page.</p>""")
 
 write("404.html", f"Page not found | {SITE}", "The page you are looking for does not exist.",
- f'<section class="{W} py-24 text-center"><h1 class="font-head text-5xl font-extrabold tracking-tight sm:text-7xl">Page not found</h1><p class="mx-auto mt-5 max-w-md text-dim">That address does not lead anywhere. Pick a tool from the Tools menu or go back home.</p><a href="index.html" class="{GOLDBTN} mt-8">Go to the home page</a></section>')
+ f'<section class="{W} py-24 text-center"><a href="index.html" class="inline-flex mb-8 transition hover:opacity-90"><img src="assets/logo/logo-stacked.svg" alt="{SITE}" class="h-16 sm:h-20 w-auto"></a><h1 class="font-head text-5xl font-extrabold tracking-tight sm:text-7xl">Page not found</h1><p class="mx-auto mt-5 max-w-md text-dim">That address does not lead anywhere. Pick a tool from the Tools menu or go back home.</p><a href="index.html" class="{GOLDBTN} mt-8">Go to the home page</a></section>')
 
 pages = ["index.html"] + [t["file"] for t in TOOLS] + ["about.html", "contact.html", "terms.html", "privacy.html"]
 sm = "".join(f"  <url><loc>{DOMAIN}/{'' if p == 'index.html' else p}</loc></url>\n" for p in pages)

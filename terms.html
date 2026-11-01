@@ -6,7 +6,9 @@
 <title>Terms of Service | Pixlab</title>
 <meta name="description" content="The rules for using Pixlab: acceptable use, your content, availability and liability.">
 <link rel="canonical" href="https://www.example.com/terms.html">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#0B1B3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixlab">
@@ -24,7 +26,7 @@
 <body class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
 <header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
   <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex h-16 items-center justify-between gap-6 lg:h-20">
-    <a href="index.html" class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"><span class="h-4 w-4 rounded-full bg-ink"></span></span>Pixlab</a>
+    <a href="index.html" class="flex shrink-0 items-center transition hover:opacity-90" aria-label="Pixlab"><img src="assets/logo/logo.svg" alt="Pixlab" class="h-8 sm:h-9 w-auto"></a>
     <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
       <a href="index.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Home</a>
       <div class="group relative">
@@ -76,11 +78,8 @@
     <div class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10">
       <div class="flex flex-col justify-between">
         <div>
-          <a href="index.html" class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group">
-            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
-              <span class="h-4 w-4 rounded-full bg-ink"></span>
-            </span>
-            <span class="tracking-tight text-2xl">Pix<span class="text-gold">lab</span></span>
+          <a href="index.html" class="inline-flex items-center transition hover:opacity-90" aria-label="Pixlab">
+            <img src="assets/logo/logo-light.svg" alt="Pixlab" class="h-9 sm:h-10 w-auto">
           </a>
           <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60">
             Next-generation online image laboratory. Fast, browser-based tools to remove backgrounds, enlarge, compress, and resize with zero friction.
