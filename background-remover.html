@@ -102,29 +102,34 @@
 </header>
 
 <main class="flex-1">
-<!-- HERO SECTION -->
-<section class="border-b border-line bg-white">
-  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-8 sm:py-12">
-    <div class="flex items-center gap-2 text-sm text-dim mb-3">
+<!-- HERO SECTION (CENTER-ALIGNED MATCHING SITE STANDARD) -->
+<section class="relative overflow-hidden bg-white pt-12 pb-12 sm:pt-16 sm:pb-16 lg:pt-20 lg:pb-18 border-b border-line">
+  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[950px] rounded-full bg-gradient-to-b from-tint/70 via-mist to-transparent blur-3xl opacity-75"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+    <!-- Breadcrumb Centered -->
+    <div class="inline-flex items-center justify-center gap-2 text-sm text-dim mb-4">
       <a href="index.html" class="hover:text-ink transition">Home</a>
       <span>/</span>
       <span class="text-ink font-medium">Background Remover</span>
     </div>
 
-    <div class="max-w-3xl">
-      <h1 class="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.1] tracking-tight text-ink">
-        Precision background isolation for studio photography
-      </h1>
-      <p class="mt-3.5 text-base sm:text-lg text-dim leading-relaxed">
-        Extract footwear, timepieces, apparel, and portraits with clean edge contours. Export an alpha-transparent PNG ready for composition, or fill the space with a uniform studio tone.
-      </p>
+    <!-- Main Title Centered -->
+    <h1 class="mx-auto max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">
+      Precision background isolation for studio photography
+    </h1>
 
-      <div class="mt-5 flex flex-wrap items-center gap-y-2 gap-x-6 text-xs sm:text-sm font-medium text-dim border-t border-line pt-4">
-        <span>Lossless Alpha PNG</span>
-        <span>Solid Hex Color Fill</span>
-        <span>Up to 50 MB File Size</span>
-        <span>Zero Account Required</span>
-      </div>
+    <!-- Subtitle Centered -->
+    <p class="mx-auto mt-5 max-w-2xl text-base sm:text-lg lg:text-xl text-dim leading-relaxed">
+      Extract footwear, timepieces, apparel, and portraits with clean edge contours. Export an alpha-transparent PNG ready for composition, or fill the space with a uniform studio tone.
+    </p>
+
+    <!-- Centered Feature Chips (No dots) -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 text-xs sm:text-sm font-medium text-dim">
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Lossless Alpha PNG</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Solid Hex Color Fill</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Up to 50 MB File Size</span>
+      <span class="rounded-full border border-line bg-mist/80 px-4 py-1.5 shadow-sm">Zero Account Required</span>
     </div>
   </div>
 </section>
@@ -300,18 +305,18 @@
 </section>
 
 <!-- FREQUENTLY ASKED QUESTIONS -->
-<section class="bg-white py-12 lg:py-16 border-b border-line">
+<section class="bg-white py-14 lg:py-20 border-b border-line">
   <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-    <div class="max-w-2xl">
-      <h2 class="font-head text-2xl sm:text-3xl font-extrabold tracking-tight text-ink">
+    <div class="text-center max-w-2xl mx-auto">
+      <h2 class="font-head text-3xl sm:text-4xl font-extrabold tracking-tight text-ink">
         Frequently asked questions
       </h2>
-      <p class="mt-2 text-sm sm:text-base text-dim">
+      <p class="mt-3 text-sm sm:text-base text-dim">
         Clear answers about image formats, custom color fills, and privacy.
       </p>
     </div>
 
-    <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl">
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5 max-w-5xl mx-auto">
       <div class="rounded-2xl border border-line bg-mist/40 p-5 shadow-sm">
         <h3 class="font-head text-sm sm:text-base font-bold text-ink">What file format do I receive after processing?</h3>
         <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
