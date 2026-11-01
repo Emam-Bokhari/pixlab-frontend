@@ -1,4 +1,5 @@
 """Generates every page of Pixlab. Set DOMAIN, then run: python3 build.py"""
+import utils.session
 import json, os
 DOMAIN = "https://www.example.com"   # <- your real domain
 SITE = "Pixlab"
