@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Terms of Service | Pixlab</title>
-<meta name="description" content="The rules for using Pixlab: acceptable use, your content, availability and liability.">
+<title>Terms of Service – Pixlab Image Studio</title>
+<meta name="description" content="Pixlab terms of service and commercial usage rights. You retain 100% ownership of your images with full commercial licensing, zero royalties, and transparent studio boundaries.">
 <link rel="canonical" href="https://www.example.com/terms.html">
 <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -12,16 +12,43 @@
 <meta name="theme-color" content="#0B1B3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixlab">
-<meta property="og:title" content="Terms of Service | Pixlab">
-<meta property="og:description" content="The rules for using Pixlab: acceptable use, your content, availability and liability.">
+<meta property="og:title" content="Terms of Service – Pixlab Image Studio">
+<meta property="og:description" content="Pixlab terms of service and commercial usage rights. 100% ownership retained with full commercial licensing.">
 <meta property="og:url" content="https://www.example.com/terms.html">
-<meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
+<meta property="og:image" content="assets/img/showcase-leather.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <script src="assets/tailwind-config.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Terms of Service", "url": "https://www.example.com/terms.html", "description": "Commercial terms of service, IP ownership, and acceptable use guidelines of Pixlab."}</script>
+<script>
+  // Smooth scroll and active state for terms sidebar index
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.terms-nav-link');
+    const sections = document.querySelectorAll('.terms-section');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('bg-ink', 'text-white', 'shadow-sm');
+              link.classList.remove('text-dim', 'hover:bg-mist');
+            } else {
+              link.classList.remove('bg-ink', 'text-white', 'shadow-sm');
+              link.classList.add('text-dim', 'hover:bg-mist');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(sec => observer.observe(sec));
+  });
+</script>
 </head>
 <body class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
 <header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
@@ -98,21 +125,404 @@
     </details>
   </div>
 </header>
+
 <main class="flex-1">
-<section class="border-b border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-12 sm:py-16 lg:py-20"><h1 class="max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">Terms of Service</h1><p class="mt-4 max-w-2xl text-base sm:text-lg text-dim leading-relaxed">Please read these terms before using Pixlab. Last updated: November 2026.</p></div></section>
-<article class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-12 lg:py-16"><div class="prose prose-slate max-w-3xl prose-headings:font-head prose-headings:tracking-tight prose-a:text-ink prose-a:underline-offset-4 2xl:prose-lg">
-<h2>1. Acceptance</h2><p>By using Pixlab you agree to these terms. If you do not agree, please do not use the site.</p>
-<h2>2. The service</h2><p>Pixlab lets you upload an image and receive a processed copy: background removal, upscaling, compression or resizing. We may change, add or remove features at any time.</p>
-<h2>3. Your content</h2><p>You keep all rights to the images you upload. You give us permission to process them only so we can return the result to you. You confirm that you own the image or have the right to use it.</p>
-<h2>4. Acceptable use</h2><ul>
-<li>Do not upload content that is illegal or that infringes someone else’s rights.</li>
-<li>Do not upload content that sexually exploits or harms children.</li>
-<li>Do not attack, overload or try to break into the service, and do not use automated tools to send heavy traffic.</li>
-<li>Stay within the limits shown on each tool page, including the 50 MB file size.</li></ul>
-<h2>5. Availability and results</h2><p>The service is provided “as is” and “as available”. We do not promise that it will be uninterrupted or error free, or that a result will suit your purpose. Automated tools can make mistakes, so please check every result before you rely on it. Keep the original file.</p>
-<h2>6. Limitation of liability</h2><p>To the extent the law allows, Pixlab is not liable for indirect or consequential loss, or for loss of data or profit, arising from your use of the service.</p>
-<h2>7. Changes to these terms</h2><p>We may update these terms. The date at the top shows the latest version. Continuing to use the site after a change means you accept the new terms.</p>
-<h2>8. Contact</h2><p>Questions about these terms? Reach us through the <a href="contact.html">contact page</a>.</p></div></article></main>
+<!-- EYE-CATCHING DARK STUDIO HERO (MATCHING PRIVACY POLICY & ABOUT US) -->
+<section class="relative overflow-hidden bg-[#070F20] text-white py-20 sm:py-24 lg:py-28">
+  <div class="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[130px]"></div>
+  <div class="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-gold/5 blur-[120px]"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+    <p class="text-xs font-bold uppercase tracking-wider text-gold">Commercial Governance &bull; Terms of Use</p>
+    <h1 class="mt-4 max-w-4xl mx-auto font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white">
+      Terms of service &amp; commercial usage
+    </h1>
+    <p class="mt-5 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed font-body">
+      Clear rules of engagement for creators, agencies, and e-commerce studios. You retain 100% intellectual property ownership over every photograph, composite, and export.
+    </p>
+
+    <!-- Key Metrics Highlight Grid -->
+    <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6 text-left max-w-5xl mx-auto">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">100% Owned</p>
+        <p class="mt-1 text-xs text-white/70">Full user copyright &amp; asset retention</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">0 Royalties</p>
+        <p class="mt-1 text-xs text-white/70">Unrestricted commercial monetization</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">50 MB Cap</p>
+        <p class="mt-1 text-xs text-white/70">Single-image volatile memory limit</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">Worldwide</p>
+        <p class="mt-1 text-xs text-white/70">Global commercial validity</p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-white/50 border-t border-white/10 pt-6">
+      <span>Effective Date: November 1, 2026</span>
+      <span>&bull;</span>
+      <span>Commercial Release 2.4</span>
+      <span>&bull;</span>
+      <span>Worldwide Commercial Jurisdiction</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: THE CREATOR'S COVENANT (DUAL COMPARISON MATRIX) -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-wider text-dim">Rights &amp; Authority</p>
+      <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        The Creator's Ownership Covenant
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim leading-relaxed">
+        We built Pixlab with complete respect for intellectual property. Here is the explicit balance of rights between you and our processing studio.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-8 lg:grid-cols-2">
+      <!-- Card Left: What You Own -->
+      <div class="rounded-3xl border-2 border-ink bg-white p-8 sm:p-10 shadow-lg shadow-ink/5 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-line">
+            <h3 class="font-head text-2xl font-bold text-ink">Your Absolute Property</h3>
+            <span class="rounded-full bg-ink px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">100% User Owned</span>
+          </div>
+          <ul class="mt-6 space-y-4 text-sm sm:text-base text-dim">
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink text-white text-xs font-bold">&check;</span>
+              <span><strong>Full Copyright Retention:</strong> You retain complete, undivided copyright and moral ownership of all raw uploads and exported results.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink text-white text-xs font-bold">&check;</span>
+              <span><strong>Unrestricted Commercial Freedom:</strong> Monetize, distribute, print, sell, or advertise your images worldwide without fees or revenue sharing.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink text-white text-xs font-bold">&check;</span>
+              <span><strong>Zero Attribution Obligation:</strong> You are never required to credit Pixlab in any digital store, client lookbook, or marketing campaign.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-ink text-white text-xs font-bold">&check;</span>
+              <span><strong>Client NDA Compatibility:</strong> Ideal for creative studios handling sensitive, unreleased brand assets under confidential agreements.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-6 border-t border-line text-xs text-dim">
+          Governed by Section 3 &bull; Commercial Rights
+        </div>
+      </div>
+
+      <!-- Card Right: Pixlab's Limited Undertaking -->
+      <div class="rounded-3xl border border-line bg-mist p-8 sm:p-10 shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-6 border-b border-line">
+            <h3 class="font-head text-2xl font-bold text-ink">Pixlab's Limited Scope</h3>
+            <span class="rounded-full bg-line px-4 py-1 text-xs font-bold text-ink uppercase tracking-wider">Volatile RAM Only</span>
+          </div>
+          <ul class="mt-6 space-y-4 text-sm sm:text-base text-dim">
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-ink text-xs font-bold">&check;</span>
+              <span><strong>Execution License Only:</strong> We receive only a transient, non-exclusive license to transform pixel buffers strictly to return your file.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-ink text-xs font-bold">&check;</span>
+              <span><strong>No Algorithmic Training:</strong> User-submitted photos are never harvested, scraped, or used to train machine learning models.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-ink text-xs font-bold">&check;</span>
+              <span><strong>Zero Disk Archiving:</strong> Image buffers exist strictly in volatile RAM and are permanently wiped after transmission completes.</span>
+            </li>
+            <li class="flex items-start gap-3.5">
+              <span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-ink text-xs font-bold">&check;</span>
+              <span><strong>No Co-Authorship Claims:</strong> We assert zero legal claim, royalty, or property stake in any derivative asset created.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="mt-8 pt-6 border-t border-line text-xs text-dim">
+          Governed by Section 2 &bull; Platform Responsibilities
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: COMMERCIAL PRODUCTION SHOWCASE (FEATURING LEATHER CRAFTSMANSHIP PHOTOGRAPHY) -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="overflow-hidden rounded-3xl border border-line bg-white shadow-xl shadow-ink/5">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/img/showcase-leather.jpg" alt="Commercial leather goods craftsmanship photography" loading="lazy" class="h-full w-full object-cover">
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Production Standards</p>
+        <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+          Tailored for high-end commerce &amp; editorial publishing
+        </h2>
+        <p class="mt-4 text-base text-dim leading-relaxed">
+          Pixlab terms provide rock-solid legal backing for digital agencies, product retailers, and editorial photographers who require uncompromised rights and high production outputs.
+        </p>
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-2xl border border-line bg-white p-5 shadow-sm">
+            <h4 class="font-head text-base font-bold text-ink">E-Commerce Ready</h4>
+            <p class="mt-1.5 text-xs sm:text-sm text-dim leading-relaxed">Direct export formats ready for Shopify, Amazon, WooCommerce, and high-fashion catalogs.</p>
+          </div>
+          <div class="rounded-2xl border border-line bg-white p-5 shadow-sm">
+            <h4 class="font-head text-base font-bold text-ink">Print Resolution</h4>
+            <p class="mt-1.5 text-xs sm:text-sm text-dim leading-relaxed">Lossless upscaled assets suitable for large-format billboards, lookbooks, and packaging.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: MASTER EDITORIAL TERMS DOCUMENT (TWO-COLUMN ARCHITECTURE WITH STICKY TOC) -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid gap-12 lg:grid-cols-[18rem_1fr] lg:gap-16 items-start">
+      
+      <!-- STICKY SIDEBAR INDEX -->
+      <aside class="hidden lg:block lg:sticky lg:top-28">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Clauses &bull; Index</p>
+        <nav class="mt-4 space-y-1" aria-label="Terms index">
+          <a href="#acceptance" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm">01. Acceptance of Terms</a>
+          <a href="#ip-rights" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">02. IP &amp; Content Ownership</a>
+          <a href="#commercial-use" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">03. Commercial Licensing</a>
+          <a href="#operational-limits" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">04. Studio Limits (50 MB)</a>
+          <a href="#prohibited-conduct" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">05. Acceptable Conduct</a>
+          <a href="#warranty-sla" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">06. Service Availability</a>
+          <a href="#liability" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">07. Limitation of Liability</a>
+          <a href="#jurisdiction" class="terms-nav-link block rounded-xl px-4 py-2.5 text-xs sm:text-sm font-semibold transition text-dim hover:bg-mist">08. Legal Notice &amp; Venue</a>
+        </nav>
+
+        <div class="mt-8 rounded-2xl border border-line bg-mist p-5">
+          <h4 class="font-head text-sm font-bold text-ink">Need custom enterprise terms?</h4>
+          <p class="mt-2 text-xs text-dim leading-relaxed">We issue signed Data Processing Agreements and custom licensing schedules for high-volume commercial studios.</p>
+          <a href="contact.html" class="mt-3.5 inline-flex items-center gap-1.5 text-xs font-bold text-ink hover:text-gold transition">
+            Speak with legal operations &rarr;
+          </a>
+        </div>
+      </aside>
+
+      <!-- EDITORIAL CLAUSES BODY -->
+      <div class="space-y-16">
+        
+        <!-- Clause 01 -->
+        <article id="acceptance" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 01</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Acceptance &amp; Scope of Service</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              By accessing, browsing, or utilizing the web-based image manipulation utilities provided by Pixlab (including Background Remover, Image Upscaler, Image Compressor, and Image Resizer), you signify your informed assent to these Terms of Service.
+            </p>
+            <p>
+              Pixlab is delivered entirely without mandatory user accounts, credential registries, or subscription gates. Continued utilization of any studio utility confirms your agreement to comply with all applicable regional and international copyright, commerce, and telecommunications statutes.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 02 -->
+        <article id="ip-rights" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 02</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Intellectual Property &amp; Content Ownership</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              <strong>You retain exclusive ownership.</strong> At no point does Pixlab, its operators, or its parent entities assert or obtain any ownership interest, title, or copyright in any image file, composite artwork, photographic plate, or vector geometry uploaded to our nodes.
+            </p>
+            <p>
+              You grant Pixlab solely a strictly transient, non-exclusive, royalty-free license to parse, transform, resize, or compress your image payload within volatile RAM memory buffers for the single purpose of returning the processed output file to your browser stream.
+            </p>
+            <p>
+              You represent and warrant that you hold all necessary copyright authorizations, model releases, and commercial publication rights for any media uploaded to the studio.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 03 -->
+        <article id="commercial-use" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 03</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Commercial Licensing &amp; Client Resale</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              Any asset transformed via Pixlab may be utilized for unrestricted commercial initiatives. This includes, without limitation:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Direct integration into e-commerce product listings and storefronts.</li>
+              <li>Print and outdoor media campaigns, marketing brochures, and packaging artwork.</li>
+              <li>Delivery to corporate clients as part of agency or freelance design deliverables.</li>
+              <li>Digital advertising campaigns across paid social, search, and programmatic networks.</li>
+            </ul>
+            <p>
+              Pixlab imposes no royalty obligations, no licensing surcharges, and no attribution watermarks on processed images.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 04 -->
+        <article id="operational-limits" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 04</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Studio Operational Boundaries &amp; Capacities</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              To safeguard cluster availability and prevent memory starvation for all simultaneous creators, operational boundaries are established:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><strong>Payload Cap:</strong> A hard threshold of 50 Megabytes (MB) per single image submission applies across all tools.</li>
+              <li><strong>Format Compliance:</strong> Accepted raster formats are limited to standard WebP, PNG, JPEG, and AVIF encodings.</li>
+              <li><strong>Interactive Human Use:</strong> Tools are optimized for direct browser human interaction. Automated high-frequency scripts, unauthorized headless scrapers, or botnet submission floods are blocked by automated rate filters.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Clause 05 -->
+        <article id="prohibited-conduct" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 05</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Acceptable Conduct &amp; Content Prohibitions</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              Users are strictly barred from transmitting content or initiating server actions that violate basic criminal or civil standards. Prohibited activities include:
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Uploading content depicting child sexual exploitation, non-consensual imagery, or targeted violent harassment.</li>
+              <li>Attempting to probe, reverse-engineer, exploit buffer limits, or execute denial-of-service vectors against processing worker clusters.</li>
+              <li>Uploading payloads carrying malicious steganographic executable code, malware delivery scripts, or security exploits.</li>
+            </ul>
+            <p>
+              We reserve the immediate right to terminate sessions, drop socket connections, and blacklist IP addresses attempting abusive payloads.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 06 -->
+        <article id="warranty-sla" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 06</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Service Availability, "As-Is" Provision &amp; Backups</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              Pixlab utilities are delivered on an <strong>"As-Is"</strong> and <strong>"As-Available"</strong> baseline. While our processing clusters maintain 99.9% uptime architecture, we do not warrant that tools will remain uninterrupted, bug-free, or compatible with corrupt or proprietary RAW formats.
+            </p>
+            <p>
+              <strong>Always preserve your source files.</strong> Because Pixlab employs ephemeral RAM processing and zero disk storage, we do not retain backup copies. You are solely responsible for archiving your original master files.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 07 -->
+        <article id="liability" class="terms-section scroll-mt-28 border-b border-line pb-12">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 07</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Limitation of Liability &amp; Indemnity</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              To the maximum extent permitted under applicable law, Pixlab and its directors, contractors, and affiliates shall not be liable for any indirect, incidental, punitive, or consequential damages resulting from your use of or inability to use the tools, including loss of client contracts, production delays, or data corruption.
+            </p>
+            <p>
+              You agree to indemnify and hold harmless Pixlab against third-party claims, copyright infringement assertions, or liabilities arising directly from media files you upload to the studio.
+            </p>
+          </div>
+        </article>
+
+        <!-- Clause 08 -->
+        <article id="jurisdiction" class="terms-section scroll-mt-28">
+          <span class="text-xs font-bold uppercase tracking-wider text-gold">Clause 08</span>
+          <h3 class="mt-2 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">Amendments, Governing Law &amp; Legal Notice</h3>
+          <div class="mt-4 space-y-3.5 text-sm sm:text-base text-dim leading-relaxed">
+            <p>
+              We reserve the right to revise these terms to reflect infrastructure upgrades, feature releases, or statutory updates. The version timestamp at the top of this document indicates the active release date. Continued use of our website following posted updates constitutes acceptance.
+            </p>
+            <p>
+              Any formal legal inquiries, statutory notices, or enterprise licensing requests regarding these terms should be addressed to our legal department via our <a href="contact.html" class="text-ink font-semibold underline hover:text-gold">Contact page</a> or via email at <a href="mailto:legal@pixlab.com" class="text-ink font-semibold underline hover:text-gold">legal@pixlab.com</a>.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: SUMMARY MATRIX (TERMS AT A GLANCE) -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-wider text-dim">Quick Reference</p>
+      <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        Terms Summary Matrix
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim leading-relaxed">
+        Essential legal terms summarized for commercial creators and production teams.
+      </p>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-3xl border border-line bg-white shadow-sm">
+      <table class="w-full text-left text-sm sm:text-base">
+        <thead class="bg-mist border-b border-line text-ink font-semibold">
+          <tr>
+            <th class="p-4 sm:p-5">Provision Area</th>
+            <th class="p-4 sm:p-5">Creator Legal Position</th>
+            <th class="p-4 sm:p-5">Pixlab Operational Stance</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-line text-dim">
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Asset Ownership</td>
+            <td class="p-4 sm:p-5">100% retained by the creator</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Zero property or IP rights claimed</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Commercial Usage</td>
+            <td class="p-4 sm:p-5">Unrestricted worldwide monetization</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">No royalties, no attribution required</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Storage &amp; Retention</td>
+            <td class="p-4 sm:p-5">Maintain original files locally</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Zero disk storage; volatile RAM purge post-download</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Model Training</td>
+            <td class="p-4 sm:p-5">Exclusive protection against scraping</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Never used for algorithmic dataset training</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Payload Cap</td>
+            <td class="p-4 sm:p-5">Up to 50 MB per single file</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Enforced for cluster memory stability</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA SECTION (MATCHING SITE STANDARD) -->
+<section class="bg-gold">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-8 py-14 lg:flex-row lg:items-center lg:py-20">
+    <div>
+      <h2 class="max-w-2xl font-head text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-ink">
+        Produce professional images with confidence
+      </h2>
+      <p class="mt-3 max-w-xl text-base sm:text-lg text-ink/80 leading-relaxed">
+        Full commercial freedom, zero attribution, and ephemeral processing for creators and studios.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold transition bg-ink text-white hover:bg-white hover:text-ink shadow-md">
+        Open Studio Now
+      </a>
+      <a href="contact.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold transition bg-white/30 text-ink hover:bg-white border border-ink/10">
+        Contact Our Team
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
   <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[120px]"></div>
   <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
@@ -168,7 +578,7 @@
       <div>
         <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Legal</h2>
         <ul class="mt-5 grid gap-3 text-sm">
-          <li><a href="terms.html" class="transition-colors hover:text-white">Terms of Service</a></li>
+          <li><a href="terms.html" class="transition-colors hover:text-white font-semibold text-white">Terms of Service</a></li>
           <li><a href="privacy.html" class="transition-colors hover:text-white">Privacy Policy</a></li>
         </ul>
       </div>
@@ -190,6 +600,5 @@
     </div>
   </div>
 </footer>
-<script src="assets/app.js"></script>
 </body>
 </html>
