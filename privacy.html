@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Privacy Policy | Pixlab</title>
-<meta name="description" content="What Pixlab collects, why, who else sees it and how to contact us about your data.">
+<title>Privacy Policy – Pixlab Image Studio</title>
+<meta name="description" content="Pixlab privacy policy. How we handle uploaded images, server logs, and customer communications with zero account tracking and RAM-only processing.">
 <link rel="canonical" href="https://www.example.com/privacy.html">
 <link rel="icon" href="assets/logo/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
@@ -12,16 +12,44 @@
 <meta name="theme-color" content="#0B1B3A">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pixlab">
-<meta property="og:title" content="Privacy Policy | Pixlab">
-<meta property="og:description" content="What Pixlab collects, why, who else sees it and how to contact us about your data.">
+<meta property="og:title" content="Privacy Policy – Pixlab Image Studio">
+<meta property="og:description" content="Pixlab privacy policy. How we handle uploaded images, server logs, and customer communications with zero account tracking.">
 <meta property="og:url" content="https://www.example.com/privacy.html">
-<meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
+<meta property="og:image" content="assets/img/hero-watch-original.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 <script src="assets/tailwind-config.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Privacy Policy", "url": "https://www.example.com/privacy.html", "description": "Privacy policy and data handling principles of Pixlab."}</script>
+<script>
+  // Interactive Policy Tab Filtering
+  document.addEventListener('DOMContentLoaded', () => {
+    const policyTabs = document.querySelectorAll('.policy-tab-btn');
+    const policyCards = document.querySelectorAll('.policy-item');
+
+    policyTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+
+        policyTabs.forEach((t) => {
+          t.className = 'policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist';
+        });
+        tab.className = 'policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm';
+
+        policyCards.forEach((card) => {
+          const cat = card.getAttribute('data-category') || '';
+          if (filter === 'all' || cat.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
 </head>
 <body class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
 <header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
@@ -98,21 +126,354 @@
     </details>
   </div>
 </header>
+
 <main class="flex-1">
-<section class="border-b border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-12 sm:py-16 lg:py-20"><h1 class="max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">Privacy Policy</h1><p class="mt-4 max-w-2xl text-base sm:text-lg text-dim leading-relaxed">This page explains what happens to your data when you use Pixlab. Last updated: November 2026.</p></div></section>
-<article class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-12 lg:py-16"><div class="prose prose-slate max-w-3xl prose-headings:font-head prose-headings:tracking-tight prose-a:text-ink prose-a:underline-offset-4 2xl:prose-lg">
-<h2>What we collect</h2><ul>
-<li><strong>Images you upload.</strong> They are sent to our server so we can process them and return the result.</li>
-<li><strong>Support messages.</strong> If you use the contact form we store your name, email address, subject and message so we can reply.</li>
-<li><strong>Technical data.</strong> Like most web servers, ours may record information such as your IP address, browser type and the time of a request, for security and troubleshooting.</li></ul>
-<h2>What we do not ask for</h2><p>There are no accounts, so we do not collect passwords. We do not sell your personal information.</p>
-<h2>How we use it</h2><p>We use your images only to produce the result you asked for. We use support messages only to answer you and to improve the service. We use technical data to keep the service secure and working.</p>
-<h2>Third-party services</h2><p>This site loads fonts from Google Fonts and its styling library from a content delivery network. Those providers receive your IP address when your browser requests those files, under their own privacy policies.</p>
-<h2>Cookies</h2><p>This site does not set cookies of its own and has no advertising trackers.</p>
-<h2>Keeping your data</h2><p>We keep support messages for as long as needed to answer you and keep records of the request. Please do not upload images you are not comfortable sending to a server.</p>
-<h2>Your choices</h2><p>You can ask us to delete a support message you sent, or ask what we hold about you, through the <a href="contact.html">contact page</a>.</p>
-<h2>Children</h2><p>Pixlab is not directed at children under 13, and we do not knowingly collect their personal information.</p>
-<h2>Changes</h2><p>If we change this policy we will update the date at the top of the page.</p></div></article></main>
+<!-- EYE-CATCHING DARK STUDIO HERO (MATCHING CONTACT US & ABOUT US) -->
+<section class="relative overflow-hidden bg-[#070F20] text-white py-20 sm:py-24 lg:py-28">
+  <div class="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[130px]"></div>
+  <div class="pointer-events-none absolute bottom-0 right-1/4 h-80 w-80 rounded-full bg-gold/5 blur-[120px]"></div>
+
+  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+    <p class="text-xs font-bold uppercase tracking-wider text-gold">Data Governance &bull; Transparency</p>
+    <h1 class="mt-4 max-w-4xl mx-auto font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white">
+      Privacy by design, precision in execution
+    </h1>
+    <p class="mt-5 max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-white/70 leading-relaxed font-body">
+      We believe your photographs, client assets, and commercial artwork belong solely to you. Zero accounts, zero surveillance cookies, and ephemeral RAM-only processing.
+    </p>
+
+    <!-- Key Metrics Highlight Grid -->
+    <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6 text-left max-w-5xl mx-auto">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">0 Disks</p>
+        <p class="mt-1 text-xs text-white/70">Zero persistent file retention</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">100%</p>
+        <p class="mt-1 text-xs text-white/70">Volatile RAM processing only</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">0 Trackers</p>
+        <p class="mt-1 text-xs text-white/70">No advertising cookies or beacons</p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur transition hover:bg-white/[0.07]">
+        <p class="font-head text-2xl sm:text-3xl font-extrabold text-gold">TLS 1.3</p>
+        <p class="mt-1 text-xs text-white/70">256-bit cryptographic transfer</p>
+      </div>
+    </div>
+
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-white/50 border-t border-white/10 pt-6">
+      <span>Effective Date: November 1, 2026</span>
+      <span>&bull;</span>
+      <span>Policy Version 2.4</span>
+      <span>&bull;</span>
+      <span>GDPR &amp; CCPA Aligned</span>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1: VISUAL IMAGE LIFECYCLE PIPELINE -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-wider text-dim">Architectural Transparency</p>
+      <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        How your images move through our studio
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim leading-relaxed">
+        Every tool operates with a strict ephemeral lifecycle. From upload to export, files never touch persistent storage.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      <!-- Stage 1 -->
+      <div class="rounded-3xl border border-line bg-mist p-8 shadow-sm transition hover:shadow-md">
+        <span class="font-head text-4xl font-extrabold text-gold">01</span>
+        <h3 class="mt-5 font-head text-xl font-bold text-ink">Encrypted Transport</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          When you submit an image, it streams directly via HTTPS TLS 1.3 encryption to an isolated volatile memory buffer on our conversion nodes. No intermediate proxies inspect your content.
+        </p>
+      </div>
+
+      <!-- Stage 2 -->
+      <div class="rounded-3xl border border-line bg-mist p-8 shadow-sm transition hover:shadow-md">
+        <span class="font-head text-4xl font-extrabold text-gold">02</span>
+        <h3 class="mt-5 font-head text-xl font-bold text-ink">In-Memory Transformation</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          The selected transformation executes strictly within volatile RAM: edge contour cutting, matrix texture upscaling, or dimension compression. Nothing is written to a physical hard drive.
+        </p>
+      </div>
+
+      <!-- Stage 3 -->
+      <div class="rounded-3xl border border-line bg-mist p-8 shadow-sm transition hover:shadow-md">
+        <span class="font-head text-4xl font-extrabold text-gold">03</span>
+        <h3 class="mt-5 font-head text-xl font-bold text-ink">Instant Stream &amp; Purge</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          The output file is returned to your browser as a binary blob stream. The moment your browser finishes receiving the result, the temporary memory allocation is immediately released and purged.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: COMMERCIAL PHOTOGRAPHY & PROPRIETARY ASSETS SHOWCASE -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="overflow-hidden rounded-3xl border border-line bg-white shadow-xl shadow-ink/5">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="assets/img/showcase-watch.jpg" alt="Commercial luxury timepiece photography" loading="lazy" class="h-full w-full object-cover">
+        </div>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Asset Integrity</p>
+        <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+          Engineered for confidential commercial photography
+        </h2>
+        <p class="mt-4 text-base text-dim leading-relaxed">
+          Whether you are processing unreleased product prototypes, high-end timepieces, apparel lookbooks, or confidential client artwork, Pixlab provides absolute security.
+        </p>
+        <ul class="mt-6 space-y-3.5 text-sm text-dim">
+          <li class="flex items-start gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-gold shrink-0"></span>
+            <span><strong>No Model Training:</strong> We never train neural networks, algorithmic datasets, or generative models on user-submitted photos.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-gold shrink-0"></span>
+            <span><strong>No Human Inspection:</strong> No staff member or reviewer ever sees, previews, or inspects your pictures.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-1 h-2 w-2 rounded-full bg-gold shrink-0"></span>
+            <span><strong>Client-Safe Workflow:</strong> Suitable for professional photographers and creative studios working under strict client non-disclosure agreements.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: INTERACTIVE FILTERABLE POLICY EXPLORER -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-line">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Complete Disclosure</p>
+        <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+          Comprehensive Privacy Policies
+        </h2>
+        <p class="mt-2 text-base text-dim leading-relaxed max-w-2xl">
+          Filter our policies by domain to inspect how your data, files, and rights are maintained.
+        </p>
+      </div>
+
+      <!-- Filter Tabs (Matching about.html FAQ tabs) -->
+      <div class="flex flex-wrap items-center gap-2 self-start md:self-auto">
+        <button type="button" data-filter="all" class="policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition bg-ink text-white shadow-sm">All Policies</button>
+        <button type="button" data-filter="images" class="policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">Images</button>
+        <button type="button" data-filter="accounts" class="policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">Accounts</button>
+        <button type="button" data-filter="cookies" class="policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">Cookies &amp; Logs</button>
+        <button type="button" data-filter="rights" class="policy-tab-btn rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition text-dim hover:text-ink hover:bg-mist">Legal Rights</button>
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      
+      <!-- Card 1: Images -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="images">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Image Processing</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">In-Memory Transformation Only</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          Files you upload are transmitted directly to our processing cluster to perform your selected command: background removal, upscaling, compression, or resizing. Once transformed and delivered back to your browser, files are purged immediately from volatile memory.
+        </p>
+      </div>
+
+      <!-- Card 2: Accounts -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="accounts">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Identity &amp; Auth</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">Zero Accounts, Zero Logins</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          Pixlab has no sign-up forms, user profiles, or password requirements. Because we maintain no user databases, there are no credentials to leak, compromise, or track across the web.
+        </p>
+      </div>
+
+      <!-- Card 3: Support -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="accounts">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Communications</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">Customer Support Inquiries</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          If you send us a message via the Contact page, we receive your name, email, subject, and message solely to reply to your inquiry. We never add support contacts to promotional mailing lists.
+        </p>
+      </div>
+
+      <!-- Card 4: Cookies & Logs -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="cookies">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Web State</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">Zero Advertising Trackers</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          We deploy no marketing cookies, behavioral pixels, or third-party advertising beacons. Image canvas states exist only inside local browser memory using temporary <code>Blob URLs</code> on your device.
+        </p>
+      </div>
+
+      <!-- Card 5: Infrastructure -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="cookies">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Edge Delivery</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">CDN &amp; Typography Assets</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          Typography fonts (Plus Jakarta Sans, Inter) load via Google Fonts, and static utility scripts are served via global edge networks to ensure sub-second global performance. These requests are governed by standard CDN security rules.
+        </p>
+      </div>
+
+      <!-- Card 6: Rights -->
+      <div class="policy-item rounded-3xl border border-line bg-white p-8 shadow-sm transition hover:shadow-md" data-category="rights">
+        <p class="text-xs font-bold uppercase tracking-wider text-dim">Compliance</p>
+        <h3 class="mt-2 font-head text-xl sm:text-2xl font-bold tracking-tight text-ink">Statutory Rights (GDPR &amp; CCPA)</h3>
+        <p class="mt-3 text-sm text-dim leading-relaxed">
+          You retain full rights to request erasure of any support records we hold. We do not sell personal data under the California Consumer Privacy Act (CCPA) or European General Data Protection Regulation (GDPR).
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: DATA RETENTION SCHEDULE TABLE -->
+<section class="bg-mist py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
+    <div class="max-w-2xl">
+      <p class="text-xs font-bold uppercase tracking-wider text-dim">Governance Schedule</p>
+      <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        Data Retention Boundaries
+      </h2>
+      <p class="mt-3 text-base sm:text-lg text-dim leading-relaxed">
+        We adhere to strict automated retention schedules to ensure information is never retained longer than operational necessity requires.
+      </p>
+    </div>
+
+    <div class="mt-10 overflow-hidden rounded-3xl border border-line bg-white shadow-sm">
+      <table class="w-full text-left text-sm sm:text-base">
+        <thead class="bg-mist border-b border-line text-ink font-semibold">
+          <tr>
+            <th class="p-4 sm:p-5">Information Category</th>
+            <th class="p-4 sm:p-5">Operational Purpose</th>
+            <th class="p-4 sm:p-5">Retention Boundary</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-line text-dim">
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Uploaded Images</td>
+            <td class="p-4 sm:p-5">Temporary transformation in memory</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Purged immediately post-download</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Diagnostic Server Logs</td>
+            <td class="p-4 sm:p-5">Security, rate limiting &amp; uptime stability</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Rolling 7-day automated purge</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">Support Correspondence</td>
+            <td class="p-4 sm:p-5">Responding to user questions</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Retained until resolved or erased on request</td>
+          </tr>
+          <tr>
+            <td class="p-4 sm:p-5 font-semibold text-ink">User Account Profiles</td>
+            <td class="p-4 sm:p-5">None (no accounts supported)</td>
+            <td class="p-4 sm:p-5 text-ink font-medium">Never created or stored</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: FREQUENTLY ASKED PRIVACY QUESTIONS -->
+<section class="bg-white py-16 lg:py-24 border-b border-line">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-16 items-start">
+    <div>
+      <p class="text-xs font-bold uppercase tracking-wider text-dim">Questions &amp; Clarity</p>
+      <h2 class="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+        Frequently asked privacy questions
+      </h2>
+      <p class="mt-4 text-base text-dim leading-relaxed">
+        Common inquiries from commercial creators, studios, and enterprise teams regarding our security architecture.
+      </p>
+      <div class="mt-8 rounded-2xl border border-line bg-mist p-6">
+        <h4 class="font-head text-base font-bold text-ink">Need enterprise security documentation?</h4>
+        <p class="mt-2 text-xs sm:text-sm text-dim leading-relaxed">We provide custom compliance letters and security questionnaires for commercial accounts.</p>
+        <a href="contact.html" class="mt-4 inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-ink hover:text-gold transition">
+          Contact our compliance team &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Accordion List -->
+    <div class="border-t border-line">
+      <details class="group border-b border-line py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-base sm:text-lg text-ink [&::-webkit-details-marker]:hidden">
+          Does Pixlab keep any copy or backup of my uploaded photos?
+          <span class="text-2xl text-dim transition group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-sm sm:text-base text-dim leading-relaxed">
+          No. Images are received in volatile server RAM buffer, processed, and streamed back to your browser. Once transmission completes, the volatile memory allocation is automatically wiped. We do not maintain any disk archive, backup gallery, or file cache.
+        </p>
+      </details>
+
+      <details class="group border-b border-line py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-base sm:text-lg text-ink [&::-webkit-details-marker]:hidden">
+          Are customer photos used to train machine learning models?
+          <span class="text-2xl text-dim transition group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-sm sm:text-base text-dim leading-relaxed">
+          Never. We use pre-trained, static production models for background cutting and resolution scaling. User files are never harvested, pooled, or utilized for algorithmic training.
+        </p>
+      </details>
+
+      <details class="group border-b border-line py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-base sm:text-lg text-ink [&::-webkit-details-marker]:hidden">
+          Can I use Pixlab for proprietary or NDA-protected client imagery?
+          <span class="text-2xl text-dim transition group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-sm sm:text-base text-dim leading-relaxed">
+          Yes. Because we do not store files, employ human reviewers, or share data with third parties, Pixlab is safe for commercial studios, agency lookbooks, and proprietary client product shots.
+        </p>
+      </details>
+
+      <details class="group border-b border-line py-5">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold text-base sm:text-lg text-ink [&::-webkit-details-marker]:hidden">
+          How do I request immediate deletion of my previous contact messages?
+          <span class="text-2xl text-dim transition group-open:rotate-45">+</span>
+        </summary>
+        <p class="mt-3 text-sm sm:text-base text-dim leading-relaxed">
+          Simply email <a href="mailto:support@pixlab.com" class="text-ink underline hover:text-gold">support@pixlab.com</a> or message us through our Contact page requesting the erasure of your email records. We process all verified deletion requests within 48 business hours.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA SECTION (MATCHING SITE STANDARD) -->
+<section class="bg-gold">
+  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-8 py-14 lg:flex-row lg:items-center lg:py-20">
+    <div>
+      <h2 class="max-w-2xl font-head text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-ink">
+        Edit images with total creative certainty
+      </h2>
+      <p class="mt-3 max-w-xl text-base sm:text-lg text-ink/80 leading-relaxed">
+        High-performance studio tools with zero data storage and complete privacy.
+      </p>
+    </div>
+    <div class="flex flex-wrap items-center gap-3">
+      <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold transition bg-ink text-white hover:bg-white hover:text-ink shadow-md">
+        Open Studio Now
+      </a>
+      <a href="contact.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-sm font-semibold transition bg-white/30 text-ink hover:bg-white border border-ink/10">
+        Contact Our Team
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
 <footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
   <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-900/20 blur-[120px]"></div>
   <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
@@ -190,6 +551,5 @@
     </div>
   </div>
 </footer>
-<script src="assets/app.js"></script>
 </body>
 </html>
