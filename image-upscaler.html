@@ -1,178 +1,753 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Image Upscaler – Enlarge Images 2x, 3x or 4x Online | Pixlab</title>
-<meta name="description" content="Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed.">
-<link rel="canonical" href="https://www.example.com/image-upscaler.html">
-<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<meta name="theme-color" content="#0B1B3A">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Pixlab">
-<meta property="og:title" content="Image Upscaler – Enlarge Images 2x, 3x or 4x Online | Pixlab">
-<meta property="og:description" content="Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed.">
-<meta property="og:url" content="https://www.example.com/image-upscaler.html">
-<meta property="og:image" content="https://www.example.com/assets/img/crop-wide.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-<script src="assets/tailwind-config.js"></script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image upscaler", "url": "https://www.example.com/image-upscaler.html", "description": "Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed.", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any", "browserRequirements": "Requires JavaScript"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which scales are available?", "acceptedAnswer": {"@type": "Answer", "text": "2x, 3x and 4x. The default is 2x."}}, {"@type": "Question", "name": "Will the file size grow?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A larger image has more pixels, so the file is bigger. The result panel shows exactly how much."}}, {"@type": "Question", "name": "Which format do I get back?", "acceptedAnswer": {"@type": "Answer", "text": "The same format as the file you uploaded."}}]}</script>
-</head>
-<body data-tool="upscale" class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg">
-<header class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur">
-  <div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex h-16 items-center justify-between gap-6 lg:h-20">
-    <a href="index.html" class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"><span class="h-4 w-4 rounded-full bg-ink"></span></span>Pixlab</a>
-    <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
-      <a href="index.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Home</a>
-      <div class="group relative">
-        <button type="button" class="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition bg-tint text-ink">Tools <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180"><path d="m5 8 5 5 5-5"/></svg></button>
-        <div class="invisible absolute left-1/2 top-full w-[36rem] -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-          <div class="grid grid-cols-2 gap-1 rounded-3xl border border-line bg-white p-3 shadow-2xl"><a href="background-remover.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/filled.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Background remover</span><span class="block text-sm text-dim">Transparent or solid colour</span></span></a><a href="image-upscaler.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/scene.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image upscaler</span><span class="block text-sm text-dim">2x, 3x or 4x larger</span></span></a><a href="image-compressor.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/light.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image compressor</span><span class="block text-sm text-dim">Fit a size limit in KB</span></span></a><a href="image-resizer.html" class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"><img src="assets/img/crop-square.jpg" alt="" class="h-14 w-14 shrink-0 rounded-xl object-cover"><span><span class="block font-semibold">Image resizer</span><span class="block text-sm text-dim">Exact width and height</span></span></a></div></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Image Upscaler – Enlarge Images 2x, 3x or 4x Online | Pixlab</title>
+    <meta
+      name="description"
+      content="Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed."
+    />
+    <link rel="canonical" href="https://www.example.com/image-upscaler.html" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0B1B3A" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pixlab" />
+    <meta
+      property="og:title"
+      content="Image Upscaler – Enlarge Images 2x, 3x or 4x Online | Pixlab"
+    />
+    <meta
+      property="og:description"
+      content="Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed."
+    />
+    <meta
+      property="og:url"
+      content="https://www.example.com/image-upscaler.html"
+    />
+    <meta
+      property="og:image"
+      content="https://www.example.com/assets/img/crop-wide.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script src="assets/tailwind-config.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image upscaler",
+        "url": "https://www.example.com/image-upscaler.html",
+        "description": "Enlarge a small image 2x, 3x or 4x online. See the new pixel dimensions and file size, then download the result. No account needed.",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which scales are available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "2x, 3x and 4x. The default is 2x."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Will the file size grow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A larger image has more pixels, so the file is bigger. The result panel shows exactly how much."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which format do I get back?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The same format as the file you uploaded."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body
+    data-tool="upscale"
+    class="flex min-h-screen flex-col bg-white font-body text-ink antialiased 2xl:text-lg"
+  >
+    <header
+      class="sticky top-0 z-30 border-b border-line bg-white/95 backdrop-blur"
+    >
+      <div
+        class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex h-16 items-center justify-between gap-6 lg:h-20"
+      >
+        <a
+          href="index.html"
+          class="flex shrink-0 items-center gap-2.5 font-head text-xl font-bold tracking-tight"
+          ><span class="grid h-9 w-9 place-items-center rounded-xl bg-gold"
+            ><span class="h-4 w-4 rounded-full bg-ink"></span></span
+          >Pixlab</a
+        >
+        <nav aria-label="Main" class="hidden items-center gap-1 lg:flex">
+          <a
+            href="index.html"
+            class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
+            >Home</a
+          >
+          <div class="group relative">
+            <button
+              type="button"
+              class="flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-semibold transition bg-tint text-ink"
+            >
+              Tools
+              <svg
+                viewBox="0 0 20 20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                class="h-4 w-4 transition group-hover:rotate-180 group-focus-within:rotate-180"
+              >
+                <path d="m5 8 5 5 5-5" />
+              </svg>
+            </button>
+            <div
+              class="invisible absolute left-1/2 top-full w-[36rem] -translate-x-1/2 pt-3 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100"
+            >
+              <div
+                class="grid grid-cols-2 gap-1 rounded-3xl border border-line bg-white p-3 shadow-2xl"
+              >
+                <a
+                  href="background-remover.html"
+                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
+                  ><img
+                    src="assets/img/filled.jpg"
+                    alt=""
+                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
+                  /><span
+                    ><span class="block font-semibold">Background remover</span
+                    ><span class="block text-sm text-dim"
+                      >Transparent or solid colour</span
+                    ></span
+                  ></a
+                ><a
+                  href="image-upscaler.html"
+                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
+                  ><img
+                    src="assets/img/scene.jpg"
+                    alt=""
+                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
+                  /><span
+                    ><span class="block font-semibold">Image upscaler</span
+                    ><span class="block text-sm text-dim"
+                      >2x, 3x or 4x larger</span
+                    ></span
+                  ></a
+                ><a
+                  href="image-compressor.html"
+                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
+                  ><img
+                    src="assets/img/light.jpg"
+                    alt=""
+                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
+                  /><span
+                    ><span class="block font-semibold">Image compressor</span
+                    ><span class="block text-sm text-dim"
+                      >Fit a size limit in KB</span
+                    ></span
+                  ></a
+                ><a
+                  href="image-resizer.html"
+                  class="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-mist"
+                  ><img
+                    src="assets/img/crop-square.jpg"
+                    alt=""
+                    class="h-14 w-14 shrink-0 rounded-xl object-cover"
+                  /><span
+                    ><span class="block font-semibold">Image resizer</span
+                    ><span class="block text-sm text-dim"
+                      >Exact width and height</span
+                    ></span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+          <a
+            href="about.html"
+            class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
+            >About</a
+          >
+          <a
+            href="contact.html"
+            class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink"
+            >Contact</a
+          >
+        </nav>
+        <a
+          href="background-remover.html"
+          class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex"
+          >Try it now</a
+        >
+        <details class="lg:hidden">
+          <summary
+            class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden"
+            aria-label="Menu"
+          >
+            <span class="grid gap-1.5"
+              ><span class="h-0.5 w-5 bg-ink"></span
+              ><span class="h-0.5 w-5 bg-ink"></span
+              ><span class="h-0.5 w-5 bg-ink"></span
+            ></span>
+          </summary>
+          <nav
+            aria-label="Mobile"
+            class="absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-white p-3 shadow-xl"
+          >
+            <a
+              href="index.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist"
+              >Home</a
+            >
+            <p class="px-4 pb-1 pt-3 text-xs font-semibold text-dim">Tools</p>
+            <a
+              href="background-remover.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
+              >Background remover</a
+            ><a
+              href="image-upscaler.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold bg-tint ml-3 font-medium text-dim"
+              >Image upscaler</a
+            ><a
+              href="image-compressor.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
+              >Image compressor</a
+            ><a
+              href="image-resizer.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim"
+              >Image resizer</a
+            >
+            <a
+              href="about.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist"
+              >About</a
+            ><a
+              href="contact.html"
+              class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist"
+              >Contact</a
+            >
+            <a
+              href="background-remover.html"
+              class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full"
+              >Try it now</a
+            >
+          </nav>
+        </details>
       </div>
-      <a href="about.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">About</a>
-      <a href="contact.html" class="rounded-full px-4 py-2 text-sm font-semibold transition text-dim hover:bg-mist hover:text-ink">Contact</a>
-    </nav>
-    <a href="background-remover.html" class="hidden rounded-full bg-gold px-6 py-2.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-white lg:inline-flex">Try it now</a>
-    <details class="lg:hidden">
-      <summary class="grid h-11 w-11 cursor-pointer list-none place-items-center rounded-full border border-line [&::-webkit-details-marker]:hidden" aria-label="Menu">
-        <span class="grid gap-1.5"><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span><span class="h-0.5 w-5 bg-ink"></span></span></summary>
-      <nav aria-label="Mobile" class="absolute inset-x-0 top-full max-h-[calc(100vh-4rem)] overflow-y-auto border-b border-line bg-white p-3 shadow-xl">
-        <a href="index.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ">Home</a><p class="px-4 pb-1 pt-3 text-xs font-semibold text-dim">Tools</p>
-        <a href="background-remover.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Background remover</a><a href="image-upscaler.html" class="block rounded-xl px-4 py-3 text-sm font-semibold bg-tint ml-3 font-medium text-dim">Image upscaler</a><a href="image-compressor.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Image compressor</a><a href="image-resizer.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ml-3 font-medium text-dim">Image resizer</a>
-        <a href="about.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ">About</a><a href="contact.html" class="block rounded-xl px-4 py-3 text-sm font-semibold hover:bg-mist ">Contact</a>
-        <a href="background-remover.html" class="inline-flex items-center justify-center rounded-full px-7 py-3.5 font-semibold transition bg-gold text-ink hover:bg-ink hover:text-white mt-3 w-full">Try it now</a>
-      </nav>
-    </details>
-  </div>
-</header>
-<main class="flex-1">
-<section class="border-b border-line bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 sm:py-14 lg:py-16">
-  <p class="mb-4 text-sm text-dim"><a href="index.html" class="hover:text-ink">Home</a> / Image upscaler</p>
-  <h1 class="max-w-4xl font-head text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl 2xl:text-7xl">Make your image bigger</h1>
-  <p class="mt-5 max-w-2xl text-base text-dim sm:text-lg 2xl:max-w-3xl 2xl:text-xl">Choose how many times larger you want the picture. You see the old and new dimensions and file sizes side by side before you download.</p>
-  <ul class="mt-6 flex flex-wrap gap-2"><li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">2x, 3x or 4x</li><li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">Keeps your format</li><li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">Up to 50 MB</li></ul></div></section>
-<section class="bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 lg:py-14">
-  <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-    <div class="flex flex-col gap-5 rounded-3xl border border-line bg-white p-5 shadow-xl shadow-ink/5 sm:p-7">
-      <label data-r="drop" class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-mist px-6 py-10 text-center transition hover:border-gold focus-within:border-ink">
-        <input data-r="file" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif" class="sr-only">
-        <span class="grid h-12 w-12 place-items-center rounded-full bg-ink text-2xl font-bold text-gold">+</span>
-        <span class="font-semibold">Drop an image here or click to choose</span>
-        <span data-r="fname" class="max-w-full truncate text-sm text-dim">No file selected</span>
-      </label>
-      <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
-      <p data-r="err" role="alert" class="hidden rounded-xl bg-red-50 p-3 text-sm font-medium text-red-700"></p>
-      <button data-r="go" class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-3.5 font-semibold text-white transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60">
-        <span data-r="spin" class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"></span>Upscale image</button>
-    </div>
-    <div class="flex flex-col gap-5">
-      <div class="grid gap-4 sm:grid-cols-2">
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="origph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Your image appears here</span><img data-r="orig" alt="Original image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Original</figcaption></figure>
-        <figure class="overflow-hidden rounded-3xl border border-line bg-white">
-          <div class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"><span data-r="resph" class="rounded-full bg-white px-4 py-1.5 text-sm text-dim">Result appears here</span><img data-r="res" alt="Processed image" class="hidden max-h-[55vh] w-full object-contain"></div>
-          <figcaption class="px-5 py-3 text-sm font-semibold">Result</figcaption></figure>
-      </div>
-      <dl data-r="stats" class="grid grid-cols-2 gap-3 sm:grid-cols-3"></dl>
-      <a data-r="dl" class="hidden w-full rounded-xl bg-gold py-3.5 text-center font-semibold text-ink transition hover:bg-ink hover:text-white sm:w-fit sm:px-10">Download image</a>
-    </div>
-  </div></div></section>
+    </header>
+    <main class="flex-1">
+      <section class="border-b border-line bg-white">
+        <div
+          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 sm:py-14 lg:py-16"
+        >
+          <p class="mb-4 text-sm text-dim">
+            <a href="index.html" class="hover:text-ink">Home</a> / Image
+            upscaler
+          </p>
+          <h1
+            class="max-w-4xl font-head text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl 2xl:text-7xl"
+          >
+            Make your image bigger
+          </h1>
+          <p
+            class="mt-5 max-w-2xl text-base text-dim sm:text-lg 2xl:max-w-3xl 2xl:text-xl"
+          >
+            Choose how many times larger you want the picture. You see the old
+            and new dimensions and file sizes side by side before you download.
+          </p>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            <li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">
+              2x, 3x or 4x
+            </li>
+            <li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">
+              Keeps your format
+            </li>
+            <li class="rounded-full bg-tint px-4 py-1.5 text-sm font-semibold">
+              Up to 50 MB
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="bg-mist">
+        <div
+          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-10 lg:py-14"
+        >
+          <div
+            class="grid items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+          >
+            <div
+              class="flex flex-col gap-5 rounded-3xl border border-line bg-white p-5 shadow-xl shadow-ink/5 sm:p-7"
+            >
+              <label
+                data-r="drop"
+                class="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-line bg-mist px-6 py-10 text-center transition hover:border-gold focus-within:border-ink"
+              >
+                <input
+                  data-r="file"
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff,image/gif,image/avif"
+                  class="sr-only"
+                />
+                <span
+                  class="grid h-12 w-12 place-items-center rounded-full bg-ink text-2xl font-bold text-gold"
+                  >+</span
+                >
+                <span class="font-semibold"
+                  >Drop an image here or click to choose</span
+                >
+                <span
+                  data-r="fname"
+                  class="max-w-full truncate text-sm text-dim"
+                  >No file selected</span
+                >
+              </label>
+              <div data-r="fields" class="grid grid-cols-2 gap-4"></div>
+              <p
+                data-r="err"
+                role="alert"
+                class="hidden rounded-xl bg-red-50 p-3 text-sm font-medium text-red-700"
+              ></p>
+              <button
+                data-r="go"
+                class="flex w-full items-center justify-center gap-3 rounded-xl bg-ink py-3.5 font-semibold text-white transition hover:bg-ink/90 disabled:cursor-wait disabled:opacity-60"
+              >
+                <span
+                  data-r="spin"
+                  class="hidden h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white"
+                ></span
+                >Upscale image
+              </button>
+            </div>
+            <div class="flex flex-col gap-5">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <figure
+                  class="overflow-hidden rounded-3xl border border-line bg-white"
+                >
+                  <div
+                    class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"
+                  >
+                    <span
+                      data-r="origph"
+                      class="rounded-full bg-white px-4 py-1.5 text-sm text-dim"
+                      >Your image appears here</span
+                    ><img
+                      data-r="orig"
+                      alt="Original image"
+                      class="hidden max-h-[55vh] w-full object-contain"
+                    />
+                  </div>
+                  <figcaption class="px-5 py-3 text-sm font-semibold">
+                    Original
+                  </figcaption>
+                </figure>
+                <figure
+                  class="overflow-hidden rounded-3xl border border-line bg-white"
+                >
+                  <div
+                    class="flex min-h-56 items-center justify-center bg-tint bg-[conic-gradient(#E8EDF7_25%,#fff_0_50%,#E8EDF7_0_75%,#fff_0)] bg-[length:20px_20px] p-2 sm:min-h-72"
+                  >
+                    <span
+                      data-r="resph"
+                      class="rounded-full bg-white px-4 py-1.5 text-sm text-dim"
+                      >Result appears here</span
+                    ><img
+                      data-r="res"
+                      alt="Processed image"
+                      class="hidden max-h-[55vh] w-full object-contain"
+                    />
+                  </div>
+                  <figcaption class="px-5 py-3 text-sm font-semibold">
+                    Result
+                  </figcaption>
+                </figure>
+              </div>
+              <dl
+                data-r="stats"
+                class="grid grid-cols-2 gap-3 sm:grid-cols-3"
+              ></dl>
+              <a
+                data-r="dl"
+                class="hidden w-full rounded-xl bg-gold py-3.5 text-center font-semibold text-ink transition hover:bg-ink hover:text-white sm:w-fit sm:px-10"
+                >Download image</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section class="bg-white"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20">
-  <h2 class="font-head text-2xl font-bold tracking-tight sm:text-4xl">What the result looks like</h2>
-  <p class="mt-3 max-w-2xl text-dim">An example of what this tool does to a picture.</p>
-  <div class="mt-8"><div class="grid gap-3 sm:grid-cols-2"><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/low.jpg" alt="Small low resolution image" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">Before: 250 × 188 px</figcaption></figure><figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white "><img src="assets/img/scene.jpg" alt="Enlarged sharp image" loading="lazy" class="h-full w-full object-cover"><figcaption class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow">After: 4x, 1000 × 750 px</figcaption></figure></div></div></div></section>
-<section class="border-t border-line bg-mist"><div class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid gap-12 py-14 lg:grid-cols-2 lg:gap-20 lg:py-20">
-  <div><h2 class="font-head text-2xl font-bold tracking-tight sm:text-3xl">Good for</h2><ul class="mt-6 grid gap-6"><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Print and posters</h3><p class="mt-1 text-dim">Get more pixels to work with before sending a file to the printer.</p></div></li><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Old photos</h3><p class="mt-1 text-dim">Enlarge a small scan or an old download.</p></div></li><li class="flex gap-4"><span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"></span><div><h3 class="font-semibold">Web banners</h3><p class="mt-1 text-dim">Make a small graphic wide enough for a full-width section.</p></div></li></ul></div>
-  <div><h2 class="font-head text-2xl font-bold tracking-tight sm:text-3xl">Common questions</h2><div class="mt-6 border-t border-line"><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Which scales are available?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">2x, 3x and 4x. The default is 2x.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Will the file size grow?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">Yes. A larger image has more pixels, so the file is bigger. The result panel shows exactly how much.</p></details><details class="group border-b border-line py-4"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">Which format do I get back?<span class="text-2xl text-dim transition group-open:rotate-45">+</span></summary><p class="mt-3 max-w-3xl text-dim">The same format as the file you uploaded.</p></details></div></div></div></section>
-</main>
-<footer class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10">
-  <div class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-600/15 blur-[120px]"></div>
-  <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"></div>
-  
-  <div class="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-[#132A5E]/40 blur-sm"></div>
-  <div class="pointer-events-none absolute right-16 top-12 h-80 w-80 rounded-full bg-[#1A3B80]/30 blur-[2px]"></div>
-  <div class="pointer-events-none absolute right-52 top-1/3 h-64 w-64 rounded-full bg-[#0E2045]/60 blur-md"></div>
-  <div class="pointer-events-none absolute -right-10 bottom-4 h-96 w-96 rounded-full bg-blue-500/10 blur-[90px]"></div>
+      <section class="bg-white">
+        <div
+          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 py-14 lg:py-20"
+        >
+          <h2 class="font-head text-2xl font-bold tracking-tight sm:text-4xl">
+            What the result looks like
+          </h2>
+          <p class="mt-3 max-w-2xl text-dim">
+            An example of what this tool does to a picture.
+          </p>
+          <div class="mt-8">
+            <div class="grid gap-3 sm:grid-cols-2">
+              <figure
+                class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
+              >
+                <img
+                  src="assets/img/low.jpg"
+                  alt="Small low resolution image"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+                <figcaption
+                  class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
+                >
+                  Before: 250 × 188 px
+                </figcaption>
+              </figure>
+              <figure
+                class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-white"
+              >
+                <img
+                  src="assets/img/scene.jpg"
+                  alt="Enlarged sharp image"
+                  loading="lazy"
+                  class="h-full w-full object-cover"
+                />
+                <figcaption
+                  class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-ink shadow"
+                >
+                  After: 4x, 1000 × 750 px
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="border-t border-line bg-mist">
+        <div
+          class="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid gap-12 py-14 lg:grid-cols-2 lg:gap-20 lg:py-20"
+        >
+          <div>
+            <h2 class="font-head text-2xl font-bold tracking-tight sm:text-3xl">
+              Good for
+            </h2>
+            <ul class="mt-6 grid gap-6">
+              <li class="flex gap-4">
+                <span
+                  class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"
+                ></span>
+                <div>
+                  <h3 class="font-semibold">Print and posters</h3>
+                  <p class="mt-1 text-dim">
+                    Get more pixels to work with before sending a file to the
+                    printer.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span
+                  class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"
+                ></span>
+                <div>
+                  <h3 class="font-semibold">Old photos</h3>
+                  <p class="mt-1 text-dim">
+                    Enlarge a small scan or an old download.
+                  </p>
+                </div>
+              </li>
+              <li class="flex gap-4">
+                <span
+                  class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-gold"
+                ></span>
+                <div>
+                  <h3 class="font-semibold">Web banners</h3>
+                  <p class="mt-1 text-dim">
+                    Make a small graphic wide enough for a full-width section.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="font-head text-2xl font-bold tracking-tight sm:text-3xl">
+              Common questions
+            </h2>
+            <div class="mt-6 border-t border-line">
+              <details class="group border-b border-line py-4">
+                <summary
+                  class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden"
+                >
+                  Which scales are available?<span
+                    class="text-2xl text-dim transition group-open:rotate-45"
+                    >+</span
+                  >
+                </summary>
+                <p class="mt-3 max-w-3xl text-dim">
+                  2x, 3x and 4x. The default is 2x.
+                </p>
+              </details>
+              <details class="group border-b border-line py-4">
+                <summary
+                  class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden"
+                >
+                  Will the file size grow?<span
+                    class="text-2xl text-dim transition group-open:rotate-45"
+                    >+</span
+                  >
+                </summary>
+                <p class="mt-3 max-w-3xl text-dim">
+                  Yes. A larger image has more pixels, so the file is bigger.
+                  The result panel shows exactly how much.
+                </p>
+              </details>
+              <details class="group border-b border-line py-4">
+                <summary
+                  class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden"
+                >
+                  Which format do I get back?<span
+                    class="text-2xl text-dim transition group-open:rotate-45"
+                    >+</span
+                  >
+                </summary>
+                <p class="mt-3 max-w-3xl text-dim">
+                  The same format as the file you uploaded.
+                </p>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="relative overflow-hidden bg-[#070F20] text-white/70 pt-20 pb-12 lg:pt-28 lg:pb-16 border-t border-white/10"
+    >
+      <div
+        class="pointer-events-none absolute -top-24 left-1/4 h-96 w-96 rounded-full bg-blue-600/15 blur-[120px]"
+      ></div>
+      <div
+        class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 h-72 w-[600px] rounded-full bg-gold/5 blur-[140px]"
+      ></div>
 
-  <div class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-    <div class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10">
-      <div class="flex flex-col justify-between">
-        <div>
-          <a href="index.html" class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group">
-            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105">
-              <span class="h-4 w-4 rounded-full bg-ink"></span>
-            </span>
-            <span class="tracking-tight text-2xl">Pix<span class="text-gold">lab</span></span>
-          </a>
-          <p class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60">
-            Next-generation online image laboratory. Fast, browser-based tools to remove backgrounds, enlarge, compress, and resize with zero friction.
+      <div
+        class="pointer-events-none absolute -right-24 top-1/2 -translate-y-1/2 h-[520px] w-[520px] rounded-full bg-[#132A5E]/40 blur-sm"
+      ></div>
+      <div
+        class="pointer-events-none absolute right-16 top-12 h-80 w-80 rounded-full bg-[#1A3B80]/30 blur-[2px]"
+      ></div>
+      <div
+        class="pointer-events-none absolute right-52 top-1/3 h-64 w-64 rounded-full bg-[#0E2045]/60 blur-md"
+      ></div>
+      <div
+        class="pointer-events-none absolute -right-10 bottom-4 h-96 w-96 rounded-full bg-blue-500/10 blur-[90px]"
+      ></div>
+
+      <div
+        class="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14"
+      >
+        <div
+          class="grid gap-12 lg:grid-cols-[1.6fr_1fr_1fr_1fr] pb-16 border-b border-white/10"
+        >
+          <div class="flex flex-col justify-between">
+            <div>
+              <a
+                href="index.html"
+                class="inline-flex items-center gap-3 font-head text-2xl font-black tracking-tight text-white group"
+              >
+                <span
+                  class="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-tr from-gold to-amber-300 text-ink shadow-lg shadow-gold/20 transition-transform duration-300 group-hover:scale-105"
+                >
+                  <span class="h-4 w-4 rounded-full bg-ink"></span>
+                </span>
+                <span class="tracking-tight text-2xl"
+                  >Pix<span class="text-gold">lab</span></span
+                >
+              </a>
+              <p
+                class="mt-5 max-w-sm text-sm sm:text-base leading-relaxed text-white/60"
+              >
+                Next-generation online image laboratory. Fast, browser-based
+                tools to remove backgrounds, enlarge, compress, and resize with
+                zero friction.
+              </p>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
+              >
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="X (Twitter)"
+                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
+              >
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="GitHub"
+                class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5"
+              >
+                <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h2
+              class="font-head text-sm font-bold uppercase tracking-wider text-white"
+            >
+              Tools
+            </h2>
+            <ul class="mt-5 grid gap-3 text-sm">
+              <li>
+                <a
+                  href="background-remover.html"
+                  class="transition-colors hover:text-white"
+                  >Background remover</a
+                >
+              </li>
+              <li>
+                <a
+                  href="image-upscaler.html"
+                  class="transition-colors hover:text-white"
+                  >Image upscaler</a
+                >
+              </li>
+              <li>
+                <a
+                  href="image-compressor.html"
+                  class="transition-colors hover:text-white"
+                  >Image compressor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="image-resizer.html"
+                  class="transition-colors hover:text-white"
+                  >Image resizer</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2
+              class="font-head text-sm font-bold uppercase tracking-wider text-white"
+            >
+              Company
+            </h2>
+            <ul class="mt-5 grid gap-3 text-sm">
+              <li>
+                <a href="index.html" class="transition-colors hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="about.html" class="transition-colors hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="transition-colors hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2
+              class="font-head text-sm font-bold uppercase tracking-wider text-white"
+            >
+              Legal
+            </h2>
+            <ul class="mt-5 grid gap-3 text-sm">
+              <li>
+                <a href="terms.html" class="transition-colors hover:text-white"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="privacy.html"
+                  class="transition-colors hover:text-white"
+                  >Privacy Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="relative w-full overflow-hidden select-none pointer-events-none pt-12 sm:pt-16 pb-2 sm:pb-4 flex justify-center items-center"
+        >
+          <div
+            class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-36 w-3/4 max-w-4xl rounded-full bg-gradient-to-r from-blue-600/15 via-gold/15 to-indigo-600/15 blur-3xl"
+          ></div>
+          <p
+            class="font-head font-black tracking-[-0.04em] text-[18vw] sm:text-[17vw] lg:text-[16vw] xl:text-[210px] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]"
+          >
+            PIXLAB
           </p>
         </div>
 
-        <div class="mt-8 flex flex-wrap items-center gap-3">
-          <a href="#" aria-label="LinkedIn" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
-            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-          </a>
-          <a href="#" aria-label="X (Twitter)" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
-            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="#" aria-label="GitHub" class="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/5 text-white/70 backdrop-blur transition-all duration-300 hover:border-gold/50 hover:bg-gold hover:text-ink hover:shadow-lg hover:shadow-gold/20 hover:-translate-y-0.5">
-            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          </a>
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs sm:text-sm text-white/50"
+        >
+          <p>© 2026 Pixlab. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a href="privacy.html" class="transition hover:text-white"
+              >Privacy Policy</a
+            >
+            <a href="terms.html" class="transition hover:text-white"
+              >Terms of Service</a
+            >
+          </div>
         </div>
       </div>
-
-      <div>
-        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Tools</h2>
-        <ul class="mt-5 grid gap-3 text-sm">
-          <li><a href="background-remover.html" class="transition-colors hover:text-white">Background remover</a></li>
-          <li><a href="image-upscaler.html" class="transition-colors hover:text-white">Image upscaler</a></li>
-          <li><a href="image-compressor.html" class="transition-colors hover:text-white">Image compressor</a></li>
-          <li><a href="image-resizer.html" class="transition-colors hover:text-white">Image resizer</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Company</h2>
-        <ul class="mt-5 grid gap-3 text-sm">
-          <li><a href="index.html" class="transition-colors hover:text-white">Home</a></li>
-          <li><a href="about.html" class="transition-colors hover:text-white">About Us</a></li>
-          <li><a href="contact.html" class="transition-colors hover:text-white">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="font-head text-sm font-bold uppercase tracking-wider text-white">Legal</h2>
-        <ul class="mt-5 grid gap-3 text-sm">
-          <li><a href="terms.html" class="transition-colors hover:text-white">Terms of Service</a></li>
-          <li><a href="privacy.html" class="transition-colors hover:text-white">Privacy Policy</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="relative w-full overflow-hidden select-none pointer-events-none pt-12 sm:pt-16 pb-2 sm:pb-4 flex justify-center items-center">
-      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-36 w-3/4 max-w-4xl rounded-full bg-gradient-to-r from-blue-600/15 via-gold/15 to-indigo-600/15 blur-3xl"></div>
-      <p class="font-head font-black tracking-[-0.04em] text-[18vw] sm:text-[17vw] lg:text-[16vw] xl:text-[210px] leading-none uppercase text-transparent bg-clip-text bg-gradient-to-b from-white/[0.12] via-white/[0.04] to-transparent drop-shadow-[0_15px_30px_rgba(0,0,0,0.7)]">
-        PIXLAB
-      </p>
-    </div>
-
-    <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 border-t border-white/10 text-xs sm:text-sm text-white/50">
-      <p>© 2026 Pixlab. All rights reserved.</p>
-      <div class="flex items-center gap-6">
-        <a href="privacy.html" class="transition hover:text-white">Privacy Policy</a>
-        <a href="terms.html" class="transition hover:text-white">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<script src="assets/app.js"></script>
-</body>
+    </footer>
+    <script src="assets/app.js"></script>
+  </body>
 </html>
