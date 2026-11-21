@@ -1,9 +1,36 @@
 import Link from "next/link";
-import { ArrowRight, Cpu, Maximize2, Minimize2, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, Scissors, Sparkles, Minimize2, Crop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
 import { FAQSection } from "@/components/faq-section";
+
+const STUDIO_TOOLS = [
+  {
+    id: "bg-remove",
+    name: "Background Remover",
+    href: "/background-remover",
+    icon: Scissors,
+  },
+  {
+    id: "upscale",
+    name: "Image Upscaler",
+    href: "/image-upscaler",
+    icon: Sparkles,
+  },
+  {
+    id: "compress",
+    name: "Image Compressor",
+    href: "/image-compressor",
+    icon: Minimize2,
+  },
+  {
+    id: "resize",
+    name: "Image Resizer",
+    href: "/image-resizer",
+    icon: Crop,
+  },
+];
 
 const HOME_FAQS = [
   {
@@ -87,176 +114,39 @@ export default function HomePage() {
       </section>
 
       {/* CORE FOUR TOOLS SHOWCASE */}
-      <section className="bg-mist py-16 sm:py-20 lg:py-24 border-b border-line">
-        <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+      <section className="bg-mist py-12 sm:py-16 border-b border-line">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
             <p className="text-xs font-bold uppercase tracking-wider text-dim">
               Everything in One Place
             </p>
-            <h2 className="mt-2 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+            <h2 className="mt-2 font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-ink">
               Four specialized studio tools built for high-throughput workflows
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-dim leading-relaxed">
-              No bloated editors or complicated layer trees. Each tool does exactly one job with uncompromising mathematical precision.
+            <p className="mt-3 text-sm sm:text-base text-dim leading-relaxed max-w-xl mx-auto">
+              No bloated editors or complicated layer trees. Each tool does exactly one job with uncompromising precision.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Tool 1: Background Remover */}
-            <div className="group flex flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-mist border border-line mb-6">
-                  <img
-                    src="/assets/img/watch-hero.jpg"
-                    alt="Background removal showcase"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                    Background Remover
+          {/* 4 Minimalist Icon Cards in One Line (Screenshot Style) */}
+          <div className="grid grid-cols-4 gap-2.5 sm:gap-4 md:gap-6 max-w-3xl mx-auto">
+            {STUDIO_TOOLS.map((tool) => {
+              const ToolIcon = tool.icon;
+              return (
+                <Link
+                  key={tool.id}
+                  href={tool.href}
+                  className="group flex flex-col items-center justify-center rounded-2xl border border-line bg-white p-3.5 sm:p-5 md:p-6 shadow-xs transition-all duration-200 hover:border-ink/20 hover:shadow-md hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink"
+                >
+                  <div className="mb-2 sm:mb-3 flex items-center justify-center text-ink transition-transform duration-200 group-hover:scale-110 group-hover:text-gold-600">
+                    <ToolIcon className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 stroke-[1.75]" />
                   </div>
-                </div>
-
-                <h3 className="font-head text-2xl font-bold text-ink">
-                  Precision Background Cutout
-                </h3>
-                <p className="mt-2 text-sm sm:text-base text-dim leading-relaxed">
-                  Isolate apparel, wristwatches, jewelry, and portraits with sub-pixel edge smoothness. Download an alpha-channel transparent PNG or fill the background with studio hex colors.
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2 text-xs font-medium text-dim">
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Alpha PNG</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Hex Color Fill</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Edge Feathering</span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-line flex items-center justify-between">
-                <span className="text-xs font-semibold text-dim">Endpoint: /bg-remove</span>
-                <Button asChild variant="gold" size="sm" className="font-semibold">
-                  <Link href="/background-remover">
-                    Open Studio
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Tool 2: Upscaler */}
-            <div className="group flex flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-mist border border-line mb-6">
-                  <img
-                    src="/assets/img/jacket-upscale.jpg"
-                    alt="Image upscaler texture showcase"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                    Image Upscaler
-                  </div>
-                </div>
-
-                <h3 className="font-head text-2xl font-bold text-ink">
-                  2x, 3x and 4x Super Resolution
-                </h3>
-                <p className="mt-2 text-sm sm:text-base text-dim leading-relaxed">
-                  Magnify low-resolution photos and product shots without blocky artifacts, pixel blur, or smudged textures. Perfect for fine art prints, packaging, and high-DPI displays.
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2 text-xs font-medium text-dim">
-                  <span className="rounded-lg bg-mist px-2.5 py-1">2x/3x/4x Scale</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Detail Synthesis</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Sharpening Engine</span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-line flex items-center justify-between">
-                <span className="text-xs font-semibold text-dim">Endpoint: /upscales</span>
-                <Button asChild variant="gold" size="sm" className="font-semibold">
-                  <Link href="/image-upscaler">
-                    Open Studio
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Tool 3: Compressor */}
-            <div className="group flex flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-mist border border-line mb-6">
-                  <img
-                    src="/assets/img/sneaker-compress.jpg"
-                    alt="Image compression showcase"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                    Image Compressor
-                  </div>
-                </div>
-
-                <h3 className="font-head text-2xl font-bold text-ink">
-                  Exact Target Size in KB
-                </h3>
-                <p className="mt-2 text-sm sm:text-base text-dim leading-relaxed">
-                  Hit precise file size requirements for passport portals, visa uploads, and e-commerce CDNs. Specify target KB and our algorithm optimizes compression without destroying quality.
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2 text-xs font-medium text-dim">
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Exact KB Limits</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Perceptual Quality</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Format Retention</span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-line flex items-center justify-between">
-                <span className="text-xs font-semibold text-dim">Endpoint: /reduce</span>
-                <Button asChild variant="gold" size="sm" className="font-semibold">
-                  <Link href="/image-compressor">
-                    Open Studio
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            {/* Tool 4: Resizer */}
-            <div className="group flex flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div>
-                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-mist border border-line mb-6">
-                  <img
-                    src="/assets/img/man-portrait.jpg"
-                    alt="Image resizer aspect ratio showcase"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 rounded-full bg-ink/80 px-3 py-1 text-xs font-semibold text-white backdrop-blur">
-                    Image Resizer
-                  </div>
-                </div>
-
-                <h3 className="font-head text-2xl font-bold text-ink">
-                  Pixel-Exact Dimensions &amp; Aspect Ratios
-                </h3>
-                <p className="mt-2 text-sm sm:text-base text-dim leading-relaxed">
-                  Resize pictures to exact width and height pixels. Focal center framing keeps your primary subject in the frame without squashing, stretching, or losing clarity.
-                </p>
-
-                <div className="mt-4 flex flex-wrap gap-2 text-xs font-medium text-dim">
-                  <span className="rounded-lg bg-mist px-2.5 py-1">1:1, 4:5, 16:9 Ratios</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Smart Subject Lock</span>
-                  <span className="rounded-lg bg-mist px-2.5 py-1">Zero Stretch</span>
-                </div>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-line flex items-center justify-between">
-                <span className="text-xs font-semibold text-dim">Endpoint: /resize</span>
-                <Button asChild variant="gold" size="sm" className="font-semibold">
-                  <Link href="/image-resizer">
-                    Open Studio
-                    <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
+                  <span className="font-head text-[11px] sm:text-xs md:text-sm font-bold text-ink text-center leading-tight">
+                    {tool.name}
+                  </span>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
