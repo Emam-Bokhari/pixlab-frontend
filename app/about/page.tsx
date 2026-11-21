@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, Zap, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FAQSection } from "@/components/faq-section";
 import { CtaSection } from "@/components/cta-section";
@@ -30,119 +30,168 @@ const ABOUT_FAQS = [
     answer:
       "Pixlab uses cutting-edge browser WebAssembly and optimized headless edge microservices to deliver sub-second response times worldwide.",
   },
+  {
+    category: "commercial",
+    question: "Can I use images processed on Pixlab for commercial purposes?",
+    answer:
+      "Yes. You retain 100% intellectual property ownership of every processed asset with zero licensing fees, royalty splits, or watermarks.",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-12 sm:pt-20 sm:pb-16 lg:pt-24 lg:pb-20 border-b border-line">
-        <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[950px] rounded-full bg-gradient-to-b from-tint/70 via-mist to-transparent blur-3xl opacity-75" />
-
-        <div className="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
-          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm text-dim mb-4">
-            <Link href="/" className="hover:text-ink transition">
-              Home
+      {/* MINIMALIST HERO */}
+      <section className="bg-white pt-14 pb-14 sm:pt-18 sm:pb-18 lg:pt-20 lg:pb-20 border-b border-line">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
+          {/* Breadcrumb */}
+          <nav
+            aria-label="Breadcrumb"
+            className="inline-flex items-center justify-center gap-1.5 text-xs sm:text-sm text-dim mb-6"
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1 text-dim hover:text-ink transition font-medium"
+            >
+              <Home className="h-3.5 w-3.5 text-dim/80" />
+              <span>Home</span>
             </Link>
-            <span>/</span>
-            <span className="text-ink font-medium">About Us</span>
-          </div>
+            <ChevronRight className="h-3.5 w-3.5 text-line shrink-0" />
+            <span className="font-semibold text-ink">About</span>
+          </nav>
 
-          <h1 className="mx-auto max-w-4xl font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-ink">
-            Built for modern creative &amp; image workflows
+          <h1 className="font-head text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-ink leading-[1.15]">
+            We believe image tools should be fast, private, and simple.
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dim sm:text-lg lg:text-xl">
-            Fast, distortion-free image processing built for creators, sellers, and businesses. Pixlab provides a focused suite of browser-native tools to remove backgrounds, enlarge, compress, and resize pictures without complex software or subscriptions.
+          <p className="mt-5 text-base sm:text-lg text-dim leading-relaxed max-w-2xl mx-auto">
+            Pixlab is a focused studio for high-resolution photo processing. No subscription walls, no accounts, and no data harvesting.
           </p>
 
-          {/* 3-Image Showcase Cards */}
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center text-left">
-            <div className="group relative overflow-hidden rounded-3xl border border-line bg-mist p-3 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <Button asChild variant="gold" size="lg" className="font-bold shadow-xs">
+              <Link href="/background-remover">
+                Open Studio Tools
+                <ArrowRight className="ml-1.5 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* EDITORIAL STORY SECTION */}
+      <section className="bg-mist py-16 sm:py-20 border-b border-line">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-12 md:gap-14 items-start">
+            <div className="md:col-span-5">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-dim block mb-3">
+                The Story
+              </span>
+              <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink leading-snug">
+                Built out of frustration with modern online editors.
+              </h2>
+            </div>
+
+            <div className="md:col-span-7 space-y-4 text-sm sm:text-base text-dim leading-relaxed">
+              <p>
+                Preparing an image for a product catalog, portfolio, or web store should take seconds. Yet most tools on the web force you to create accounts, navigate intrusive banners, pay monthly subscriptions, or hand over your personal photography to third-party databases.
+              </p>
+              <p>
+                We built Pixlab with a straightforward philosophy: lightweight, browser-native tools that do one job exceptionally well.
+              </p>
+              <p>
+                Whether you need to isolate intricate contours, upscale a photo up to 4x, compress down to a strict KB quota, or resize with focal centering - everything runs immediately in your browser without tracking or bloat.
+              </p>
+            </div>
+          </div>
+
+          {/* Clean Dual Studio Photo Display */}
+          <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-xs">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-mist">
                 <img
-                  src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80"
-                  alt="Studio camera equipment"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="/assets/img/showcase-watch.jpg"
+                  alt="Studio product photography"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <div className="p-3">
-                <h3 className="font-head text-base sm:text-lg font-bold text-ink">Studio Precision</h3>
-                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Calibrated optics &amp; sub-pixel isolation algorithms.</p>
+              <div className="p-4 sm:p-5">
+                <h3 className="font-head text-sm sm:text-base font-bold text-ink">
+                  Studio Precision
+                </h3>
+                <p className="mt-1 text-xs text-dim leading-relaxed">
+                  Clean edge isolation and high-resolution texture reconstruction.
+                </p>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl border border-line bg-white p-3.5 shadow-xl shadow-ink/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl md:-mt-4">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-mist">
+            <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-xs">
+              <div className="aspect-[4/3] w-full overflow-hidden bg-mist">
                 <img
-                  src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"
-                  alt="Product footwear showcase"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  src="/assets/img/showcase-sneaker.jpg"
+                  alt="E-commerce footwear showcase"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <div className="p-3">
-                <h3 className="font-head text-base sm:text-lg font-bold text-ink">E-Commerce Ready</h3>
-                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Ready for Amazon, Shopify, and global product catalogs.</p>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-3xl border border-line bg-mist p-3 shadow-sm transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-gold/60">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-white">
-                <img
-                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
-                  alt="Creative design workspace"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-3">
-                <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Data Retention</h3>
-                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Volatile RAM guarantees absolute privacy.</p>
+              <div className="p-4 sm:p-5">
+                <h3 className="font-head text-sm sm:text-base font-bold text-ink">
+                  E-Commerce Ready
+                </h3>
+                <p className="mt-1 text-xs text-dim leading-relaxed">
+                  Optimized for Shopify, Amazon, and commercial product feeds.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* THREE CORE PRINCIPLES */}
-      <section className="bg-mist py-14 sm:py-16 lg:py-20 border-b border-line">
-        <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
-              Our guiding principles
+      {/* THREE PRINCIPLES (Clean Minimalist List) */}
+      <section className="bg-white py-16 sm:py-20 border-b border-line">
+        <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-dim block mb-2">
+              Our Values
+            </span>
+            <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+              Three simple commitments
             </h2>
-            <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed max-w-md mx-auto">
-              Why thousands of designers and product teams trust Pixlab every day.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-amber-50 text-gold mb-6 border border-amber-100">
-                <Sparkles className="h-6 w-6" />
-              </div>
-              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Mathematical Precision</h3>
-              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
-                We avoid fuzzy approximations. Whether extracting a background or resizing an image, every pixel transformation is deterministic, lossless, and sharp.
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="border-t border-line pt-6">
+              <span className="font-mono text-xs font-bold text-gold-600 block mb-2">
+                01
+              </span>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink mb-2">
+                Zero disk storage
+              </h3>
+              <p className="text-xs sm:text-sm text-dim leading-relaxed">
+                Images stream strictly into temporary volatile memory and are purged immediately upon download. Nothing is ever written to disks or used for machine learning.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-600 mb-6 border border-emerald-100">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Persistent Storage</h3>
-              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
-                Your imagery is never saved to a database, hard drive, or training bucket. When your tab closes, every trace of data disappears instantly.
+            <div className="border-t border-line pt-6">
+              <span className="font-mono text-xs font-bold text-gold-600 block mb-2">
+                02
+              </span>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink mb-2">
+                Lossless fidelity
+              </h3>
+              <p className="text-xs sm:text-sm text-dim leading-relaxed">
+                We avoid artificial blurring or aggressive lossy compression. Every transformation is engineered for clean, razor-sharp output ready for print and retina displays.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
-              <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-600 mb-6 border border-blue-100">
-                <Zap className="h-6 w-6" />
-              </div>
-              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Friction</h3>
-              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
-                No subscription pop-ups, mandatory credit cards, or credit counters. Just open the tool and do your work in seconds.
+            <div className="border-t border-line pt-6">
+              <span className="font-mono text-xs font-bold text-gold-600 block mb-2">
+                03
+              </span>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink mb-2">
+                Complete ownership
+              </h3>
+              <p className="text-xs sm:text-sm text-dim leading-relaxed">
+                You retain 100% copyright and intellectual property over every exported file. Free to use across personal and commercial work with zero watermarks or attribution.
               </p>
             </div>
           </div>
