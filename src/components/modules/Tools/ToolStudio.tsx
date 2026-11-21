@@ -6,7 +6,6 @@ import {
   Sparkles,
   Download,
   RotateCcw,
-  CheckCircle2,
   AlertCircle,
   Loader2,
   Sliders,
@@ -758,35 +757,23 @@ export function ToolStudio({
             </div>
 
             {/* Download Bar */}
-            <div className="pt-6 border-t border-line mt-6 flex flex-wrap items-center justify-between gap-4">
-              <div className="text-xs text-dim">
-                {resultUrl ? (
-                  <span className="inline-flex items-center gap-1.5 text-emerald-700 font-semibold">
-                    <CheckCircle2 className="h-4 w-4" /> Ready for production export
-                  </span>
-                ) : (
-                  "High resolution uncompressed download available after processing"
-                )}
-              </div>
-
-              <div className="flex items-center gap-2">
-                {resultUrl && (
-                  <Button
-                    asChild
-                    variant="default"
-                    className="font-semibold shadow-md"
+            {resultUrl && (
+              <div className="pt-6 border-t border-line mt-6 flex flex-wrap items-center justify-end gap-4">
+                <Button
+                  asChild
+                  variant="default"
+                  className="font-semibold shadow-md"
+                >
+                  <a
+                    href={resultUrl}
+                    download={`pixlab-${tool}-${file?.name || "export.png"}`}
                   >
-                    <a
-                      href={resultUrl}
-                      download={`pixlab-${tool}-${file?.name || "export.png"}`}
-                    >
-                      <Download className="mr-2 h-4 w-4" />
-                      Download Output
-                    </a>
-                  </Button>
-                )}
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Output
+                  </a>
+                </Button>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
