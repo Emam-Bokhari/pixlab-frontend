@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
-import { HowItWorksSection } from "@/components/how-it-works-section";
-import { StudioToolsSection } from "@/components/studio-tools-section";
 import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
@@ -79,12 +77,6 @@ export default function ImageUpscalerPage() {
         sampleBefore="/assets/img/low.jpg"
         sampleAfter="/assets/img/jacket-upscale.jpg"
       />
-
-      {/* HOW IT WORKS */}
-      <HowItWorksSection />
-
-      {/* STUDIO TOOLS */}
-      <StudioToolsSection currentToolId="upscale" />
 
       {/* FAQS */}
       <FAQSection

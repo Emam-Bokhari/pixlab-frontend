@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
-import { HowItWorksSection } from "@/components/how-it-works-section";
-import { StudioToolsSection } from "@/components/studio-tools-section";
 import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
@@ -84,12 +82,6 @@ export default function BackgroundRemoverPage() {
         sampleBefore="/assets/img/tool-sneaker-original.jpg"
         sampleAfter="/assets/img/tool-sneaker-transparent.png"
       />
-
-      {/* HOW IT WORKS */}
-      <HowItWorksSection />
-
-      {/* STUDIO TOOLS */}
-      <StudioToolsSection currentToolId="bg-remove" />
 
       {/* FAQS */}
       <FAQSection

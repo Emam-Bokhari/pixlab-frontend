@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { StudioToolsSection } from "@/components/studio-tools-section";
 import { CtaSection } from "@/components/cta-section";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
@@ -237,9 +236,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* STUDIO TOOLS */}
-      <StudioToolsSection />
 
       {/* BOTTOM CTA */}
       <CtaSection />

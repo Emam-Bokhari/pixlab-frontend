@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
-import { HowItWorksSection } from "@/components/how-it-works-section";
-import { StudioToolsSection } from "@/components/studio-tools-section";
 import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
@@ -79,12 +77,6 @@ export default function ImageResizerPage() {
         sampleBefore="/assets/img/man-portrait.jpg"
         sampleAfter="/assets/img/man-crop-square.jpg"
       />
-
-      {/* HOW IT WORKS */}
-      <HowItWorksSection />
-
-      {/* STUDIO TOOLS */}
-      <StudioToolsSection currentToolId="resize" />
 
       {/* FAQS */}
       <FAQSection
