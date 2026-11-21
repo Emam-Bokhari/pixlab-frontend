@@ -6,8 +6,8 @@ import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, Loader2 } from "l
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import CtaSection from "@/components/shared/CtaSection";
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
+import { addSupport } from "@/services/Support";
+import { toast } from "sonner";
 
 export function ContactForm() {
   const [formData, setFormData] = React.useState({
@@ -25,28 +25,33 @@ export function ContactForm() {
     setStatus(null);
 
     try {
-      const res = await fetch(`${API_BASE}/supports`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await addSupport(formData);
 
-      if (!res.ok) {
-        throw new Error("Unable to submit. Please try again or email us directly.");
+      if (response?.success) {
+        toast.success("Thank you! Your message has been sent. We will respond within 24 hours.");
+        setStatus({
+          ok: true,
+          message: "Thank you! Your message has been sent. We will respond within 24 hours.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const errMsg =
+          (response as any)?.error?.[0]?.message ||
+          response?.message ||
+          "Unable to submit. Please try again.";
+        toast.error(errMsg);
+        setStatus({
+          ok: false,
+          message: errMsg,
+        });
       }
-
+    } catch (err: any) {
+      const errMsg = err?.message || "Something went wrong. Please try again.";
+      toast.error(errMsg);
       setStatus({
-        ok: true,
-        message: "Thank you! Your message has been sent. We will respond within 24 hours.",
+        ok: false,
+        message: errMsg,
       });
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch {
-      // Fallback response for offline / dev demo
-      setStatus({
-        ok: true,
-        message: "Thank you! Your message has been recorded. Our team will get back to you shortly.",
-      });
-      setFormData({ name: "", email: "", subject: "", message: "" });
     }
 
     setIsSubmitting(false);

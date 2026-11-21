@@ -22,6 +22,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { cn, formatFileSize } from "@/lib/utils";
+import { removeBackground } from "@/services/BgRemove";
+import { reduceImage } from "@/services/Reduce";
+import { resizeImage } from "@/services/Resize";
+import { upscaleImage } from "@/services/Upscale";
+import { toast } from "sonner";
 
 export type ToolType = "bg" | "upscale" | "compress" | "resize";
 
@@ -40,8 +45,6 @@ interface ToolStudioProps {
   sampleAfter?: string;
   actionIcon?: React.ElementType;
 }
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
 
 export function ToolStudio({
   tool,
@@ -117,80 +120,158 @@ export function ToolStudio({
   const handleProcess = async () => {
     if (!file || !origUrl) {
       setError("Please select an image file first.");
+      toast.error("Please select an image file first.");
       return;
     }
 
     setIsProcessing(true);
     setError(null);
 
-    // Try API request first
-    let processedBlob: Blob | null = null;
-    let computedStats: { label: string; value: string }[] = [];
-
     try {
-      const fd = new FormData();
-      fd.append("image", file);
-
-      let endpoint = "";
       if (tool === "bg") {
-        endpoint = "bg-remove";
-        if (bgColor) fd.append("bgColor", bgColor);
+        const res = await removeBackground(file, bgColor);
+        if (res.success && res.data) {
+          const current = res.data.current;
+          setResultUrl(current.imageUrl);
+          setResultDims({ width: current.widthPx, height: current.heightPx });
+          setResultSize(current.sizeBytes);
+          setStats([
+            {
+              label: "Background",
+              value: res.data.bgColor ? `#${res.data.bgColor.replace(/^#/, "")}` : "Transparent",
+            },
+            {
+              label: "Output Format",
+              value: current.format.toUpperCase(),
+            },
+            {
+              label: "Original Size",
+              value: formatFileSize(res.data.original.sizeBytes),
+            },
+            {
+              label: "Output Size",
+              value: formatFileSize(current.sizeBytes),
+            },
+          ]);
+          toast.success(res.message || "Background removed successfully!");
+          setIsProcessing(false);
+          return;
+        } else {
+          const msg = (res as any)?.error?.[0]?.message || res?.message || "Failed to remove background.";
+          setError(msg);
+          toast.error(msg);
+        }
       } else if (tool === "upscale") {
-        endpoint = "upscales";
-        fd.append("scale", String(scaleFactor));
+        const res = await upscaleImage(file, scaleFactor);
+        if (res.success && res.data) {
+          const current = res.data.current;
+          setResultUrl(current.imageUrl);
+          setResultDims({ width: current.widthPx, height: current.heightPx });
+          setResultSize(current.sizeBytes);
+          setStats([
+            {
+              label: "Scale Multiplier",
+              value: `${res.data.scale}x`,
+            },
+            {
+              label: "Upscaled Resolution",
+              value: `${current.widthPx} × ${current.heightPx} px`,
+            },
+            {
+              label: "Original Resolution",
+              value: `${res.data.original.widthPx} × ${res.data.original.heightPx} px`,
+            },
+            {
+              label: "Original Size",
+              value: formatFileSize(res.data.original.sizeBytes),
+            },
+            {
+              label: "Upscaled Size",
+              value: formatFileSize(current.sizeBytes),
+            },
+          ]);
+          toast.success(res.message || "Image upscaled successfully!");
+          setIsProcessing(false);
+          return;
+        } else {
+          const msg = (res as any)?.error?.[0]?.message || res?.message || "Failed to upscale image.";
+          setError(msg);
+          toast.error(msg);
+        }
       } else if (tool === "compress") {
-        endpoint = "reduce";
-        fd.append("targetSizeKb", String(targetKb));
+        const res = await reduceImage(file, targetKb);
+        if (res.success && res.data) {
+          const current = res.data.current;
+          setResultUrl(current.imageUrl);
+          setResultDims({ width: current.widthPx, height: current.heightPx });
+          setResultSize(current.sizeBytes);
+          setStats([
+            {
+              label: "Target Size",
+              value: `${res.data.targetSizeKb} KB`,
+            },
+            {
+              label: "Resulting Size",
+              value: `${current.sizeKB.toFixed(1)} KB`,
+            },
+            {
+              label: "Reduction",
+              value: `-${res.data.reductionPercentage.toFixed(1)}%`,
+            },
+            {
+              label: "Original Size",
+              value: formatFileSize(res.data.original.sizeBytes),
+            },
+            {
+              label: "Resolution",
+              value: `${current.widthPx} × ${current.heightPx} px`,
+            },
+          ]);
+          toast.success(res.message || "Image compressed successfully!");
+          setIsProcessing(false);
+          return;
+        } else {
+          const msg = (res as any)?.error?.[0]?.message || res?.message || "Failed to compress image.";
+          setError(msg);
+          toast.error(msg);
+        }
       } else if (tool === "resize") {
-        endpoint = "resize";
-        fd.append("width", String(targetWidth));
-        fd.append("height", String(targetHeight));
-      }
-
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 8000);
-
-      const res = await fetch(`${API_BASE}/${endpoint}`, {
-        method: "POST",
-        body: fd,
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
-
-      if (res.ok) {
-        processedBlob = await res.blob();
-        // Read response headers for stats
-        if (tool === "bg") {
-          const bgHeader = res.headers.get("X-Background-Color") || (bgColor || "Transparent");
-          computedStats = [{ label: "Background", value: bgHeader }];
-        } else if (tool === "upscale") {
-          const upW = res.headers.get("X-Upscaled-Width") || String((origDims?.width || 0) * scaleFactor);
-          const upH = res.headers.get("X-Upscaled-Height") || String((origDims?.height || 0) * scaleFactor);
-          computedStats = [
-            { label: "Scale Factor", value: `${scaleFactor}x` },
-            { label: "Upscaled Resolution", value: `${upW} × ${upH} px` },
-            { label: "Original Size", value: formatFileSize(file.size) },
-          ];
-        } else if (tool === "compress") {
-          const redKb = res.headers.get("X-Reduced-Size-KB") || `${targetKb} KB`;
-          computedStats = [
-            { label: "Target Size", value: `${targetKb} KB` },
-            { label: "Resulting Size", value: `${redKb}` },
-            { label: "Original Size", value: formatFileSize(file.size) },
-          ];
-        } else if (tool === "resize") {
-          computedStats = [
-            { label: "Target Dimensions", value: `${targetWidth} × ${targetHeight} px` },
-            { label: "Original Dimensions", value: `${origDims?.width} × ${origDims?.height} px` },
-          ];
+        const res = await resizeImage(file, targetWidth, targetHeight);
+        if (res.success && res.data) {
+          const current = res.data.current;
+          setResultUrl(current.imageUrl);
+          setResultDims({ width: current.widthPx, height: current.heightPx });
+          setResultSize(current.sizeBytes);
+          setStats([
+            {
+              label: "Target Dimensions",
+              value: `${current.widthPx} × ${current.heightPx} px`,
+            },
+            {
+              label: "Original Dimensions",
+              value: `${res.data.original.widthPx} × ${res.data.original.heightPx} px`,
+            },
+            {
+              label: "Original Size",
+              value: formatFileSize(res.data.original.sizeBytes),
+            },
+            {
+              label: "Output Size",
+              value: formatFileSize(current.sizeBytes),
+            },
+          ]);
+          toast.success(res.message || "Image resized successfully!");
+          setIsProcessing(false);
+          return;
+        } else {
+          const msg = (res as any)?.error?.[0]?.message || res?.message || "Failed to resize image.";
+          setError(msg);
+          toast.error(msg);
         }
       }
-    } catch {
-      // API unreachable: fall back smoothly to client-side canvas simulation
-    }
-
-    // Client-side canvas fallback if API not running or returned error
-    if (!processedBlob) {
+    } catch (apiErr: any) {
+      console.warn("Backend API request failed, attempting local fallback:", apiErr);
+      // Fallback to local canvas if server is unreachable
       try {
         const result = await processOnClient(file, origUrl, tool, {
           bgColor,
@@ -199,26 +280,22 @@ export function ToolStudio({
           targetWidth,
           targetHeight,
         });
-        processedBlob = result.blob;
-        computedStats = result.stats;
-      } catch (err: any) {
-        setError(err.message || "Could not process image.");
-        setIsProcessing(false);
-        return;
+        const outUrl = URL.createObjectURL(result.blob);
+        setResultUrl(outUrl);
+        setResultSize(result.blob.size);
+        setStats(result.stats);
+
+        const outImg = new window.Image();
+        outImg.onload = () => {
+          setResultDims({ width: outImg.naturalWidth, height: outImg.naturalHeight });
+        };
+        outImg.src = outUrl;
+        toast.info("Processed via local fallback engine");
+      } catch (clientErr: any) {
+        const msg = apiErr?.message || clientErr?.message || "Could not process image.";
+        setError(msg);
+        toast.error(msg);
       }
-    }
-
-    if (processedBlob) {
-      const outUrl = URL.createObjectURL(processedBlob);
-      setResultUrl(outUrl);
-      setResultSize(processedBlob.size);
-      setStats(computedStats);
-
-      const outImg = new window.Image();
-      outImg.onload = () => {
-        setResultDims({ width: outImg.naturalWidth, height: outImg.naturalHeight });
-      };
-      outImg.src = outUrl;
     }
 
     setIsProcessing(false);
