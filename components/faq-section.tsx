@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FAQItem {
@@ -11,6 +11,7 @@ interface FAQItem {
 }
 
 interface FAQSectionProps {
+  badge?: string;
   title?: string;
   subtitle?: string;
   items: FAQItem[];
@@ -18,8 +19,9 @@ interface FAQSectionProps {
 }
 
 export function FAQSection({
+  badge = "Frequently Asked Questions",
   title = "Frequently asked questions",
-  subtitle = "Everything you need to know about image processing, file formats, and privacy.",
+  subtitle = "Common questions about image quality, security, and tool operations.",
   items,
   categories,
 }: FAQSectionProps) {
@@ -34,27 +36,40 @@ export function FAQSection({
   }, [items, activeCategory]);
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 border-t border-line">
-      <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-14 sm:py-16 lg:py-20 border-t border-line">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+          {/* Studio Eyebrow Badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-line/80 bg-mist px-3.5 py-1 shadow-xs mb-3.5">
+            <HelpCircle className="h-3.5 w-3.5 text-gold-600" />
+            <span className="font-mono text-[10px] font-bold tracking-widest text-ink/75 uppercase">
+              {badge}
+            </span>
+          </div>
+
+          {/* Compact, Refined Headline */}
+          <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
             {title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-dim max-w-2xl mx-auto leading-relaxed">
-            {subtitle}
-          </p>
 
-          {/* Category Filter Tabs */}
+          {/* Subtitle */}
+          {subtitle && (
+            <p className="mt-2 text-xs sm:text-sm text-dim max-w-lg mx-auto leading-relaxed">
+              {subtitle}
+            </p>
+          )}
+
+          {/* Modern Segmented Filter Dock */}
           {categories && categories.length > 0 && (
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-1.5 p-1 rounded-full border border-line bg-mist/60 max-w-fit mx-auto">
               <button
                 type="button"
                 onClick={() => setActiveCategory("all")}
                 className={cn(
-                  "rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all",
+                  "rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-150",
                   activeCategory === "all"
-                    ? "bg-ink text-white shadow-sm"
-                    : "text-dim hover:text-ink hover:bg-mist"
+                    ? "bg-ink text-white shadow-xs"
+                    : "text-dim hover:text-ink hover:bg-white"
                 )}
               >
                 All Questions
@@ -65,10 +80,10 @@ export function FAQSection({
                   type="button"
                   onClick={() => setActiveCategory(cat.value)}
                   className={cn(
-                    "rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all",
+                    "rounded-full px-3.5 py-1.5 text-xs font-semibold transition-all duration-150",
                     activeCategory === cat.value
-                      ? "bg-ink text-white shadow-sm"
-                      : "text-dim hover:text-ink hover:bg-mist"
+                      ? "bg-ink text-white shadow-xs"
+                      : "text-dim hover:text-ink hover:bg-white"
                   )}
                 >
                   {cat.label}
@@ -78,31 +93,40 @@ export function FAQSection({
           )}
         </div>
 
-        {/* Accordion List */}
-        <div className="mt-12 space-y-4">
+        {/* Refined Accordion List */}
+        <div className="mt-10 space-y-3">
           {filteredItems.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (
               <div
                 key={idx}
-                className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition-all hover:border-ink/30"
+                className={cn(
+                  "overflow-hidden rounded-xl border transition-all duration-200",
+                  isOpen
+                    ? "border-ink/25 bg-white shadow-sm"
+                    : "border-line bg-white hover:border-ink/20"
+                )}
               >
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between p-5 sm:p-6 text-left font-head font-bold text-ink"
+                  className="flex w-full items-center justify-between p-4 sm:p-5 text-left font-head font-bold text-ink"
                 >
-                  <span className="text-base sm:text-lg pr-4">{item.question}</span>
-                  <ChevronDown
+                  <span className="text-sm sm:text-base pr-4 text-ink">
+                    {item.question}
+                  </span>
+                  <div
                     className={cn(
-                      "h-5 w-5 shrink-0 text-dim transition-transform duration-200",
-                      isOpen && "rotate-180 text-ink"
+                      "flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line bg-mist/60 text-dim transition-all duration-200",
+                      isOpen && "rotate-180 bg-ink text-white border-ink"
                     )}
-                  />
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </div>
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-6 pt-1 sm:px-6 text-dim text-sm sm:text-base leading-relaxed border-t border-line/60 bg-mist/30 animate-in fade-in-50 duration-200">
-                    {item.answer}
+                  <div className="px-4 pb-5 pt-0 sm:px-5 text-dim text-xs sm:text-sm leading-relaxed border-t border-line/50 bg-mist/20 animate-in fade-in-50 duration-200">
+                    <p className="pt-3">{item.answer}</p>
                   </div>
                 )}
               </div>

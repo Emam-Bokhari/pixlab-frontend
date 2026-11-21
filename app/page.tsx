@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Scissors, Sparkles, Minimize2, Crop } from "lucide-react";
+import { ArrowRight, Scissors, Maximize2, Minimize2, Crop } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
@@ -16,7 +16,7 @@ const STUDIO_TOOLS = [
     id: "upscale",
     name: "Image Upscaler",
     href: "/image-upscaler",
-    icon: Sparkles,
+    icon: Maximize2,
   },
   {
     id: "compress",
@@ -114,16 +114,31 @@ export default function HomePage() {
       </section>
 
       {/* CORE FOUR TOOLS SHOWCASE */}
-      <section className="bg-mist py-12 sm:py-16 border-b border-line">
+      <section className="bg-mist/70 py-12 sm:py-16 border-b border-line">
         <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <p className="text-xs font-bold uppercase tracking-wider text-dim">
-              Everything in One Place
-            </p>
-            <h2 className="mt-2 font-head text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-ink">
+            {/* Unique Studio Pill Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-line/80 bg-white px-3.5 py-1 shadow-xs mb-3.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-gold" />
+              </span>
+              <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-ink/75">
+                Toolkit
+              </span>
+              <span className="text-line">/</span>
+              <span className="text-[11px] font-medium text-dim">
+                Everything in One Place
+              </span>
+            </div>
+
+            {/* Smaller, refined, confident headline */}
+            <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
               Four specialized studio tools built for high-throughput workflows
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-dim leading-relaxed max-w-xl mx-auto">
+
+            {/* Tight, balanced subtext */}
+            <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed max-w-lg mx-auto">
               No bloated editors or complicated layer trees. Each tool does exactly one job with uncompromising precision.
             </p>
           </div>
@@ -152,44 +167,78 @@ export default function HomePage() {
       </section>
 
       {/* HOW IT WORKS SECTION */}
-      <section className="bg-white py-16 sm:py-20 lg:py-24 border-b border-line">
+      <section className="bg-white py-14 sm:py-16 lg:py-20 border-b border-line">
         <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="text-xs font-bold uppercase tracking-wider text-dim">
-              Frictionless Pipeline
-            </p>
-            <h2 className="mt-2 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            {/* Unique Pipeline Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-line/80 bg-mist px-3.5 py-1 shadow-xs mb-3.5">
+              <span className="font-mono text-[10px] font-bold tracking-widest uppercase text-ink/75">
+                Workflow
+              </span>
+              <span className="h-1 w-1 rounded-full bg-dim/40" />
+              <span className="text-[11px] font-medium text-dim">
+                Frictionless Pipeline
+              </span>
+            </div>
+
+            {/* Smaller, refined, confident headline */}
+            <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
               Three simple steps from raw photo to studio export
             </h2>
+
+            <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed max-w-md mx-auto">
+              Browser-native processing engineered for instant execution and lossless output.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="relative rounded-3xl border border-line bg-mist/50 p-8">
-              <span className="font-mono text-4xl font-extrabold text-ink/20">01</span>
-              <h3 className="mt-4 font-head text-xl font-bold text-ink">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="group relative rounded-2xl border border-line bg-mist/40 p-6 sm:p-7 transition-all duration-200 hover:border-ink/25 hover:bg-white hover:shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-dim/80 bg-white border border-line/80 px-2.5 py-0.5 rounded-md shadow-2xs">
+                  Step 01
+                </span>
+                <span className="font-mono text-2xl font-extrabold text-ink/15 group-hover:text-ink/30 transition-colors">
+                  01
+                </span>
+              </div>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">
                 Upload your picture
               </h3>
-              <p className="mt-2 text-sm text-dim leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
                 Drag and drop your file into the workbench or choose it from your device. Supports all major photo formats up to 50 MB.
               </p>
             </div>
 
-            <div className="relative rounded-3xl border border-line bg-mist/50 p-8">
-              <span className="font-mono text-4xl font-extrabold text-gold">02</span>
-              <h3 className="mt-4 font-head text-xl font-bold text-ink">
+            <div className="group relative rounded-2xl border border-line bg-mist/40 p-6 sm:p-7 transition-all duration-200 hover:border-gold/50 hover:bg-white hover:shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-gold-700 bg-gold/15 border border-gold/30 px-2.5 py-0.5 rounded-md shadow-2xs">
+                  Step 02
+                </span>
+                <span className="font-mono text-2xl font-extrabold text-gold group-hover:scale-105 transition-transform">
+                  02
+                </span>
+              </div>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">
                 Adjust parameters
               </h3>
-              <p className="mt-2 text-sm text-dim leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
                 Choose transparent cutout, solid hex color, upscale multiplier (2x-4x), target KB size, or custom pixel dimensions.
               </p>
             </div>
 
-            <div className="relative rounded-3xl border border-line bg-mist/50 p-8">
-              <span className="font-mono text-4xl font-extrabold text-ink/20">03</span>
-              <h3 className="mt-4 font-head text-xl font-bold text-ink">
+            <div className="group relative rounded-2xl border border-line bg-mist/40 p-6 sm:p-7 transition-all duration-200 hover:border-ink/25 hover:bg-white hover:shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <span className="font-mono text-xs font-bold uppercase tracking-wider text-dim/80 bg-white border border-line/80 px-2.5 py-0.5 rounded-md shadow-2xs">
+                  Step 03
+                </span>
+                <span className="font-mono text-2xl font-extrabold text-ink/15 group-hover:text-ink/30 transition-colors">
+                  03
+                </span>
+              </div>
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">
                 Inspect &amp; download
               </h3>
-              <p className="mt-2 text-sm text-dim leading-relaxed">
+              <p className="mt-2 text-xs sm:text-sm text-dim leading-relaxed">
                 Review side-by-side results with instant metric verification. Download high-resolution unwatermarked output directly.
               </p>
             </div>
@@ -199,6 +248,7 @@ export default function HomePage() {
 
       {/* FAQ SECTION */}
       <FAQSection
+        badge="FAQ & Help"
         title="Frequently asked questions"
         subtitle="Common questions about image quality, security, and tool operations."
         items={HOME_FAQS}
@@ -206,21 +256,21 @@ export default function HomePage() {
       />
 
       {/* BOTTOM CTA BANNER */}
-      <section className="bg-gold">
-        <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-8 py-14 lg:flex-row lg:items-center lg:py-20">
+      <section className="bg-gold border-t border-gold-600/20">
+        <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 flex flex-col items-start justify-between gap-6 py-12 lg:flex-row lg:items-center lg:py-14">
           <div>
-            <h2 className="max-w-2xl font-head text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-ink">
+            <h2 className="max-w-2xl font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">
               Process your first image in seconds
             </h2>
-            <p className="mt-3 max-w-xl text-base sm:text-lg text-ink/80 leading-relaxed">
+            <p className="mt-2 max-w-xl text-sm sm:text-base text-ink/85 leading-relaxed">
               Choose a tool and inspect high-precision results right away. No software installation needed.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="bg-ink text-white hover:bg-white hover:text-ink font-bold">
+            <Button asChild size="lg" className="bg-ink text-white hover:bg-ink/90 font-bold shadow-sm">
               <Link href="/background-remover">Open background remover</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="bg-white/30 text-ink border-ink/20 hover:bg-white font-semibold">
+            <Button asChild size="lg" variant="outline" className="bg-white/40 text-ink border-ink/20 hover:bg-white font-semibold">
               <Link href="/image-compressor">Compress an image</Link>
             </Button>
           </div>
