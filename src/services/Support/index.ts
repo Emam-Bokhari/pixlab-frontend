@@ -1,9 +1,5 @@
+import { BASE_API } from "@/constants";
 import { ApiSuccessResponse, SupportPayload, SupportResponseData } from "@/types";
-
-const BASE_API =
-  process.env.NEXT_PUBLIC_BASE_API ||
-  process.env.NEXT_PUBLIC_API_URL ||
-  "http://172.19.112.1:5000/api/v1";
 
 export const addSupport = async (
   payload: SupportPayload
