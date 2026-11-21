@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Sparkles, Zap, ShieldCheck, Layers, Cpu, Maximize2, Minimize2, Image as ImageIcon } from "lucide-react";
+import { ArrowRight, Cpu, Maximize2, Minimize2, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { BeforeAfterSlider } from "@/components/before-after-slider";
@@ -55,11 +55,6 @@ export default function HomePage() {
 
         <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 grid items-center gap-12 lg:grid-cols-[1.1fr_1.15fr] lg:gap-16">
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-line bg-mist/80 px-4 py-1.5 text-xs font-semibold text-ink shadow-sm mb-6">
-              <Sparkles className="h-3.5 w-3.5 text-gold" />
-              <span>Studio-Grade Image Processing Suite</span>
-            </div>
-
             <h1 className="font-head text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl text-ink">
               Professional image processing for products, apparel and portraits
             </h1>
@@ -79,19 +74,6 @@ export default function HomePage() {
                 <Link href="/image-upscaler">Upscale an image</Link>
               </Button>
             </div>
-
-            {/* Feature pills */}
-            <div className="mt-10 flex flex-wrap items-center gap-4 text-xs font-semibold text-dim pt-6 border-t border-line/80">
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" /> 100% RAM-only private
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Zap className="h-4 w-4 text-gold" /> Instant browser processing
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Layers className="h-4 w-4 text-ink" /> Lossless export
-              </span>
-            </div>
           </div>
 
           {/* Interactive Before/After Slider */}
@@ -100,9 +82,6 @@ export default function HomePage() {
               originalSrc="/assets/img/hero-watch-original.jpg"
               afterSrc="/assets/img/hero-watch-transparent.png"
             />
-            <p className="mt-3 text-center text-xs text-dim">
-              Drag the center slider left and right to inspect the hair-line cutout precision.
-            </p>
           </div>
         </div>
       </section>
