@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ShieldCheck, Zap, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FAQSection } from "@/components/faq-section";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { StudioToolsSection } from "@/components/studio-tools-section";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "About Pixlab – Simple Online Image Studio Tools",
@@ -148,12 +151,21 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* HOW IT WORKS */}
+      <HowItWorksSection />
+
+      {/* STUDIO TOOLS */}
+      <StudioToolsSection />
+
       {/* FAQS */}
       <FAQSection
         title="Frequently asked questions about Pixlab"
         subtitle="Insights into our philosophy, security architecture, and tools."
         items={ABOUT_FAQS}
       />
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

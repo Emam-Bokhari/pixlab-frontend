@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, ShieldCheck, Scale, FileText } from "lucide-react";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Terms of Service & Commercial Usage | Pixlab",
@@ -110,6 +111,9 @@ export default function TermsPage() {
           </div>
         </div>
       </section>
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

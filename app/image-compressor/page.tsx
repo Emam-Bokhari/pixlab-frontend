@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { StudioToolsSection } from "@/components/studio-tools-section";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Image Compressor – Target File Size in KB | Pixlab",
@@ -77,11 +80,21 @@ export default function ImageCompressorPage() {
         sampleAfter="/assets/img/light.jpg"
       />
 
+      {/* HOW IT WORKS */}
+      <HowItWorksSection />
+
+      {/* STUDIO TOOLS */}
+      <StudioToolsSection currentToolId="compress" />
+
+      {/* FAQS */}
       <FAQSection
         title="Image compression questions"
         subtitle="Detailed guidance on file size quotas, compression algorithms, and clarity."
         items={COMPRESS_FAQS}
       />
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

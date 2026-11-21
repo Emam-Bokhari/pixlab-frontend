@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { StudioToolsSection } from "@/components/studio-tools-section";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Background Remover – Precision Image Cutout Studio | Pixlab",
@@ -82,12 +85,21 @@ export default function BackgroundRemoverPage() {
         sampleAfter="/assets/img/tool-sneaker-transparent.png"
       />
 
+      {/* HOW IT WORKS */}
+      <HowItWorksSection />
+
+      {/* STUDIO TOOLS */}
+      <StudioToolsSection currentToolId="bg-remove" />
+
       {/* FAQS */}
       <FAQSection
         title="Background remover questions"
         subtitle="Everything you need to know about isolation accuracy and color fills."
         items={BG_FAQS}
       />
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

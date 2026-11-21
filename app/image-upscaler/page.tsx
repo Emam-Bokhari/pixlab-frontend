@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { StudioToolsSection } from "@/components/studio-tools-section";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Image Upscaler – Razor-Sharp AI Super Resolution | Pixlab",
@@ -77,11 +80,21 @@ export default function ImageUpscalerPage() {
         sampleAfter="/assets/img/jacket-upscale.jpg"
       />
 
+      {/* HOW IT WORKS */}
+      <HowItWorksSection />
+
+      {/* STUDIO TOOLS */}
+      <StudioToolsSection currentToolId="upscale" />
+
+      {/* FAQS */}
       <FAQSection
         title="Image upscaler questions"
         subtitle="Answers on super-resolution factors, print preparation, and detail synthesis."
         items={UPSCALE_FAQS}
       />
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

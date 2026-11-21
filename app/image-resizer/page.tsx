@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ToolStudio } from "@/components/tool-studio";
 import { FAQSection } from "@/components/faq-section";
+import { HowItWorksSection } from "@/components/how-it-works-section";
+import { StudioToolsSection } from "@/components/studio-tools-section";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Image Resizer – Exact Pixel Dimensions & Aspect Ratios | Pixlab",
@@ -77,11 +80,21 @@ export default function ImageResizerPage() {
         sampleAfter="/assets/img/man-crop-square.jpg"
       />
 
+      {/* HOW IT WORKS */}
+      <HowItWorksSection />
+
+      {/* STUDIO TOOLS */}
+      <StudioToolsSection currentToolId="resize" />
+
+      {/* FAQS */}
       <FAQSection
         title="Image resizer questions"
         subtitle="Details on aspect ratios, focal cropping algorithms, and sharpness."
         items={RESIZE_FAQS}
       />
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

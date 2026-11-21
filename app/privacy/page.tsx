@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, Lock, EyeOff, Server, CheckCircle2 } from "lucide-react";
+import { CtaSection } from "@/components/cta-section";
 
 export const metadata: Metadata = {
   title: "Privacy Policy – Data Governance & RAM Architecture | Pixlab",
@@ -135,6 +136,9 @@ export default function PrivacyPage() {
           </div>
         </div>
       </section>
+
+      {/* BOTTOM CTA */}
+      <CtaSection />
     </>
   );
 }

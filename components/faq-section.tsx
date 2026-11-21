@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface FAQItem {
@@ -39,14 +39,6 @@ export function FAQSection({
     <section className="bg-white py-14 sm:py-16 lg:py-20 border-t border-line">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* Studio Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-line/80 bg-mist px-3.5 py-1 shadow-xs mb-3.5">
-            <HelpCircle className="h-3.5 w-3.5 text-gold-600" />
-            <span className="font-mono text-[10px] font-bold tracking-widest text-ink/75 uppercase">
-              {badge}
-            </span>
-          </div>
-
           {/* Compact, Refined Headline */}
           <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
             {title}
