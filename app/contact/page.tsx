@@ -67,6 +67,14 @@ export default function ContactPage() {
         <div className="pointer-events-none absolute -top-20 left-1/3 h-80 w-80 rounded-full bg-blue-600/20 blur-[100px]" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
+          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm text-white/70 mb-4">
+            <Link href="/" className="hover:text-white transition">
+              Home
+            </Link>
+            <span>/</span>
+            <span className="text-white font-medium">Contact</span>
+          </div>
+
           <h1 className="font-head text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.08] tracking-tight text-white">
             Contact us
           </h1>
@@ -83,10 +91,10 @@ export default function ContactPage() {
             {/* Contact Details */}
             <div className="flex flex-col justify-between">
               <div>
-                <h2 className="font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+                <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
                   Get in touch
                 </h2>
-                <p className="mt-3 text-base text-dim leading-relaxed">
+                <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
                   Have questions about our tools, API integrations, or need custom enterprise image workflows? We&apos;re here to help you get the best results.
                 </p>
 
@@ -96,8 +104,8 @@ export default function ContactPage() {
                       <MapPin className="h-6 w-6" />
                     </span>
                     <div>
-                      <h3 className="font-head text-base font-bold text-ink">Head Office</h3>
-                      <p className="mt-1 text-sm text-dim leading-relaxed">
+                      <h3 className="font-head text-sm sm:text-base font-bold text-ink">Head Office</h3>
+                      <p className="mt-1 text-xs sm:text-sm text-dim leading-relaxed">
                         742 Evergreen Terrace, Suite 400<br />
                         San Francisco, CA 94107
                       </p>
@@ -109,8 +117,8 @@ export default function ContactPage() {
                       <Mail className="h-6 w-6" />
                     </span>
                     <div>
-                      <h3 className="font-head text-base font-bold text-ink">Email Us</h3>
-                      <p className="mt-1 text-sm text-dim">
+                      <h3 className="font-head text-sm sm:text-base font-bold text-ink">Email Us</h3>
+                      <p className="mt-1 text-xs sm:text-sm text-dim">
                         <a href="mailto:support@pixlab.com" className="text-ink hover:text-gold transition font-medium">
                           support@pixlab.com
                         </a>
@@ -127,8 +135,8 @@ export default function ContactPage() {
                       <Phone className="h-6 w-6" />
                     </span>
                     <div>
-                      <h3 className="font-head text-base font-bold text-ink">Call Us</h3>
-                      <p className="mt-1 text-sm text-dim leading-relaxed">
+                      <h3 className="font-head text-sm sm:text-base font-bold text-ink">Call Us</h3>
+                      <p className="mt-1 text-xs sm:text-sm text-dim leading-relaxed">
                         Phone: <a href="tel:+18005550199" className="text-ink font-medium hover:text-gold transition">+1 (800) 555-0199</a><br />
                         Hours: Mon – Fri, 9am – 6pm EST
                       </p>
@@ -145,8 +153,8 @@ export default function ContactPage() {
 
             {/* Contact Form */}
             <div className="rounded-2xl border border-line bg-mist/40 p-6 sm:p-8">
-              <h3 className="font-head text-xl font-bold text-ink">Send a message</h3>
-              <p className="text-xs text-dim mt-1">Fill out the fields below and our team will get back to you.</p>
+              <h3 className="font-head text-lg sm:text-xl font-bold text-ink">Send a message</h3>
+              <p className="text-xs sm:text-sm text-dim mt-1">Fill out the fields below and our team will get back to you.</p>
 
               <form onSubmit={handleSubmit} className="mt-6 space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

@@ -158,9 +158,6 @@ export function Footer() {
                   Privacy Policy
                 </Link>
               </li>
-              <li className="pt-2 text-xs text-white/40">
-                Data retained: 0 seconds (RAM ephemeral only)
-              </li>
             </ul>
           </div>
         </div>

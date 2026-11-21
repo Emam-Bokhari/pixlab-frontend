@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Scissors, Maximize2, Minimize2, Crop, type LucideIcon } from "lucide-react";
+import { Scissors, Maximize2, Minimize2, Scaling, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface StudioToolItem {
@@ -32,7 +32,7 @@ export const STUDIO_TOOLS: StudioToolItem[] = [
     id: "resize",
     name: "Image Resizer",
     href: "/image-resizer",
-    icon: Crop,
+    icon: Scaling,
   },
 ];
 

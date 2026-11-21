@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[950px] rounded-full bg-gradient-to-b from-tint/70 via-mist to-transparent blur-3xl opacity-75" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14 text-center">
-          <div className="inline-flex items-center justify-center gap-2 text-sm text-dim mb-4">
+          <div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm text-dim mb-4">
             <Link href="/" className="hover:text-ink transition">
               Home
             </Link>
@@ -52,7 +52,7 @@ export default function AboutPage() {
             Built for modern creative &amp; image workflows
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dim sm:text-lg lg:text-xl 2xl:max-w-3xl">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-dim sm:text-lg lg:text-xl">
             Fast, distortion-free image processing built for creators, sellers, and businesses. Pixlab provides a focused suite of browser-native tools to remove backgrounds, enlarge, compress, and resize pictures without complex software or subscriptions.
           </p>
 
@@ -67,8 +67,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className="p-3">
-                <h3 className="font-head text-base font-bold text-ink">Studio Precision</h3>
-                <p className="text-xs text-dim mt-1">Calibrated optics &amp; sub-pixel isolation algorithms.</p>
+                <h3 className="font-head text-base sm:text-lg font-bold text-ink">Studio Precision</h3>
+                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Calibrated optics &amp; sub-pixel isolation algorithms.</p>
               </div>
             </div>
 
@@ -81,8 +81,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className="p-3">
-                <h3 className="font-head text-base font-bold text-ink">E-Commerce Ready</h3>
-                <p className="text-xs text-dim mt-1">Ready for Amazon, Shopify, and global product catalogs.</p>
+                <h3 className="font-head text-base sm:text-lg font-bold text-ink">E-Commerce Ready</h3>
+                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Ready for Amazon, Shopify, and global product catalogs.</p>
               </div>
             </div>
 
@@ -95,8 +95,8 @@ export default function AboutPage() {
                 />
               </div>
               <div className="p-3">
-                <h3 className="font-head text-base font-bold text-ink">Zero Data Retention</h3>
-                <p className="text-xs text-dim mt-1">Volatile RAM guarantees absolute privacy.</p>
+                <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Data Retention</h3>
+                <p className="text-xs sm:text-sm text-dim mt-1.5 leading-relaxed">Volatile RAM guarantees absolute privacy.</p>
               </div>
             </div>
           </div>
@@ -104,44 +104,44 @@ export default function AboutPage() {
       </section>
 
       {/* THREE CORE PRINCIPLES */}
-      <section className="bg-mist py-16 sm:py-20 lg:py-24 border-b border-line">
+      <section className="bg-mist py-14 sm:py-16 lg:py-20 border-b border-line">
         <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <h2 className="font-head text-3xl sm:text-4xl font-extrabold text-ink">
-              Our Guiding Principles
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <h2 className="font-head text-xl sm:text-2xl lg:text-[26px] font-bold tracking-tight text-ink">
+              Our guiding principles
             </h2>
-            <p className="mt-3 text-base text-dim">
+            <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed max-w-md mx-auto">
               Why thousands of designers and product teams trust Pixlab every day.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="rounded-3xl border border-line bg-white p-8 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-amber-50 text-gold mb-6 border border-amber-100">
                 <Sparkles className="h-6 w-6" />
               </div>
-              <h3 className="font-head text-xl font-bold text-ink">Mathematical Precision</h3>
-              <p className="mt-3 text-sm text-dim leading-relaxed">
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Mathematical Precision</h3>
+              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
                 We avoid fuzzy approximations. Whether extracting a background or resizing an image, every pixel transformation is deterministic, lossless, and sharp.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-line bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-emerald-50 text-emerald-600 mb-6 border border-emerald-100">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h3 className="font-head text-xl font-bold text-ink">Zero Persistent Storage</h3>
-              <p className="mt-3 text-sm text-dim leading-relaxed">
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Persistent Storage</h3>
+              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
                 Your imagery is never saved to a database, hard drive, or training bucket. When your tab closes, every trace of data disappears instantly.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-line bg-white p-8 shadow-sm">
+            <div className="rounded-3xl border border-line bg-white p-7 sm:p-8 shadow-sm">
               <div className="grid h-12 w-12 place-items-center rounded-2xl bg-blue-50 text-blue-600 mb-6 border border-blue-100">
                 <Zap className="h-6 w-6" />
               </div>
-              <h3 className="font-head text-xl font-bold text-ink">Zero Friction</h3>
-              <p className="mt-3 text-sm text-dim leading-relaxed">
+              <h3 className="font-head text-base sm:text-lg font-bold text-ink">Zero Friction</h3>
+              <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
                 No subscription pop-ups, mandatory credit cards, or credit counters. Just open the tool and do your work in seconds.
               </p>
             </div>

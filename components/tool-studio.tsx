@@ -12,6 +12,11 @@ import {
   Sliders,
   Image as ImageIcon,
   FileCheck,
+  Scissors,
+  Maximize2,
+  Minimize2,
+  Crop,
+  Scaling,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,12 +25,20 @@ import { cn, formatFileSize } from "@/lib/utils";
 
 export type ToolType = "bg" | "upscale" | "compress" | "resize";
 
+const TOOL_ACTION_ICONS: Record<ToolType, React.ElementType> = {
+  bg: Scissors,
+  upscale: Maximize2,
+  compress: Minimize2,
+  resize: Scaling,
+};
+
 interface ToolStudioProps {
   tool: ToolType;
   title: string;
   subtitle: string;
   sampleBefore?: string;
   sampleAfter?: string;
+  actionIcon?: React.ElementType;
 }
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/v1";
@@ -36,7 +49,10 @@ export function ToolStudio({
   subtitle,
   sampleBefore,
   sampleAfter,
+  actionIcon,
 }: ToolStudioProps) {
+  const ActionIcon = actionIcon || TOOL_ACTION_ICONS[tool] || Maximize2;
+
   // File & image states
   const [file, setFile] = React.useState<File | null>(null);
   const [origUrl, setOrigUrl] = React.useState<string | null>(null);
@@ -215,14 +231,9 @@ export function ToolStudio({
           {/* LEFT WORKBENCH CARD: Upload & Configuration */}
           <div className="lg:col-span-5 flex h-full flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5">
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-line">
-                <div>
-                  <h2 className="font-head text-lg font-bold text-ink">{title}</h2>
-                  <p className="text-xs text-dim mt-0.5">{subtitle}</p>
-                </div>
-                <div className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
-                  01
-                </div>
+              <div className="pb-5 border-b border-line">
+                <h2 className="font-head text-lg font-bold text-ink">{title}</h2>
+                <p className="text-xs text-dim mt-0.5">{subtitle}</p>
               </div>
 
               {/* Upload Dropzone */}
@@ -542,7 +553,7 @@ export function ToolStudio({
                   </>
                 ) : (
                   <>
-                    <Sparkles className="mr-2 h-5 w-5" />
+                    <ActionIcon className="mr-2 h-5 w-5" />
                     Process Image
                   </>
                 )}
@@ -553,18 +564,13 @@ export function ToolStudio({
           {/* RIGHT PREVIEW & RESULTS CARD */}
           <div className="lg:col-span-7 flex flex-col justify-between rounded-3xl border border-line bg-white p-6 sm:p-8 shadow-xl shadow-ink/5">
             <div>
-              <div className="flex items-center justify-between pb-5 border-b border-line">
-                <div>
-                  <h3 className="font-head text-lg font-bold text-ink">
-                    Studio Canvas &amp; Output
-                  </h3>
-                  <p className="text-xs text-dim mt-0.5">
-                    Live side-by-side verification and inspection
-                  </p>
-                </div>
-                <div className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-mist text-ink text-xs font-mono font-bold">
-                  02
-                </div>
+              <div className="pb-5 border-b border-line">
+                <h3 className="font-head text-lg font-bold text-ink">
+                  Studio Canvas &amp; Output
+                </h3>
+                <p className="text-xs text-dim mt-0.5">
+                  Live side-by-side verification and inspection
+                </p>
               </div>
 
               {/* Display Canvas / Viewport */}
@@ -633,7 +639,7 @@ export function ToolStudio({
                       />
                     ) : (
                       <div className="text-center p-4">
-                        <Sparkles className="mx-auto h-8 w-8 text-dim/40 mb-1" />
+                        <ActionIcon className="mx-auto h-8 w-8 text-dim/40 mb-1" />
                         <span className="text-xs text-dim">
                           Output will render here
                         </span>

@@ -54,23 +54,23 @@ export default function TermsPage() {
         <div className="mx-auto w-full max-w-7xl 2xl:max-w-[1700px] px-4 sm:px-6 lg:px-10 2xl:px-14">
           <div className="max-w-2xl">
             <p className="text-xs font-bold uppercase tracking-wider text-dim">Rights &amp; Authority</p>
-            <h2 className="mt-3 font-head text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-ink">
+            <h2 className="mt-3 font-head text-2xl sm:text-3xl font-bold tracking-tight text-ink">
               The Creator&apos;s Ownership Covenant
             </h2>
-            <p className="mt-3 text-base sm:text-lg text-dim leading-relaxed">
+            <p className="mt-2.5 text-xs sm:text-sm text-dim leading-relaxed">
               We built Pixlab with complete respect for intellectual property. Here is the explicit balance of rights between you and our processing studio.
             </p>
           </div>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-3xl border-2 border-ink bg-white p-8 sm:p-10 shadow-lg shadow-ink/5">
+            <div className="rounded-3xl border-2 border-ink bg-white p-7 sm:p-9 shadow-lg shadow-ink/5">
               <div className="flex items-center justify-between pb-6 border-b border-line">
-                <h3 className="font-head text-xl sm:text-2xl font-bold text-ink">Your Absolute Property</h3>
+                <h3 className="font-head text-lg sm:text-xl font-bold text-ink">Your Absolute Property</h3>
                 <span className="rounded-full bg-ink px-4 py-1 text-xs font-bold text-white uppercase tracking-wider">
                   100% User Owned
                 </span>
               </div>
-              <ul className="mt-6 space-y-4 text-sm sm:text-base text-dim">
+              <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-dim leading-relaxed">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-ink shrink-0 mt-0.5" />
                   <span><strong>Full Copyright Retention:</strong> You retain complete, undivided copyright and moral ownership of all raw uploads and exported results.</span>
@@ -86,14 +86,14 @@ export default function TermsPage() {
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-line bg-mist p-8 sm:p-10 shadow-sm">
+            <div className="rounded-3xl border border-line bg-mist p-7 sm:p-9 shadow-sm">
               <div className="flex items-center justify-between pb-6 border-b border-line">
-                <h3 className="font-head text-xl sm:text-2xl font-bold text-ink">Pixlab&apos;s Limited Scope</h3>
+                <h3 className="font-head text-lg sm:text-xl font-bold text-ink">Pixlab&apos;s Limited Scope</h3>
                 <span className="rounded-full bg-line px-4 py-1 text-xs font-bold text-ink uppercase tracking-wider">
                   Volatile RAM Only
                 </span>
               </div>
-              <ul className="mt-6 space-y-4 text-sm sm:text-base text-dim">
+              <ul className="mt-6 space-y-3.5 text-xs sm:text-sm text-dim leading-relaxed">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-gold shrink-0 mt-0.5" />
                   <span><strong>Execution License Only:</strong> We receive only a transient, non-exclusive license to transform pixel buffers strictly to return your file.</span>
