@@ -165,7 +165,7 @@ Ensure you have the following installed on your local machine:
 1. Clone the repository to your local machine:
    ```bash
    git clone <enter_your_repository_url_here>
-   cd pixlab-template
+   cd pixlab-frontend
    ```
 
 2. Install the project dependencies:
