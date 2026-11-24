@@ -1,6 +1,6 @@
-# PixLab Studio
+# Pixlab Frontend
 
-PixLab Studio is a high-performance web application designed for professional-grade image processing, optimization, and transformation. Built with Next.js 14 (App Router), TypeScript, and Tailwind CSS, it offers an intuitive suite of browser-based image manipulation tools including automated background removal, resolution upscaling, target-size file compression, and precision resizing.
+PixLab is a high-performance web application designed for professional-grade image processing, optimization, and transformation. Built with Next.js 14 (App Router), TypeScript, and Tailwind CSS, it offers an intuitive suite of browser-based image manipulation tools including automated background removal, resolution upscaling, target-size file compression, and precision resizing.
 
 ---
 
